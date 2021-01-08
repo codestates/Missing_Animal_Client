@@ -1,13 +1,15 @@
-import React from "react"
+import React from "react";
 // import "../styles/App.css";
-import Main from "../components/Main"
-// import Nav from "../components/Nav"
+import Main from "./components/Main";
+import Nav from "./components/Nav";
+import Board from "./components/board/Board";
 
 function App() {
   return (
-    <div>123
-    {/* <Nav></Nav> */}
+    <div>
+    <Nav></Nav>
     <Main></Main>
+    <Board></Board>
     </div>
   );
 }
