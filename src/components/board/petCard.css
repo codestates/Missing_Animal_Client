@@ -1,3 +1,4 @@
+/* Pet Card */
 .petCard {
     color: powderblue;
     border: solid;
@@ -5,3 +6,30 @@
     display: inline-block;
 }
  
+.petThumbnail {
+    width: 100%;
+    min-width: 50px;
+    height: auto;
+}
+
+/* Pet Detail */
+.petDetail {
+    border: solid;
+    text-align: center;
+    display: inline-block;
+}
+
+.petDetailTitle {
+    border: solid;
+    color: palegreen;
+}
+
+.petDetailHeader {
+    border: solid;
+    color: powderblue;
+}
+
+.petDetailBody {
+    border: solid;
+    color: palevioletred;
+}
