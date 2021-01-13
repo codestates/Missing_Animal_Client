@@ -1,0 +1,13 @@
+.comment {
+  padding: 5px;
+  margin-bottom: 5px;
+  background-color: #eee;
+}
+
+.comment:hover {
+  background-color: #ddd;
+}
+
+.comment .nick {
+  font-weight: 800;
+}
