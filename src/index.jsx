@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import '../styles/index.css';
 import App from './App';
 
+const rootElement = document.getElementById("map");
 ReactDOM.render(
   <React.StrictMode>
     <App />
   </React.StrictMode>,
-  document.getElementById('root')
+  rootElement
 );
 

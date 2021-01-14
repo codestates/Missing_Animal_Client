@@ -1,15 +1,19 @@
-import React from "react"
-// import "../styles/App.css";
-import Main from "../components/Main"
-// import Nav from "../components/Nav"
+import React, { Fragment } from "react"
+// import Main from "./components/Main"
+// import Nav from "./components/Nav"
+import Map from "./components/Map"
 
-function App() {
-  return (
-    <div>123
-    {/* <Nav></Nav> */}
-    <Main></Main>
-    </div>
-  );
+
+class App extends React.Component {
+  render() {
+    return (
+      <Fragment>
+        {/* <Nav /> */}
+        {/* <Main /> */}
+        <Map />
+      </Fragment>
+    );
+  }
 }
 
 export default App;
