@@ -25,3 +25,5 @@ yarn-error.log*
 .env
 
 components/MapAPI.js
+
+.eslintcache
