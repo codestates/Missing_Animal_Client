@@ -17,4 +17,5 @@
 .petDetailBody {
     border: solid;
     color: palevioletred;
+    text-align: left;
 }

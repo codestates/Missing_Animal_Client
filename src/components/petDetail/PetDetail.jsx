@@ -1,7 +1,7 @@
 import React from 'react';
 import './petDetail.css';
 
-function PetDetail({ title, description, species, sex, missingDate, area, reward, createdAt, petsImages, contact }) {
+function PetDetail({ title, petname, thumbnail, description, petsImages, species, sex, missingDate, area, reward, username, email, contact, createdAt }) {
     return (
         <div className="petDetail">
             <p className="petDetailTitle">{title}</p>
@@ -11,14 +11,16 @@ function PetDetail({ title, description, species, sex, missingDate, area, reward
                 <img src={petsImages[2]} alt="petImage3"></img>
             </div>
             <div className="petDetailBody">
-                <p>{species}</p>
-                <p>{sex}</p>
-                <p>{missingDate}</p>
-                <p>{area}</p>
-                <p>{description}</p>
-                <p>{reward}</p>
-                <p>{contact}</p>
-                <p>{createdAt}</p>
+                <p>Species      : {species}</p>
+                <p>Sex          : {sex}</p>
+                <p>Missing Date : {missingDate}</p>
+                <p>Missing Area : {area}</p>
+                <p>Descrioption : {description}</p>
+                <p>Reward       : {reward}</p>
+                <p>Owner's Name : {username}</p>
+                <p>Email        : {email}</p>
+                <p>Contact      : {contact}</p>
+                <p>Created At   : {createdAt}</p>
             </div>
         </div>
     );
