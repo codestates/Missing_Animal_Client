@@ -19,3 +19,8 @@
     color: palevioletred;
     text-align: left;
 }
+
+.petsImage {
+    max-width: 100px;
+    height: auto;
+}

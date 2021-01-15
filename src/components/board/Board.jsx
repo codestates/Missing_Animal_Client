@@ -8,9 +8,10 @@ function Board() {
     const [ state, setState ] = useState({ petsList: [] });
 
     useEffect(() => {
-        async function fetchData() {
+        const fetchData = async () => {
+            // const res = await axios.get('http://ec2-13-209-74-57.ap-northeast-2.compute.amazonaws.com:5000/pets/petslist');
             const res = await axios.get('http://localhost:8080/pets/petslist');
-            // console.log(res);
+            // console.log(res.data);
             if (res.status === 200) {
                 console.log(res.status, res.statusText);
                 setState(() => ({ petsList: res.data.petslist }));
@@ -31,7 +32,7 @@ function Board() {
                             key={pet.id}
                             title={pet.title}
                             petname={pet.petname}
-                            thumbnail={pet.thumbnail}
+                            thumbnail={pet.petsImages[0].imagePath}
                             description={pet.description}
                             petsImages={pet.petsImages}
                             species={pet.species}
