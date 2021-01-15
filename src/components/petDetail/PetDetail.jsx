@@ -6,9 +6,11 @@ function PetDetail({ title, petname, thumbnail, description, petsImages, species
         <div className="petDetail">
             <p className="petDetailTitle">{title}</p>
             <div className="petDetailHeader">
-                <img src={petsImages[0]} alt="petImage1"></img>
-                <img src={petsImages[1]} alt="petImage2"></img>
-                <img src={petsImages[2]} alt="petImage3"></img>
+                {
+                    petsImages.map((image, idx) => 
+                        <img key={idx+1} className= "petsImage" src={image.imagePath} alt={"petImage"+(idx+1)}></img>
+                    )
+                }
             </div>
             <div className="petDetailBody">
                 <p>Species      : {species}</p>
