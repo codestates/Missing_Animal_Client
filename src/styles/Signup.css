@@ -1,0 +1,167 @@
+.registerWrapper {
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+  padding: 0 20px 32px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.registerName {
+  margin: 0 auto;
+  font-size: 30px;
+}
+
+.registerText {
+  font-size: 13px;
+}
+
+.inputEmail {
+  margin-top: 5px;
+  border-radius: 2px;
+  width: 100%;
+  height: 40px;
+  border: 1px solid #e5e5e5;
+  padding: 9px 12px;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.inputPassword {
+  margin-top: 15px;
+  border-radius: 2px;
+  width: 100%;
+  height: 40px;
+  border: 1px solid #e5e5e5;
+  padding: 9px 12px;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.inputUsername {
+  margin-top: 15px;
+  border-radius: 2px;
+  width: 100%;
+  height: 40px;
+  border: 1px solid #e5e5e5;
+  padding: 9px 12px;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.inputMobile {
+  margin-top: 15px;
+  border-radius: 2px;
+  width: 100%;
+  height: 40px;
+  border: 1px solid #e5e5e5;
+  padding: 9px 12px;
+  outline: none;
+  box-sizing: border-box;
+}
+
+input::placeholder {
+  color: #999999;
+}
+
+.autoLogin {
+  font-size: 12px;
+  color: #8d8d8d;
+  line-height: 3;
+}
+
+.registerBtn {
+  height: 40px;
+  font-size: 14px;
+  padding: 13px 30px;
+  cursor: pointer;
+  background-color: black;
+  color: white;
+  line-height: 1px;
+  margin-top: 20px;
+  margin-bottom: 12px;
+  border-radius: 3px;
+  border-style: none;
+}
+
+.socialBox {
+  margin-bottom: 13px;
+}
+.kakao {
+  background-color: #feec34;
+  border-color: #feec34;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.btn_kakao {
+  width: 300px;
+  font-size: 15px;
+  text-align: center;
+  display: inline-block;
+  box-sizing: border-box;
+  object-fit: fill;
+}
+
+.naver {
+  background-color: #2db400;
+  border-color: #2db400;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  color: #fff;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.btn__naver {
+  padding-top: 12px;
+  width: 310px;
+  color: #fff;
+  font-size: 15px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.loginLine {
+  color: #bcbcbc;
+  font-size: 11px;
+  margin-bottom: 35px;
+}
+
+.loginEnd {
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+  padding: 0 0 32px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.signUpBtn {
+  height: 40px;
+  font-size: 14px;
+  padding: 13px 30px;
+  cursor: pointer;
+  background-color: black;
+  color: white;
+  line-height: 1px;
+  margin-top: 0px;
+  margin-bottom: 12px;
+  border-radius: 3px;
+  border-style: none;
+}
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
