@@ -32,8 +32,9 @@ class Signin extends React.Component {
   loginHandler() {
     // this.setState({ isLogin: true });
     window.localStorage.setItem("isLogin", true);
+    this.props.close();
     this.props.history.push({
-      pathname: "/board",
+      // pathname: "/",
       isLogin: this.state.isLogin,
     });
   }
@@ -52,7 +53,7 @@ class Signin extends React.Component {
       if (resp.data.message === "naver login") {
         console.log("userid:", resp.data.userid);
         console.log("username:", resp.data.username);
-        this.props.history.push("/board");
+        this.props.history.push("/");
       }
     }
     // 카카오
@@ -69,7 +70,7 @@ class Signin extends React.Component {
       console.log("resp.data.message:", resp.data.message);
 
       if (resp.data.message === "kakao login") {
-        this.props.history.push("/board");
+        this.props.history.push("/");
       }
     }
   }
