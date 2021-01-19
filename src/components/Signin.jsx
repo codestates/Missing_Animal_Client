@@ -61,8 +61,8 @@ class Signin extends React.Component {
         "http://localhost:8080/auth/kakao",
         {
           authorizationCode: authorizationCode,
-        }
-        // { withCredentials: true }
+        },
+        { withCredentials: true }
       );
 
       console.log("resp.data:", resp.data);

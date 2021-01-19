@@ -9,11 +9,12 @@ import React from "react";
 import { Switch, Route, withRouter } from "react-router-dom";
 import Main from "./components/Main";
 import MyInfo from "./components/Myinfo";
-import Check from "./components/Check";
+// import Check from "./components/Check";
 import SignUp from "./components/Signup";
 import Board from "./components/board/Board";
 import Map from "./components/Map";
 import PetRegister from "./components/petRegister/PetRegister";
+import Main_Menu from "./components/Main_Menu";
 
 class App extends React.Component {
   constructor(props) {
@@ -25,11 +26,20 @@ class App extends React.Component {
 
   render() {
     return (
-      <div id="main">
+      <div>
         <Switch>
-          <Route exact path="/" render={() => <Main />} />
+          <Route
+            exact
+            path="/"
+            render={() => (
+              <>
+                <Main_Menu />
+                <Main />
+              </>
+            )}
+          />
           <Route exact path="/mypage" render={() => <MyInfo />} />
-          <Route exact path="/signin" render={() => <Check />} />
+          {/* <Route exact path="/signin" render={() => <Check />} /> */}
           <Route exact path="/signup" render={() => <SignUp />} />
           <Route exact path="/board" render={() => <Board />} />
           <Route exact path="/map" render={() => <Map />} />
