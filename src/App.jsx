@@ -6,6 +6,7 @@ import SignUp from "./components/Signup";
 import Board from "./components/board/Board";
 import Map from "./components/Map";
 import PetRegister from "./components/petRegister/PetRegister";
+import Main_Menu from "./components/Main_Menu";
 
 class App extends React.Component {
   constructor(props) {
@@ -17,9 +18,18 @@ class App extends React.Component {
 
   render() {
     return (
-      <div id="main">
+      <div>
         <Switch>
-          <Route exact path="/" render={() => <Main />} />
+          <Route
+            exact
+            path="/"
+            render={() => (
+              <>
+                <Main_Menu />
+                <Main />
+              </>
+            )}
+          />
           <Route exact path="/mypage" render={() => <MyInfo />} />
           <Route exact path="/signup" render={() => <SignUp />} />
           <Route exact path="/board" render={() => <Board />} />

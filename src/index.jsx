@@ -5,7 +5,7 @@ import App from "./App";
 //
 import { BrowserRouter as Router } from "react-router-dom";
 
-const rootElement = document.getElementById("map");
+const rootElement = document.getElementById("root");
 ReactDOM.render(
   // <React.StrictMode>
   //   <App />

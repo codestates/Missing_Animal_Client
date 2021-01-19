@@ -1,9 +1,9 @@
 .board {
-    border: solid;
-    text-align: center;
+  /* border: solid; */
+  text-align: center;
 }
 
 .boardTitle {
-    color: palevioletred;
-    border: solid;
+  color: palevioletred;
+  border: solid;
 }
