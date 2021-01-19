@@ -32,6 +32,7 @@ class Map extends React.Component {
 
         kakao.maps.event.addListener(marker, 'click', function () {
           alert('마커를 클릭했습니다!');
+
         });
       });
     };
@@ -40,6 +41,7 @@ class Map extends React.Component {
     return (
       <>
         <div id="map">
+          테스트용
         </div>
       </>
     )

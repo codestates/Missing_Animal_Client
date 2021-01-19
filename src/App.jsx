@@ -1,19 +1,21 @@
-import React, { Fragment } from "react"
-// import Main from "./components/Main"
-// import Nav from "./components/Nav"
+import React from "react";
+// import "../styles/App.css";
+import Main from "./components/Main";
+import Nav from "./components/Nav";
 import Map from "./components/Map"
+import Board from "./components/board/Board";
+// import PetRegister from "./components/petRegister/PetRegister";
 
-
-class App extends React.Component {
-  render() {
-    return (
-      <Fragment>
-        {/* <Nav /> */}
-        {/* <Main /> */}
-        <Map />
-      </Fragment>
-    );
-  }
+function App() {
+  return (
+    <div>
+      <Nav></Nav>
+      <Main></Main>
+      <Board></Board>
+      <Map></Map>
+      {/* <PetRegister></PetRegister> */}
+    </div>
+  );
 }
 
 export default App;

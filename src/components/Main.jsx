@@ -1,5 +1,5 @@
 import React from 'react';
-import "../styles/Main.css";
+import "../styles/Main.css"
 
 class Main extends React.Component {
   render() {
@@ -7,18 +7,16 @@ class Main extends React.Component {
       <div className="main_UI">
         <div className="main_intro">
           <img src="intro.jpg" alt="profile" />
-          <div>
-            이 개는 영국에서부터 시작된.....
-          </div>
-        </div>
+        이 사이트를 만든 이유는 ~
+      </div>
         <div>
           <div className="main_menu">
             <div>지도보기</div>
             <div>게시판</div>
             <div>등록하기</div>
-          </div>
+          </div>{/*메뉴*/}
         </div>
-      </div>
+      </div> //메인 ui
     )
   }
 }

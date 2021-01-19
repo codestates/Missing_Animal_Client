@@ -1,0 +1,20 @@
+.petCard {
+    color: powderblue;
+    border: solid;
+    width: 30%;
+    display: inline-block;
+}
+ 
+.petThumbnail {
+    width: 100%;
+    min-width: 50px;
+    height: auto;
+}
+
+.modal {
+    display: inline-block;
+}
+
+.closeButton {
+    display: block;
+}
