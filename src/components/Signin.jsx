@@ -51,8 +51,7 @@ class Signin extends React.Component {
       );
 
       if (resp.data.message === "naver login") {
-        console.log("userid:", resp.data.userid);
-        console.log("username:", resp.data.username);
+        window.localStorage.setItem("isLogin", true);
         this.props.history.push("/");
       }
     }
@@ -62,14 +61,12 @@ class Signin extends React.Component {
         "http://localhost:8080/auth/kakao",
         {
           authorizationCode: authorizationCode,
-        }
-        // { withCredentials: true }
+        },
+        { withCredentials: true }
       );
 
-      console.log("resp.data:", resp.data);
-      console.log("resp.data.message:", resp.data.message);
-
       if (resp.data.message === "kakao login") {
+        window.localStorage.setItem("isLogin", true);
         this.props.history.push("/");
       }
     }
@@ -81,8 +78,6 @@ class Signin extends React.Component {
     if (authorizationCode) {
       this.getAccessToken(authorizationCode);
     }
-
-    console.log("authorizationCode:", authorizationCode);
   }
 
   naverLoginHandler() {
@@ -131,8 +126,6 @@ class Signin extends React.Component {
       );
 
       if (loginRequest.data.message === "signin OK") {
-        console.log("isLogin:", this.state.isLogin);
-        console.log("loginRequest.data:", loginRequest.data);
         this.loginHandler();
       }
     }
@@ -147,7 +140,6 @@ class Signin extends React.Component {
     const { isOpen, close } = this.props;
 
     // { isLogin ? <Board /> : <Signin loginHandler={this.loginHandler} />}
-    console.log("isOpen:", isOpen);
 
     return (
       <>

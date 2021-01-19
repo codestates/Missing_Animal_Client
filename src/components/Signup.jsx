@@ -1,6 +1,3 @@
-// import React from "react";
-// import "../styles/login.css";
-
 import axios from "axios";
 import React, { Component } from "react";
 import "../styles/Signup.css";
@@ -84,8 +81,3 @@ class Signup extends Component {
 }
 
 export default withRouter(Signup);
-
-// function SignUp() {
-//   return <div className="Myinfo_menue">회원가입</div>;
-// }
-// export default SignUp;

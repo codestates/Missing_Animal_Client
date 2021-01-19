@@ -3,6 +3,7 @@ import "../styles/Main.css";
 import { Link, withRouter } from "react-router-dom";
 
 import Signin from "./Signin";
+import Signout from "./Signout";
 
 class Main extends React.Component {
   constructor(props) {
@@ -21,6 +22,8 @@ class Main extends React.Component {
   };
 
   render() {
+    const checkLogin = window.localStorage.getItem("isLogin");
+
     return (
       <div className="pageList">
         <div className="mypage">
@@ -28,13 +31,18 @@ class Main extends React.Component {
             <button className="mypageBtn">마이페이지</button>
           </Link>
         </div>
-        <div className="signin">
-          <button onClick={this.openModal} className="signinBtn">
-            로그인
-          </button>
-          <Signin isOpen={this.state.isModalOpen} close={this.closeModal} />
-          {/* <button className="signinBtn">로그인</button> */}
-        </div>
+        {checkLogin ? (
+          <div className="signin">
+            <Signout />
+          </div>
+        ) : (
+          <div className="signin">
+            <button onClick={this.openModal} className="signinBtn">
+              로그인
+            </button>
+            <Signin isOpen={this.state.isModalOpen} close={this.closeModal} />
+          </div>
+        )}
         <div className="map">
           <Link to="/map">
             <button className="mapBtn">지도보기</button>
