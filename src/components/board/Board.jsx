@@ -1,11 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import PetCard from '../petCard/PetCard';
+import SearchBar from '../searchBar/SearchBar';
 import './board.css';
 import axios from 'axios';
 
 function Board() {
 
-    const [ state, setState ] = useState({ petsList: [] });
+    const [ state, setState ] = useState({ 
+        get: {
+            petsList: [] 
+        },
+        search: {
+            query: '',
+            petsList: []
+        }
+    });
 
     useEffect(() => {
         const fetchData = async () => {
@@ -14,7 +23,12 @@ function Board() {
             // console.log(res.data);
             if (res.status === 200) {
                 console.log(res.status, res.statusText);
-                setState(() => ({ petsList: res.data.petslist }));
+                setState((prevState) => ({ 
+                    ...prevState,
+                    get: {
+                        petsList: res.data.petslist 
+                    }
+                }));
             } else {
                 console.log(res.status, res.statusText);
             }
@@ -22,12 +36,39 @@ function Board() {
         fetchData();
     }, [] );
 
+    const searchPets = async (keyword) => {
+        // const res = await axios.post('http://ec2-13-209-74-57.ap-northeast-2.compute.amazonaws.com:5000/pets/search', { search: keyword });
+        const res = await axios.post('http://localhost:8080/pets/search', { search: keyword });
+        console.log(res.data);
+        if (res.status === 200) {
+            console.log(res.status, res.statusText);
+            setState((prevState) => ({ 
+                ...prevState,
+                search: {
+                    query: keyword,
+                    petsList: res.data.filteredList,   
+                }
+            })); 
+        } else {
+            console.log(res.status, res.statusText);
+        }
+    };
+
+    let _petsList;
+    if (state.search.query === '') {
+        _petsList = state.get.petsList;
+    } else if (state.search.query !== '') {
+        _petsList = state.search.petsList;
+    }
     return (
         <div className="board">
+            <SearchBar 
+                searchPets={searchPets}
+            ></SearchBar>
             <div className="boardTitle">Board - Missing Pets</div>
             <div className="petCards">
                 {
-                    state.petsList.map(pet =>
+                    _petsList.map(pet =>
                         <PetCard
                             key={pet.id}
                             title={pet.title}

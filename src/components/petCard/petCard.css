@@ -1,4 +1,4 @@
-.petCard {
+/* .petCard {
     color: powderblue;
     border: solid;
     width: 32%;
@@ -8,6 +8,7 @@
 .petThumbnail {
     width: 100%;
     min-width: 50px;
+    max-width: 300px;
     height: auto;
 }
 
@@ -17,4 +18,4 @@
 
 .closeButton {
     display: block;
-}
+} */
