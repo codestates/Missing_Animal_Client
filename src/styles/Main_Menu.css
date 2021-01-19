@@ -13,7 +13,7 @@
   border-bottom: 0.5px solid rgb(232, 232, 232);
 }
 
-.Btn {
+/* .Btn {
   width: 120px;
   background-color: #213e52;
   border-radius: 10px;
@@ -28,6 +28,23 @@
 }
 .Btn:hover {
   background-color: #aec4c7;
+} */
+
+.mypageBtn {
+  width: 120px;
+  background-color: #213e52;
+  border-radius: 10px;
+  color: #fff;
+  padding: 15px 0;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 4px;
+  cursor: pointer;
+}
+.mypageBtn:hover {
+  background-color: #aec4c7;
 }
 
 .mypageBtn {
@@ -37,6 +54,40 @@
 .signin {
   margin-left: 15px;
   margin-right: 50px;
+}
+
+.signinBtn {
+  width: 120px;
+  background-color: #213e52;
+  border-radius: 10px;
+  color: #fff;
+  padding: 15px 0;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 4px;
+  cursor: pointer;
+}
+.signinBtn:hover {
+  background-color: #aec4c7;
+}
+
+.logoutBtn {
+  width: 120px;
+  background-color: #213e52;
+  border-radius: 10px;
+  color: #fff;
+  padding: 15px 0;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 4px;
+  cursor: pointer;
+}
+.logoutBtn:hover {
+  background-color: #aec4c7;
 }
 
 h1 {
