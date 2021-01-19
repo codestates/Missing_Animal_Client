@@ -1,15 +1,7 @@
-// import React from "react";
-// // import "../styles/App.css";
-// import Main from "./components/Main";
-// import Nav from "./components/Nav";
-// import Map from "./components/Map";
-// import "./styles/App.css"
-
 import React from "react";
 import { Switch, Route, withRouter } from "react-router-dom";
 import Main from "./components/Main";
 import MyInfo from "./components/Myinfo";
-// import Check from "./components/Check";
 import SignUp from "./components/Signup";
 import Board from "./components/board/Board";
 import Map from "./components/Map";
@@ -39,7 +31,6 @@ class App extends React.Component {
             )}
           />
           <Route exact path="/mypage" render={() => <MyInfo />} />
-          {/* <Route exact path="/signin" render={() => <Check />} /> */}
           <Route exact path="/signup" render={() => <SignUp />} />
           <Route exact path="/board" render={() => <Board />} />
           <Route exact path="/map" render={() => <Map />} />
