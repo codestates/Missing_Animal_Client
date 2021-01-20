@@ -34,7 +34,6 @@ class Signin extends React.Component {
     window.localStorage.setItem("isLogin", true);
     this.props.close();
     this.props.history.push({
-      // pathname: "/",
       isLogin: this.state.isLogin,
     });
   }
@@ -51,8 +50,7 @@ class Signin extends React.Component {
       );
 
       if (resp.data.message === "naver login") {
-        console.log("userid:", resp.data.userid);
-        console.log("username:", resp.data.username);
+        window.localStorage.setItem("isLogin", true);
         this.props.history.push("/");
       }
     }
@@ -66,10 +64,8 @@ class Signin extends React.Component {
         { withCredentials: true }
       );
 
-      console.log("resp.data:", resp.data);
-      console.log("resp.data.message:", resp.data.message);
-
       if (resp.data.message === "kakao login") {
+        window.localStorage.setItem("isLogin", true);
         this.props.history.push("/");
       }
     }
@@ -81,8 +77,6 @@ class Signin extends React.Component {
     if (authorizationCode) {
       this.getAccessToken(authorizationCode);
     }
-
-    console.log("authorizationCode:", authorizationCode);
   }
 
   naverLoginHandler() {
@@ -131,8 +125,6 @@ class Signin extends React.Component {
       );
 
       if (loginRequest.data.message === "signin OK") {
-        console.log("isLogin:", this.state.isLogin);
-        console.log("loginRequest.data:", loginRequest.data);
         this.loginHandler();
       }
     }
@@ -143,11 +135,9 @@ class Signin extends React.Component {
   };
 
   render() {
-    const { isLogin } = this.state;
     const { isOpen, close } = this.props;
 
     // { isLogin ? <Board /> : <Signin loginHandler={this.loginHandler} />}
-    console.log("isOpen:", isOpen);
 
     return (
       <>
@@ -166,14 +156,11 @@ class Signin extends React.Component {
               <div className="modalContents" onClick={() => isOpen}>
                 <div className="signinName"> Missing Animal </div>
                 <input
-                  // name="email"
                   className="loginId"
-                  // type="text"
                   placeholder="아이디(이메일)"
                   onChange={this.emailValidator.bind(this)}
                 />
                 <input
-                  // name="password"
                   className="loginPw"
                   type="password"
                   placeholder="비밀번호"

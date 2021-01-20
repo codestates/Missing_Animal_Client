@@ -29,7 +29,7 @@ const customStyles = {
 };
 Modal.setAppElement('#root');
 
-function PetCard({ title, petname, thumbnail, description, species, sex, missingDate, area, reward, createdAt, petsImages, contact }) {
+function PetCard({ title, petname, thumbnail, description, petsImages, species, sex, missingDate, area, reward, username, email, contact, createdAt }) {
     // Pet Detail Modal
     let subtitleDetailModal;
     const [ detailModalIsOpen, setDetailModalIsOpen ] = useState(false);
@@ -77,14 +77,16 @@ function PetCard({ title, petname, thumbnail, description, species, sex, missing
                         petname={petname}
                         thumbnail={thumbnail}
                         description={description}
+                        petsImages={petsImages}
                         species={species}
                         sex={sex}
                         missingDate={missingDate}
                         area={area}
                         reward={reward}
-                        createdAt={createdAt}
-                        petsImages={petsImages}
+                        username={username}
+                        email={email}
                         contact={contact}
+                        createdAt={createdAt}
                     ></PetDetail>
                     <button className="closeButton" onClick={ closeDetailModal }>Close</button>
                 </Modal>
