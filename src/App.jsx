@@ -7,6 +7,7 @@ import Board from "./components/board/Board";
 import Map from "./components/Map";
 import PetRegister from "./components/petRegister/PetRegister";
 import Main_Menu from "./components/Main_Menu";
+import "./styles/App.css";
 
 class App extends React.Component {
   constructor(props) {
@@ -18,7 +19,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="app">
         <Switch>
           <Route
             exact
