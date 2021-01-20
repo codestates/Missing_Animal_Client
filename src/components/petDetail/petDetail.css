@@ -1,4 +1,4 @@
-.petDetail {
+/* .petDetail {
     border: solid;
     text-align: center;
     display: inline-block;
@@ -17,4 +17,10 @@
 .petDetailBody {
     border: solid;
     color: palevioletred;
+    text-align: left;
 }
+
+.petsImage {
+    max-width: 100px;
+    height: auto;
+} */

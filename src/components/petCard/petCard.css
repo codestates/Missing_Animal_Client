@@ -1,13 +1,14 @@
-.petCard {
+/* .petCard {
     color: powderblue;
     border: solid;
-    width: 30%;
+    width: 32%;
     display: inline-block;
 }
  
 .petThumbnail {
     width: 100%;
     min-width: 50px;
+    max-width: 300px;
     height: auto;
 }
 
@@ -17,4 +18,4 @@
 
 .closeButton {
     display: block;
-}
+} */

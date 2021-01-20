@@ -26,8 +26,10 @@ class Main_Menu extends React.Component {
 
     return (
       <div className="Main_Menu">
-        <div>
-          <h1>Finders</h1>
+        <div className="logo">
+          <Link to="/">
+            <img src="/images/FindersLogo.png" width="180px" height="90px" />
+          </Link>
         </div>
         <div>
           {/* <span className="Btn"> */}
