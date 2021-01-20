@@ -6,6 +6,7 @@ import SignUp from "./components/Signup";
 import Board from "./components/board/Board";
 import Map from "./components/Map";
 import PetRegister from "./components/petRegister/PetRegister";
+import PetMap from "./components/petRegister/PetMap";
 import Main_Menu from "./components/Main_Menu";
 import "./styles/App.css";
 
@@ -35,7 +36,8 @@ class App extends React.Component {
           <Route exact path="/signup" render={() => <SignUp />} />
           <Route exact path="/board" render={() => <Board />} />
           <Route exact path="/map" render={() => <Map />} />
-          <Route exact path="/petregister" render={() => <PetRegister />} />
+          <Route exact path="/mapregister" render={() => <PetMap />} />
+          {/* <Route exact path="/petregister" render={() => <PetRegister />} /> */}
         </Switch>
       </div>
     );

@@ -7,18 +7,7 @@ import { Link, withRouter } from "react-router-dom";
 class Main extends React.Component {
   constructor(props) {
     super(props);
-    // this.state = {
-    //   isModalOpen: false,
-    // };
   }
-
-  // openModal = () => {
-  //   this.setState({ isModalOpen: true });
-  // };
-
-  // closeModal = () => {
-  //   this.setState({ isModalOpen: false });
-  // };
 
   render() {
     return (
@@ -57,6 +46,11 @@ class Main extends React.Component {
               <div className="ListBtn">반려동물 등록하기</div>
             </Link>
           </div>
+          {/* <div className="mapRegister">
+            <Link to="/mapregister">
+              <div className="ListBtn">펫 등록하기</div>
+            </Link>
+          </div> */}
         </div>
       </div>
     );
