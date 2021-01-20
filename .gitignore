@@ -27,3 +27,5 @@ yarn-error.log*
 components/MapAPI.js
 
 .eslintcache
+
+package-lock.json

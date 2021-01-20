@@ -1,12 +1,17 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./App";
 
-const rootElement = document.getElementById("map");
+//
+import { BrowserRouter as Router } from "react-router-dom";
+
+const rootElement = document.getElementById("root");
 ReactDOM.render(
-  <React.StrictMode>
+  // <React.StrictMode>
+  //   <App />
+  // </React.StrictMode>,
+  <Router>
     <App />
-  </React.StrictMode>,
+  </Router>,
   rootElement
 );
-

@@ -1,21 +1,58 @@
 import React from "react";
-// import "../styles/App.css";
+import { Switch, Route, withRouter } from "react-router-dom";
 import Main from "./components/Main";
-import Nav from "./components/Nav";
-import Map from "./components/Map"
+import MyInfo from "./components/Myinfo";
+import SignUp from "./components/Signup";
 import Board from "./components/board/Board";
-// import PetRegister from "./components/petRegister/PetRegister";
+import Map from "./components/Map";
+import PetRegister from "./components/petRegister/PetRegister";
+import Main_Menu from "./components/Main_Menu";
 
-function App() {
-  return (
-    <div>
-      <Nav></Nav>
-      <Main></Main>
-      <Board></Board>
-      <Map></Map>
-      {/* <PetRegister></PetRegister> */}
-    </div>
-  );
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isLogin: false,
+    };
+  }
+
+  render() {
+    return (
+      <div>
+        <Switch>
+          <Route
+            exact
+            path="/"
+            render={() => (
+              <>
+                <Main_Menu />
+                <Main />
+              </>
+            )}
+          />
+          <Route exact path="/mypage" render={() => <MyInfo />} />
+          <Route exact path="/signup" render={() => <SignUp />} />
+          <Route exact path="/board" render={() => <Board />} />
+          <Route exact path="/map" render={() => <Map />} />
+          <Route exact path="/petregister" render={() => <PetRegister />} />
+        </Switch>
+      </div>
+    );
+  }
 }
 
-export default App;
+export default withRouter(App);
+
+// function App() {
+//   return (
+//     <div>
+//       <Nav></Nav>
+//       <Main></Main>
+//       {/* <Board></Board> */}
+//       {/*  <Map /> */}
+//       {/* <PetRegister></PetRegister> */}
+//     </div>
+//   );
+// }
+
+// export default App;
