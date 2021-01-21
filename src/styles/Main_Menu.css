@@ -12,8 +12,7 @@
   z-index: 10;
   /* border-bottom: 0.5px solid rgb(232, 232, 232); */
 }
-
-/* .Btn {
+.Btn {
   width: 120px;
   background-color: #50756ab7;
   border-radius: 10px;
@@ -29,16 +28,13 @@
 .Btn:hover {
   background-color: #7baa71;
 }
-
 .mypageBtn {
   color: white;
 }
-
 .signin {
   margin-left: 15px;
   margin-right: 43px;
 }
-
 .logo {
   margin-left: 55px;
 }
