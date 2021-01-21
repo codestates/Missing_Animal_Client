@@ -30,8 +30,8 @@ class Signin extends React.Component {
   }
 
   loginHandler() {
-    // this.setState({ isLogin: true });
     window.localStorage.setItem("isLogin", true);
+    window.localStorage.setItem("Login", "signin");
     this.props.close();
     this.props.history.push({
       isLogin: this.state.isLogin,
@@ -51,6 +51,7 @@ class Signin extends React.Component {
 
       if (resp.data.message === "naver login") {
         window.localStorage.setItem("isLogin", true);
+        window.localStorage.setItem("Login", "naver");
         this.props.history.push("/");
       }
     }
@@ -66,6 +67,7 @@ class Signin extends React.Component {
 
       if (resp.data.message === "kakao login") {
         window.localStorage.setItem("isLogin", true);
+        window.localStorage.setItem("Login", "kakao");
         this.props.history.push("/");
       }
     }
