@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './petCard.css';
-import PetDetail from '../petDetail/PetDetail';
+import PetDetail from './PetDetail';
 import Comments from '../comments/Comments';
 
 // Modal
@@ -57,10 +57,10 @@ function PetCard({ title, petname, thumbnail, description, petsImages, species, 
 
     return (
         <div className="petCard">
-            <p>{ title }</p>
+            <p>Title : { title }</p>
             <img className="petThumbnail" src={ thumbnail } alt="petThumbnail"></img>
-            <p>{ petname }</p>
-            <p>{ description }</p>
+            <p>Pet Name : { petname }</p>
+            <p>Decription : { description }</p>
             {/* Pet Detail Modal */}
             <div className="modal petDetailModal">
                 <button className="openButton" onClick={ openDetailModal }>Pet Detail</button>

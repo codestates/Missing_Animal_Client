@@ -1,7 +1,7 @@
 import React from "react";
 import { Switch, Route, withRouter } from "react-router-dom";
 import Main from "./components/Main";
-import MyInfo from "./components/Myinfo";
+import MyInfo from "./components/myInfo/MyInfo";
 import SignUp from "./components/Signup";
 import Board from "./components/board/Board";
 import Map from "./components/Map";
