@@ -19,6 +19,8 @@ class PetRegister extends React.Component {
       description: "",
       reward: "",
       img: [],
+      latitude: "",
+      longitude: "",
     };
 
     this.displayMaker = this.displayMaker.bind(this);
@@ -36,7 +38,9 @@ class PetRegister extends React.Component {
       img,
       // missingDate,
     } = this.state;
+
     const formData = new FormData();
+
     formData.append("title", title);
     formData.append("petname", petname);
     formData.append("species", species);
@@ -51,11 +55,33 @@ class PetRegister extends React.Component {
     const newDate = new Date(new Date().getTime() + 32400000).toISOString();
     const newFormatDate = newDate.split(".")[0].replace("T", " ");
     formData.append("missingDate", newFormatDate);
+
+    const getCookie = (name) => {
+      var value = document.cookie.match("(^|;) ?" + name + "=([^;]*)(;|$)");
+      return value ? value[2] : null;
+    };
+
+    const checkLogin = window.localStorage.getItem("Login");
+    // const token = getCookie("token");
+
+    let token = getCookie("token");
+    if (checkLogin === "naver") {
+      token = getCookie("naver_token");
+    } else if (checkLogin === "kakao") {
+      token = getCookie("access_token");
+    } else if (checkLogin === "signin") {
+      token = getCookie("token");
+    }
+
+    axios.defaults.headers.common["Authorization"] = "Bearer " + token;
+
     const res = await axios.post(
       "http://localhost:8080/pets/register",
       formData,
-      { withCredentials: true }
+      { withCredentials: true },
+      { headers: { "Content-type": "application/x-www-form-urlencoded" } }
     );
+
     if (res.status === 201) {
       console.log(res.status, res.statusText);
       this.setState(() => ({
@@ -87,7 +113,7 @@ class PetRegister extends React.Component {
       marker.setPosition(latlng);
     });
 
-    // console.log("displayMarker:", test);
+    // console.log("displayMarker:", test);채
     // this.setState({ getLocation: "change" });
   }
 
@@ -138,8 +164,6 @@ class PetRegister extends React.Component {
       reward,
       img,
     } = this.state;
-
-    console.log("=location=", area);
 
     return (
       <div className="petRegister">
