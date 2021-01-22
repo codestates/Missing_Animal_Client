@@ -4,11 +4,11 @@ import axios from "axios";
 import PetInfoCard from "./PetInfoCard";
 import MyInfoUpdate from "./MyInfoUpdate";
 
-function MyInfo({ isLogged, token }) {
+function MyInfo() {
   /* 렌더링 조건 설명 : 로그인한 상태(isLogged 값이 true, token이 props로 전달된 상태)일때 myInfo 페이지가 읽기 가능함 */
   // 임시 토큰 설정
   // axios.defaults.headers.common["Authorization"] =
-  //   "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJjaGFybGllQGNvZGVzdGF0ZXMuY29tIiwidXNlcm5hbWUiOiJDaGFybGllIiwiaWF0IjoxNjEwOTU1Njk3LCJleHAiOjE2MTE1NjA0OTd9.mdQ3_zFrWK6l5CBxTaH6Li6gJQtscVTlVeTmeRE6x0w";
+  //   "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJwc3lreWdAbmF2ZXIuY29tIiwidXNlcm5hbWUiOiLqsJXsmqnqtawiLCJpYXQiOjE2MTEyODQyNDAsImV4cCI6MTYxMTg4OTA0MH0.HQbsWKGNNHccYaipGpSV3D2JzEu3Yyen96nqQ_LKVxs";
   // axios.defaults.headers.common["Authorization"] = "Bearer " + token;
 
   const [state, setState] = useState({
@@ -81,7 +81,7 @@ function MyInfo({ isLogged, token }) {
       <div className="myInfoTitle">My Info</div>
       {state.toModifyMyInfo ? (
         <MyInfoUpdate
-          isLogged={isLogged}
+          // isLogged={isLogged}
           token={token}
           userId={userId}
           username={username}
@@ -121,6 +121,7 @@ function MyInfo({ isLogged, token }) {
         {petsList.map((pet) => (
           <PetInfoCard
             isLogged={isLogged}
+            // isLogged={isLogged}
             token={token}
             key={pet.id}
             id={pet.id}
