@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import "./petRegister.css";
 import FormData from "form-data";
