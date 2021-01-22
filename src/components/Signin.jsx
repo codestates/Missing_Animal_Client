@@ -23,10 +23,10 @@ class Signin extends React.Component {
     this.kakaoLoginHandler = this.kakaoLoginHandler.bind(this);
 
     this.NAVER_LOGIN_URL =
-      "https://nid.naver.com/oauth2.0/authorize?response_type=code&client_id=vbUF8EMae9G5PmUfbyRh&state=MiAn&redirect_uri=http://localhost:3000/";
+      "https://nid.naver.com/oauth2.0/authorize?response_type=code&client_id=vbUF8EMae9G5PmUfbyRh&state=MiAn&redirect_uri=https://missinganimals.ml/";
 
     this.KAKAO_LOGIN_URL =
-      "https://kauth.kakao.com/oauth/authorize?client_id=e728a9738a0f6dd292c373b3ec9e5b45&redirect_uri=http://localhost:3000/&response_type=code";
+      "https://kauth.kakao.com/oauth/authorize?client_id=e728a9738a0f6dd292c373b3ec9e5b45&redirect_uri=https://missinganimals.ml/&response_type=code";
   }
 
   loginHandler() {
@@ -42,7 +42,7 @@ class Signin extends React.Component {
     // 네이버
     if (authorizationCode.length === 18) {
       const resp = await axios.post(
-        "http://localhost:8080/auth/naver",
+        "https://missinganimals.ml/auth/naver",
         {
           authorizationCode: authorizationCode,
         },
@@ -58,7 +58,7 @@ class Signin extends React.Component {
     // 카카오
     else {
       const resp = await axios.post(
-        "http://localhost:8080/auth/kakao",
+        "https://missinganimals.ml/auth/kakao",
         {
           authorizationCode: authorizationCode,
         },
@@ -121,7 +121,7 @@ class Signin extends React.Component {
       alert("아이디, 비밀번호를 확인해주세요");
     } else if (isEmailChecked && isPasswordChecked) {
       const loginRequest = await axios.post(
-        "http://localhost:8080/auth/signin",
+        "https://missinganimals.ml/auth/signin",
         { email, password },
         { withCredentials: true }
       );

@@ -12,7 +12,7 @@ class Signout extends Component {
 
   logoutBtn = () => {
     axios
-      .post("http://localhost:8080/auth/signout", { credentials: "include" })
+      .post("https://missinganimals.ml/signout", { credentials: "include" })
       .then((res) => {
         if (res.data.message === "signout") {
           window.localStorage.removeItem("isLogin");
