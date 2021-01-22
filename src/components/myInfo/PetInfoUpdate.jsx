@@ -7,7 +7,7 @@ function PetInfoUpdate({
   toggleToModifyPetInfo,
   handleToModifyPetInfo,
   isLogged,
-  //   token,
+  token,
   id,
   title,
   petname,
@@ -35,16 +35,16 @@ function PetInfoUpdate({
   const checkLogin = window.localStorage.getItem("Login");
   // const token = getCookie("token");
 
-  let token = getCookie("token");
+  let checkToken = getCookie("token");
   if (checkLogin === "naver") {
-    token = getCookie("naver_token");
+    checkToken = getCookie("naver_token");
   } else if (checkLogin === "kakao") {
-    token = getCookie("access_token");
+    checkToken = getCookie("access_token");
   } else if (checkLogin === "signin") {
-    token = getCookie("token");
+    checkToken = getCookie("token");
   }
 
-  axios.defaults.headers.common["Authorization"] = "Bearer " + token;
+  axios.defaults.headers.common["Authorization"] = "Bearer " + checkToken;
 
   const [state, setState] = useState({
     isLogged: true,
@@ -82,9 +82,13 @@ function PetInfoUpdate({
     /* 사용자입력 실종 날짜 */
     formData.append("missingDate", missingDate);
     // const res = await axios.put(`https://missinganimals.ml/pets/edit`, formData, { withCredentials: true });
-    const res = await axios.put(`http://localhost:8080/pets/edit`, formData, {
-      withCredentials: true,
-    });
+    const res = await axios.put(
+      `https://missinganimals.ml/pets/edit`,
+      formData,
+      {
+        withCredentials: true,
+      }
+    );
     console.log(res.data);
     if (res.staus === 201) {
       console.log(res.status, res.statusText);

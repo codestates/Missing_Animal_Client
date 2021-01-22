@@ -95,7 +95,7 @@ class PetRegister extends React.Component {
     axios.defaults.headers.common["Authorization"] = "Bearer " + token;
 
     const res = await axios.post(
-      "http://localhost:8080/pets/register",
+      "https://missinganimals.ml/pets/register",
       formData,
       { withCredentials: true },
       { headers: { "Content-type": "application/x-www-form-urlencoded" } }

@@ -11,25 +11,6 @@ function MyInfo() {
   //   "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJwc3lreWdAbmF2ZXIuY29tIiwidXNlcm5hbWUiOiLqsJXsmqnqtawiLCJpYXQiOjE2MTEyODQyNDAsImV4cCI6MTYxMTg4OTA0MH0.HQbsWKGNNHccYaipGpSV3D2JzEu3Yyen96nqQ_LKVxs";
   // axios.defaults.headers.common["Authorization"] = "Bearer " + token;
 
-  const getCookie = (name) => {
-    var value = document.cookie.match("(^|;) ?" + name + "=([^;]*)(;|$)");
-    return value ? value[2] : null;
-  };
-
-  const checkLogin = window.localStorage.getItem("Login");
-  // const token = getCookie("token");
-
-  let token = getCookie("token");
-  if (checkLogin === "naver") {
-    token = getCookie("naver_token");
-  } else if (checkLogin === "kakao") {
-    token = getCookie("access_token");
-  } else if (checkLogin === "signin") {
-    token = getCookie("token");
-  }
-
-  axios.defaults.headers.common["Authorization"] = "Bearer " + token;
-
   const [state, setState] = useState({
     isLogged: true,
     // isLogged,
@@ -43,9 +24,28 @@ function MyInfo() {
   });
 
   useEffect(() => {
+    const getCookie = (name) => {
+      var value = document.cookie.match("(^|;) ?" + name + "=([^;]*)(;|$)");
+      return value ? value[2] : null;
+    };
+
+    const checkLogin = window.localStorage.getItem("Login");
+    // const token = getCookie("token");
+
+    let checkToken = getCookie("token");
+    if (checkLogin === "naver") {
+      checkToken = getCookie("naver_token");
+    } else if (checkLogin === "kakao") {
+      checkToken = getCookie("access_token");
+    } else if (checkLogin === "signin") {
+      checkToken = getCookie("token");
+    }
+
+    axios.defaults.headers.common["Authorization"] = "Bearer " + checkToken;
+
     const fetchData = async () => {
       // const res = await axios.get('https://missinganimals.ml/users/myinfo', { withCredentials: true });
-      const res = await axios.get("http://localhost:8080/users/myinfo", {
+      const res = await axios.get("https://missinganimals.ml/users/myinfo", {
         withCredentials: true,
       });
       // console.log(res.data);
@@ -120,6 +120,7 @@ function MyInfo() {
         <p>Registered Pets : {petsList.length}</p>
         {petsList.map((pet) => (
           <PetInfoCard
+            isLogged={isLogged}
             // isLogged={isLogged}
             token={token}
             key={pet.id}
