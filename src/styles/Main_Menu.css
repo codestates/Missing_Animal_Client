@@ -3,19 +3,18 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 40px;
+  height: 5vh;
   padding: 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #dee2e6;
+  background: linear-gradient(to bottom, #8bc4c1 50%, #d1e9ca3a);
   z-index: 10;
-  border-bottom: 0.5px solid rgb(232, 232, 232);
+  /* border-bottom: 0.5px solid rgb(232, 232, 232); */
 }
-
-/* .Btn {
+.Btn {
   width: 120px;
-  background-color: #213e52;
+  background-color: #50756ab7;
   border-radius: 10px;
   color: #fff;
   padding: 15px 0;
@@ -27,70 +26,20 @@
   cursor: pointer;
 }
 .Btn:hover {
-  background-color: #aec4c7;
-} */
-
-.mypageBtn {
-  width: 120px;
-  background-color: #213e52;
-  border-radius: 10px;
-  color: #fff;
-  padding: 15px 0;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 14px;
-  margin: 4px;
-  cursor: pointer;
+  background-color: #7baa71;
 }
-.mypageBtn:hover {
-  background-color: #aec4c7;
-}
-
 .mypageBtn {
   color: white;
 }
-
 .signin {
   margin-left: 15px;
-  margin-right: 50px;
+  margin-right: 43px;
+}
+.signout {
+  margin-left: 15px;
+  margin-right: 43px;
 }
 
-.signinBtn {
-  width: 120px;
-  background-color: #213e52;
-  border-radius: 10px;
-  color: #fff;
-  padding: 15px 0;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 14px;
-  margin: 4px;
-  cursor: pointer;
-}
-.signinBtn:hover {
-  background-color: #aec4c7;
-}
-
-.logoutBtn {
-  width: 120px;
-  background-color: #213e52;
-  border-radius: 10px;
-  color: #fff;
-  padding: 15px 0;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 14px;
-  margin: 4px;
-  cursor: pointer;
-}
-.logoutBtn:hover {
-  background-color: #aec4c7;
-}
-
-h1 {
-  margin-left: 50px;
-  font-size: xx-large;
+.logo {
+  margin-left: 55px;
 }
