@@ -21,6 +21,7 @@ class PetRegister extends React.Component {
       img: [],
       latitude: "",
       longitude: "",
+      test: "",
     };
 
     this.displayMaker = this.displayMaker.bind(this);
@@ -36,8 +37,23 @@ class PetRegister extends React.Component {
       description,
       reward,
       img,
+      latitude,
+      longitude,
       // missingDate,
     } = this.state;
+
+    // 좌표로 주소 얻기
+    const getAddress = await axios.get(
+      `https://dapi.kakao.com//v2/local/geo/coord2address.json?x=${latitude}&y=${longitude}`,
+      { headers: { Authorization: "KakaoAK b5c1749155b0e7951f524756103ea74b" } }
+    );
+
+    const address = getAddress.data.documents[0].address.address_name;
+
+    // console.log(
+    //   "getAddress",
+    //   getAddress.data.documents[0].address.address_name
+    // );
 
     const formData = new FormData();
 
@@ -45,9 +61,12 @@ class PetRegister extends React.Component {
     formData.append("petname", petname);
     formData.append("species", species);
     formData.append("sex", sex);
-    formData.append("area", area);
+    formData.append("area", address);
+    // formData.append("area", "test");
     formData.append("description", description);
     formData.append("reward", reward);
+    formData.append("latitude", latitude);
+    formData.append("longitude", longitude);
     img.forEach((ele) => {
       formData.append("img", ele);
     });
@@ -92,7 +111,7 @@ class PetRegister extends React.Component {
         area: "",
         description: "",
         reward: "",
-        img: [],
+        img: "",
         // missingDate: '',
       }));
     } else {
@@ -111,13 +130,13 @@ class PetRegister extends React.Component {
 
       // 마커 위치를 클릭한 위치로 옮깁니다
       marker.setPosition(latlng);
+      console.log("displayMarker:", mouseEvent.latLng.La);
     });
 
-    // console.log("displayMarker:", test);채
     // this.setState({ getLocation: "change" });
   }
 
-  componentDidMount() {
+  async componentDidMount() {
     // const { area } = this.state;
     let container = document.getElementById("map");
 
@@ -147,7 +166,11 @@ class PetRegister extends React.Component {
       //   console.log("Lng:", mouseEvent.latLng.Ma);
       this.displayMaker();
       this.setState(
-        { area: [mouseEvent.latLng.La, mouseEvent.latLng.Ma] },
+        {
+          area: [mouseEvent.latLng.La, mouseEvent.latLng.Ma],
+          latitude: mouseEvent.latLng.La,
+          longitude: mouseEvent.latLng.Ma,
+        },
         function () {}
       );
     });
@@ -163,7 +186,11 @@ class PetRegister extends React.Component {
       description,
       reward,
       img,
+      latitude,
+      longitude,
     } = this.state;
+
+    console.log("====", this.state.test);
 
     return (
       <div className="petRegister">
@@ -225,26 +252,11 @@ class PetRegister extends React.Component {
           <br />
           <label>Missing Area : </label>
           <input
-            // type="text"
             type="text"
-            placeholder="지도를 클릭해주세요"
+            // placeholder="지도를 클릭해주세요"
             value={area}
-            onChange={(event) => (
-              () => this.displayMaker(event), this.setState(area)
-              // window.location.reload()
-            )}
+            readOnly
           ></input>
-          {/* <input
-            type="text"
-            placeholder="Missing Area"
-            value={area}
-            onChange={(event) =>
-              this.setState((prevState) => ({
-                ...prevState,
-                area: event.target.value,
-              }))
-            }
-          ></input> */}
           <br />
           <label>Description : </label>
           <input
@@ -292,6 +304,7 @@ class PetRegister extends React.Component {
           onClick={(event) => {
             event.preventDefault();
             this.registerPet();
+            window.history.back();
           }}
         >
           Register
