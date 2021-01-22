@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import PetCard from '../petCard/PetCard';
+import PetCard from './PetCard';
 import SearchBar from '../searchBar/SearchBar';
 import './board.css';
 import axios from 'axios';
@@ -18,7 +18,7 @@ function Board() {
 
     useEffect(() => {
         const fetchData = async () => {
-            // const res = await axios.get('http://ec2-13-209-74-57.ap-northeast-2.compute.amazonaws.com:5000/pets/petslist');
+            // const res = await axios.get('https://missinganimals.ml/pets/petslist');
             const res = await axios.get('http://localhost:8080/pets/petslist');
             // console.log(res.data);
             if (res.status === 200) {
@@ -37,7 +37,7 @@ function Board() {
     }, [] );
 
     const searchPets = async (keyword) => {
-        // const res = await axios.post('http://ec2-13-209-74-57.ap-northeast-2.compute.amazonaws.com:5000/pets/search', { search: keyword });
+        // const res = await axios.post('https://missinganimals.ml/pets/search', { search: keyword });
         const res = await axios.post('http://localhost:8080/pets/search', { search: keyword });
         console.log(res.data);
         if (res.status === 200) {
