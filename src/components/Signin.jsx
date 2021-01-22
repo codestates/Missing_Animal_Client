@@ -23,10 +23,10 @@ class Signin extends React.Component {
     this.kakaoLoginHandler = this.kakaoLoginHandler.bind(this);
 
     this.NAVER_LOGIN_URL =
-      "https://nid.naver.com/oauth2.0/authorize?response_type=code&client_id=vbUF8EMae9G5PmUfbyRh&state=MiAn&redirect_uri=https://missinganimals.ml/";
+      "https://nid.naver.com/oauth2.0/authorize?response_type=code&client_id=vbUF8EMae9G5PmUfbyRh&state=MiAn&redirect_uri=https://missinganimal.ml/";
 
     this.KAKAO_LOGIN_URL =
-      "https://kauth.kakao.com/oauth/authorize?client_id=e728a9738a0f6dd292c373b3ec9e5b45&redirect_uri=https://missinganimals.ml/&response_type=code";
+      "https://kauth.kakao.com/oauth/authorize?client_id=e728a9738a0f6dd292c373b3ec9e5b45&redirect_uri=https://missinganimal.ml/&response_type=code";
   }
 
   loginHandler() {
