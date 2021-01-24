@@ -22,9 +22,11 @@ function PetInfoUpdate({
 }) {
   /* 렌더링 조건 설명 : 로그인한 상태(isLogged 값이 true, token이 props로 전달된 상태)일때 myInfo 페이지가 읽기 가능함 */
   // 임시 토큰 설정
-  //   axios.defaults.headers.common["Authorization"] =
-  //     "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJjaGFybGllQGNvZGVzdGF0ZXMuY29tIiwidXNlcm5hbWUiOiJDaGFybGllIiwiaWF0IjoxNjEwOTU1Njk3LCJleHAiOjE2MTE1NjA0OTd9.mdQ3_zFrWK6l5CBxTaH6Li6gJQtscVTlVeTmeRE6x0w";
+  // axios.defaults.headers.common["Authorization"] = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJjaGFybGllQGNvZGVzdGF0ZXMuY29tIiwidXNlcm5hbWUiOiJDaGFybGllIiwiaWF0IjoxNjEwOTU1Njk3LCJleHAiOjE2MTE1NjA0OTd9.mdQ3_zFrWK6l5CBxTaH6Li6gJQtscVTlVeTmeRE6x0w";
   // axios.defaults.headers.common["Authorization"] = "Bearer " + token;
+  axios.defaults.headers.post["Content-Type"] =
+    "application/x-www-form-urlencoded";
+
   const getCookie = (name) => {
     var value = document.cookie.match("(^|;) ?" + name + "=([^;]*)(;|$)");
     return value ? value[2] : null;
@@ -43,9 +45,6 @@ function PetInfoUpdate({
   }
 
   axios.defaults.headers.common["Authorization"] = "Bearer " + checkToken;
-
-  axios.defaults.headers.post["Content-Type"] =
-    "application/x-www-form-urlencoded";
 
   const [state, setState] = useState({
     isLogged: true,
