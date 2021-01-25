@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './petCard.css';
 import PetDetail from './PetDetail';
-import Comments from '../comments/Comments';
+// import Comments from '../comments/Comments';
 
 // Modal
 import Modal from 'react-modal';
@@ -43,17 +43,17 @@ function PetCard({ title, petname, thumbnail, description, petsImages, species, 
         setDetailModalIsOpen(false);
     }
     // Comments Modal
-    let subtitle;
-    const [ modalIsOpen, setIsOpen ] = useState(false);
-    function openModal() {
-        setIsOpen(true);
-    }
-    function afterOpenModal() {
-        subtitle.style.color = '#8965E6';
-    }
-    function closeModal() {
-        setIsOpen(false);
-    }
+    // let subtitle;
+    // const [ modalIsOpen, setIsOpen ] = useState(false);
+    // function openModal() {
+    //     setIsOpen(true);
+    // }
+    // function afterOpenModal() {
+    //     subtitle.style.color = '#8965E6';
+    // }
+    // function closeModal() {
+    //     setIsOpen(false);
+    // }
 
     return (
         <div className="petCard">
@@ -92,7 +92,7 @@ function PetCard({ title, petname, thumbnail, description, petsImages, species, 
                 </Modal>
             </div>
             {/* Comments Modal */}
-            <div className="modal commentsModal">
+            {/* <div className="modal commentsModal">
                 <button className="openButton" onClick={ openModal }>Comments</button>
                 <Modal
                     isOpen={ modalIsOpen }
@@ -105,7 +105,7 @@ function PetCard({ title, petname, thumbnail, description, petsImages, species, 
                     <Comments></Comments>
                     <button className="closeButton" onClick={ closeModal }>close</button>
                 </Modal>
-            </div>
+            </div> */}
         </div>
     );
 }

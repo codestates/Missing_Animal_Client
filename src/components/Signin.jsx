@@ -43,6 +43,7 @@ class Signin extends React.Component {
     // 네이버
     if (authorizationCode.length === 18) {
       const resp = await axios.post(
+        // "http://localhost:8080/auth/naver",
         "https://missinganimals.ml/auth/naver",
         {
           authorizationCode: authorizationCode,
@@ -60,9 +61,8 @@ class Signin extends React.Component {
     // 카카오
     else {
       const resp = await axios.post(
+        // "http://localhost:8080/auth/kakao",
         "https://missinganimals.ml/auth/kakao",
-        //     const resp = await axios.post(
-        // "https://missinganimals.ml/auth/kakao",
         {
           authorizationCode: authorizationCode,
         },
@@ -127,7 +127,6 @@ class Signin extends React.Component {
     } else if (isEmailChecked && isPasswordChecked) {
       const loginRequest = await axios.post(
         // "http://localhost:8080/auth/signin",
-        // const loginRequest = await axios.post(
         "https://missinganimals.ml/auth/signin",
         { email, password },
         { withCredentials: true }
