@@ -32,8 +32,8 @@ function PetInfo() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const res = await axios.get('https://missinganimals.ml/users/myinfo', { withCredentials: true });
       // const res = await axios.get("http://localhost:8080/users/myinfo", { withCredentials: true });
+      const res = await axios.get('https://missinganimals.ml/users/myinfo', { withCredentials: true });
       if (res.status === 200) {
         console.log(res.status, res.statusText);
         setState((prevState) => ({
@@ -74,6 +74,19 @@ function PetInfo() {
                 break;
               }
               newList.splice(index, 1, petObj);
+              setState((prevState) => ({
+                ...prevState,
+                petsList: newList,
+              }));
+            }}
+            handleToDeletePetInfo={(petId) => {
+              const newList = state.petsList.slice();
+              let index;
+              for (let i = 0; i < newList.length; i++) {
+                if (newList[i].id === petId) index = i;
+                break;
+              }
+              newList.splice(index, 1);
               setState((prevState) => ({
                 ...prevState,
                 petsList: newList,

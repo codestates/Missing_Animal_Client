@@ -220,9 +220,7 @@ function PetInfoUpdate({
           handleToModifyPetInfo(state.updatedPet);
           window.location.reload();
         }}
-      >
-        Modify
-      </button>
+      >Modify</button>
     </div>
   );
 }

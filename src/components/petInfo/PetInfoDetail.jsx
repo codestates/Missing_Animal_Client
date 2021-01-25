@@ -1,12 +1,43 @@
 import React, { useState } from 'react';
 import './petInfoDetail.css';
+import axios from "axios";
 import PetInfoUpdate from "./PetInfoUpdate";
 
-function PetInfoDetail({ handleToModifyPetInfo, id, title, petname, description, species, sex, missingDate, area, reward, createdAt, petsImages }) {
+function PetInfoDetail({ handleToModifyPetInfo, handleToDeletePetInfo, id, title, petname, description, species, sex, missingDate, area, reward, createdAt, petsImages }) {
     
     const [ state, setState ] = useState({
         toModifyPetInfo: false,
     });
+
+    const getCookie = (name) => {
+        var value = document.cookie.match("(^|;) ?" + name + "=([^;]*)(;|$)");
+        return value ? value[2] : null;
+    };
+
+    const checkLogin = window.localStorage.getItem("Login");
+    // const token = getCookie("token");
+
+    let checkToken = getCookie("token");
+    if (checkLogin === "naver") {
+        checkToken = getCookie("naver_token");
+    } else if (checkLogin === "kakao") {
+        checkToken = getCookie("access_token");
+    } else if (checkLogin === "signin") {
+        checkToken = getCookie("token");
+    }
+
+    axios.defaults.headers.common["Authorization"] = "Bearer " + checkToken;
+
+    const deletePetInfo = async() => {
+        const res = await axios.delete(
+            // `http://localhost:8080/pets/remove/${id}`,
+            `https://missinganimals.ml/pets/remove/${id}`,
+            {
+                withCredentials: true,
+            }
+        );
+        console.log(res.status, res.statusText);
+    }
 
     return (
         state.toModifyPetInfo ? (
@@ -52,6 +83,13 @@ function PetInfoDetail({ handleToModifyPetInfo, id, title, petname, description,
                         }));
                     }}
                 >Modify Pet Info</button>
+                <button className="deletePetInfoButton" 
+                    onClick={(event) => {
+                        event.preventDefault();
+                        deletePetInfo();
+                        handleToDeletePetInfo(id);
+                    }}
+                >Delete Pet Info</button>
             </div>
         </div>)
     );
