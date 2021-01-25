@@ -5,8 +5,6 @@ import PetInfoDetail from './PetInfoDetail';
 
 
 function PetInfo() {
-  // 임시 토큰 설정
-  // axios.defaults.headers.common["Authorization"] = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJwc3lreWdAbmF2ZXIuY29tIiwidXNlcm5hbWUiOiLqsJXsmqnqtawiLCJpYXQiOjE2MTEyODQyNDAsImV4cCI6MTYxMTg4OTA0MH0.HQbsWKGNNHccYaipGpSV3D2JzEu3Yyen96nqQ_LKVxs";
 
   const [state, setState] = useState({
     petsList: [],
@@ -34,8 +32,8 @@ function PetInfo() {
 
   useEffect(() => {
     const fetchData = async () => {
-      // const res = await axios.get('https://missinganimals.ml/users/myinfo', { withCredentials: true });
-      const res = await axios.get("http://localhost:8080/users/myinfo", { withCredentials: true });
+      const res = await axios.get('https://missinganimals.ml/users/myinfo', { withCredentials: true });
+      // const res = await axios.get("http://localhost:8080/users/myinfo", { withCredentials: true });
       if (res.status === 200) {
         console.log(res.status, res.statusText);
         setState((prevState) => ({

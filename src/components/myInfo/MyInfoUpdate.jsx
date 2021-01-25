@@ -40,8 +40,8 @@ function MyInfoUpdate({
 
   const modifyMyInfo = async () => {
     const res = await axios.put(
-      `http://localhost:8080/users/edit/${userId}`,
-      // `https://missinganimals.ml/users/edit/${userId}`,
+      // `http://localhost:8080/users/edit/${userId}`,
+      `https://missinganimals.ml/users/edit/${userId}`,
       {
         username: state.username,
         email: state.email,

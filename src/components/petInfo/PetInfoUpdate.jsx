@@ -18,8 +18,6 @@ function PetInfoUpdate({
   petsImages,
 }) {
 
-  // 임시 토큰 설정
-  // axios.defaults.headers.common["Authorization"] = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJjaGFybGllQGNvZGVzdGF0ZXMuY29tIiwidXNlcm5hbWUiOiJDaGFybGllIiwiaWF0IjoxNjEwOTU1Njk3LCJleHAiOjE2MTE1NjA0OTd9.mdQ3_zFrWK6l5CBxTaH6Li6gJQtscVTlVeTmeRE6x0w";
   axios.defaults.headers.post["Content-Type"] =
     "application/x-www-form-urlencoded";
 
@@ -76,14 +74,14 @@ function PetInfoUpdate({
     // formData.append('missingDate', newFormatDate);
     /* 사용자입력 실종 날짜 */
     formData.append("missingDate", missingDate);
-    const res = await axios.put(`http://localhost:8080/pets/edit`, formData, { withCredentials: true });
-    // const res = await axios.put(
-    //   `http://missinganimals.ml/pets/edit`,
-    //   formData,
-    //   {
-    //     withCredentials: true,
-    //   }
-    // );
+    // const res = await axios.put(`http://localhost:8080/pets/edit`, formData, { withCredentials: true });
+    const res = await axios.put(
+      `http://missinganimals.ml/pets/edit`,
+      formData,
+      {
+        withCredentials: true,
+      }
+    );
     if (res.staus === 201) {
       console.log(res.status, res.statusText);
       setState((prevState) => ({
