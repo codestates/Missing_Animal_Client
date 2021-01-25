@@ -33,6 +33,7 @@ class Signup extends Component {
     ) {
       axios
         .post("https://missinganimals.ml/auth/signup", this.state)
+        // .post("http://localhost:8080/auth/signup", this.state)
         .then((res) => {
           this.props.history.push("/");
         })
