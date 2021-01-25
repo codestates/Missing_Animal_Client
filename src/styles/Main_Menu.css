@@ -28,7 +28,7 @@
 .Btn:hover {
   background-color: #7baa71;
 }
-.mypageBtn {
+.mypageBtn, .petpageBtn {
   color: white;
 }
 .signin {

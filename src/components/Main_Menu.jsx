@@ -28,16 +28,22 @@ class Main_Menu extends React.Component {
           </Link>
         </div>
         <div>
-          <span className="Btn">
-            <Link to="/mypage">
-              <div className="mypageBtn">마이페이지</div>
-            </Link>
-          </span>
-
           {checkLogin ? (
-            <span className="Btn signout">
-              <Signout />
-            </span>
+            <>
+              <span className="Btn">
+                <Link to="/petpage">
+                  <div className="petpageBtn">펫페이지</div>
+                </Link>
+              </span>
+              <span className="Btn">
+                <Link to="/mypage">
+                  <div className="mypageBtn">마이페이지</div>
+                </Link>
+              </span>
+              <span className="Btn signout">
+                <Signout />
+              </span>
+            </>
           ) : (
             <span className="Btn signin">
               {/* <button onClick={this.openModal} className="signinBtn">

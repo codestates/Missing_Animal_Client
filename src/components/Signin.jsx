@@ -43,7 +43,9 @@ class Signin extends React.Component {
     // 네이버
     if (authorizationCode.length === 18) {
       const resp = await axios.post(
-        "https://missinganimals.ml/auth/naver",
+        "http://localhost:8080/auth/naver",
+      // const resp = await axios.post(
+      //   "https://missinganimals.ml/auth/naver",
         {
           authorizationCode: authorizationCode,
         },
@@ -60,7 +62,7 @@ class Signin extends React.Component {
     // 카카오
     else {
       const resp = await axios.post(
-        "https://missinganimals.ml/auth/kakao",
+        "http://localhost:8080/auth/kakao",
         //     const resp = await axios.post(
         // "https://missinganimals.ml/auth/kakao",
         {
@@ -126,9 +128,9 @@ class Signin extends React.Component {
       alert("아이디, 비밀번호를 확인해주세요");
     } else if (isEmailChecked && isPasswordChecked) {
       const loginRequest = await axios.post(
-        // "http://localhost:8080/auth/signin",
+        "http://localhost:8080/auth/signin",
         // const loginRequest = await axios.post(
-        "https://missinganimals.ml/auth/signin",
+        // "https://missinganimals.ml/auth/signin",
         { email, password },
         { withCredentials: true }
       );

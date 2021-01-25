@@ -96,10 +96,10 @@ class PetRegister extends React.Component {
       ) {
         alert("모든 정보를 입력해주세요");
       } else {
-        // const res = await axios.post(
-        //   "http://localhost:8080/pets/register",
         const res = await axios.post(
-          "https://missinganimals.ml/pets/register",
+          "http://localhost:8080/pets/register",
+        // const res = await axios.post(
+        //   "https://missinganimals.ml/pets/register",
           formData,
           { withCredentials: true },
           { headers: { "Content-type": "application/x-www-form-urlencoded" } }
