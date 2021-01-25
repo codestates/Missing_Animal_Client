@@ -82,7 +82,7 @@ function MyInfo() {
       {state.toModifyMyInfo ? (
         <MyInfoUpdate
           // isLogged={isLogged}
-          token={token}
+          // token={token}
           userId={userId}
           username={username}
           email={email}
@@ -120,9 +120,9 @@ function MyInfo() {
         <p>Registered Pets : {petsList.length}</p>
         {petsList.map((pet) => (
           <PetInfoCard
-            isLogged={isLogged}
+            isLogged={state.isLogged}
             // isLogged={isLogged}
-            token={token}
+            // token={token}
             key={pet.id}
             id={pet.id}
             title={pet.title}
