@@ -80,7 +80,6 @@ class PetRegister extends React.Component {
       // formData.append("missingDate", newFormatDate);
 
       const token = window.localStorage.getItem("token");
-
       axios.defaults.headers.common["Authorization"] = "Bearer " + token;
 
       if (
@@ -117,7 +116,7 @@ class PetRegister extends React.Component {
             img: "",
             missingDate: "",
           }));
-          window.history.back();
+          window.location.href = '/petpage';
         } else {
           alert("모든 정보를 입력해주세요");
           console.log(res.status, res.statusText);
@@ -191,7 +190,6 @@ class PetRegister extends React.Component {
 
     //지도 생성 및 객체 리턴
     this.map = new kakao.maps.Map(container, options);
-
     this.displayMaker();
     this.changeType();
   };

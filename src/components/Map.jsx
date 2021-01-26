@@ -26,9 +26,8 @@ class Map extends React.Component {
   }
   getList = async () => {
     const res = await axios.get(
-      "http://localhost:8080/mapinfo",
-      // const res = await axios.post(
-      //   "https://missinganimals.ml/pets/register",
+      // "http://localhost:8080/mapinfo",
+        "https://missinganimals.ml/mapinfo",
       { withCredentials: true }
     );
     // console.log(res.data.mapinfo)
@@ -41,29 +40,29 @@ class Map extends React.Component {
     let map = new kakao.maps.Map(mapContainer, mapOption);
     console.log("showMarkers", showMarkers[0].longitude, showMarkers[0].latitude);
 
-    const positions = [
-      {
-        title: "카카오",
-        latlng: new kakao.maps.LatLng(showMarkers[0].longitude, showMarkers[0].latitude)
-      },
-      {
-        title: "생태연못",
-        latlng: new kakao.maps.LatLng(showMarkers[1].longitude, showMarkers[1].latitude)
-      },
-      {
-        title: "아몰랑",
-        latlng: new kakao.maps.LatLng(showMarkers[2].longitude, showMarkers[2].latitude)
-      },
-    ];
-    for (let i = 0; i < positions.length; i++) {
-      // 마커를 생성합니다
-      let marker = new kakao.maps.Marker({
-        map: map, // 마커를 표시할 지도
-        title: positions[i].title,
-        position: positions[i].latlng, // 마커를 표시할 위치
-      });
-      marker.setMap(map);
-    }
+    // const positions = [
+    //   {
+    //     title: "카카오",
+    //     latlng: new kakao.maps.LatLng(showMarkers[0].longitude, showMarkers[0].latitude)
+    //   },
+    //   {
+    //     title: "생태연못",
+    //     latlng: new kakao.maps.LatLng(showMarkers[1].longitude, showMarkers[1].latitude)
+    //   },
+    //   {
+    //     title: "아몰랑",
+    //     latlng: new kakao.maps.LatLng(showMarkers[2].longitude, showMarkers[2].latitude)
+    //   },
+    // ];
+    // for (let i = 0; i < positions.length; i++) {
+    //   // 마커를 생성합니다
+    //   let marker = new kakao.maps.Marker({
+    //     map: map, // 마커를 표시할 지도
+    //     title: positions[i].title,
+    //     position: positions[i].latlng, // 마커를 표시할 위치
+    //   });
+    //   marker.setMap(map);
+    // }
   };
 
   componentDidMount() {

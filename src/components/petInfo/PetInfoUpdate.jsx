@@ -21,24 +21,8 @@ function PetInfoUpdate({
   axios.defaults.headers.post["Content-Type"] =
     "application/x-www-form-urlencoded";
 
-  const getCookie = (name) => {
-    var value = document.cookie.match("(^|;) ?" + name + "=([^;]*)(;|$)");
-    return value ? value[2] : null;
-  };
-
-  const checkLogin = window.localStorage.getItem("Login");
-  // const token = getCookie("token");
-
-  let checkToken = getCookie("token");
-  if (checkLogin === "naver") {
-    checkToken = getCookie("naver_token");
-  } else if (checkLogin === "kakao") {
-    checkToken = getCookie("access_token");
-  } else if (checkLogin === "signin") {
-    checkToken = getCookie("token");
-  }
-
-  axios.defaults.headers.common["Authorization"] = "Bearer " + checkToken;
+  const token = window.localStorage.getItem("token");
+  axios.defaults.headers.common["Authorization"] = "Bearer " + token;
 
   const [state, setState] = useState({
     id,
