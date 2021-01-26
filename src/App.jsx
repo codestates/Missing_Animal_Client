@@ -2,6 +2,7 @@ import React from "react";
 import { Switch, Route, withRouter } from "react-router-dom";
 import Main from "./components/Main";
 import MyInfo from "./components/myInfo/MyInfo";
+import PetInfo from "./components/petInfo/PetInfo";
 import SignUp from "./components/Signup";
 import Board from "./components/board/Board";
 import Map from "./components/Map";
@@ -19,6 +20,9 @@ class App extends React.Component {
   }
 
   render() {
+    // window.localStorage.setItem("isLogin", false);
+    const checkLogin = window.localStorage.getItem("isLogin");
+
     return (
       <div className="app">
         <Switch>
@@ -32,12 +36,17 @@ class App extends React.Component {
               </>
             )}
           />
+          <Route exact path="/petpage" render={() => <PetInfo />} />
           <Route exact path="/mypage" render={() => <MyInfo />} />
           <Route exact path="/signup" render={() => <SignUp />} />
           <Route exact path="/board" render={() => <Board />} />
           <Route exact path="/map" render={() => <Map />} />
           {/* <Route exact path="/mapregister" render={() => <PetMap />} /> */}
-          <Route exact path="/petregister" render={() => <PetRegister />} />
+          { 
+            checkLogin === null
+            ? <div>반려동물을 등록하려면 로그인해야 합니다.</div>
+            : <Route exact path="/petregister" render={() => <PetRegister />} /> 
+          }
         </Switch>
       </div>
     );

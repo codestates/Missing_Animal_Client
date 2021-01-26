@@ -1,19 +1,12 @@
 import React, { useState, useEffect } from "react";
 import "./myInfo.css";
 import axios from "axios";
-import PetInfoCard from "./PetInfoCard";
 import MyInfoUpdate from "./MyInfoUpdate";
+import { Link, withRouter } from "react-router-dom";
 
 function MyInfo() {
-  /* 렌더링 조건 설명 : 로그인한 상태(isLogged 값이 true, token이 props로 전달된 상태)일때 myInfo 페이지가 읽기 가능함 */
-  // 임시 토큰 설정
-  // axios.defaults.headers.common["Authorization"] =
-  //   "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJwc3lreWdAbmF2ZXIuY29tIiwidXNlcm5hbWUiOiLqsJXsmqnqtawiLCJpYXQiOjE2MTEyODQyNDAsImV4cCI6MTYxMTg4OTA0MH0.HQbsWKGNNHccYaipGpSV3D2JzEu3Yyen96nqQ_LKVxs";
-  // axios.defaults.headers.common["Authorization"] = "Bearer " + token;
 
   const [state, setState] = useState({
-    isLogged: true,
-    // isLogged,
     toModifyMyInfo: false,
     userId: "",
     username: "",
@@ -24,31 +17,15 @@ function MyInfo() {
   });
 
   useEffect(() => {
-    const getCookie = (name) => {
-      var value = document.cookie.match("(^|;) ?" + name + "=([^;]*)(;|$)");
-      return value ? value[2] : null;
-    };
 
-    const checkLogin = window.localStorage.getItem("Login");
-    // const token = getCookie("token");
-
-    let checkToken = getCookie("token");
-    if (checkLogin === "naver") {
-      checkToken = getCookie("naver_token");
-    } else if (checkLogin === "kakao") {
-      checkToken = getCookie("access_token");
-    } else if (checkLogin === "signin") {
-      checkToken = getCookie("token");
-    }
-
-    axios.defaults.headers.common["Authorization"] = "Bearer " + checkToken;
+    const token = window.localStorage.getItem("token");
+    axios.defaults.headers.common["Authorization"] = "Bearer " + token;
 
     const fetchData = async () => {
-      // const res = await axios.get('https://missinganimals.ml/users/myinfo', { withCredentials: true });
+      // const res = await axios.get('http://localhost:8080/users/myinfo', { withCredentials: true });
       const res = await axios.get("https://missinganimals.ml/users/myinfo", {
         withCredentials: true,
       });
-      // console.log(res.data);
       if (res.status === 200) {
         console.log(res.status, res.statusText);
         setState((prevState) => ({
@@ -67,22 +44,12 @@ function MyInfo() {
     fetchData();
   }, []);
 
-  if (!state.isLogged) {
-    return (
-      <div className="petRegister">
-        마이페이지를 보려면 로그인이 필요합니다.
-      </div>
-    );
-  }
-
   const { userId, username, email, mobile, createdAt, petsList } = state;
   return (
     <div className="myInfo">
       <div className="myInfoTitle">My Info</div>
       {state.toModifyMyInfo ? (
         <MyInfoUpdate
-          // isLogged={isLogged}
-          token={token}
           userId={userId}
           username={username}
           email={email}
@@ -103,6 +70,9 @@ function MyInfo() {
           <p>Email : {email}</p>
           <p>Mobile : {mobile}</p>
           <p>Created At : {createdAt}</p>
+          <Link to="/petpage">
+            <p>Registered Pets : {petsList.length}</p>
+          </Link>
           <button
             className="modifyMyInfoButton"
             onClick={() =>
@@ -111,47 +81,11 @@ function MyInfo() {
                 toModifyMyInfo: !prevState.toModifyMyInfo,
               }))
             }
-          >
-            Modify My Info
-          </button>
+          >Modify My Info</button>
         </div>
       )}
-      <div className="registeredPets">
-        <p>Registered Pets : {petsList.length}</p>
-        {petsList.map((pet) => (
-          <PetInfoCard
-            isLogged={isLogged}
-            // isLogged={isLogged}
-            token={token}
-            key={pet.id}
-            id={pet.id}
-            title={pet.title}
-            petname={pet.petname}
-            thumbnail={pet.petsImages[0].imagePath}
-            description={pet.description}
-            petsImages={pet.petsImages}
-            species={pet.species}
-            sex={pet.sex}
-            missingDate={pet.missingDate}
-            area={pet.area}
-            reward={pet.reward}
-            createdAt={pet.createdAt}
-            handleToModifyPetInfo={(modifiedState) => {
-              const list = state.petsList.slice();
-              let index;
-              for (let i = 0; i < list; i++) {
-                if (list[i].id === modifiedState.id) index = i;
-              }
-              const newList = [...list.splice(index, 1), modifiedState];
-              setState((prevState) => ({
-                ...prevState,
-                petsList: newList,
-              }));
-            }}
-          ></PetInfoCard>
-        ))}
-      </div>
     </div>
   );
 }
-export default MyInfo;
+export default withRouter(MyInfo);
+// export default MyInfo;

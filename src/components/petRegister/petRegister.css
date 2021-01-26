@@ -1,21 +1,21 @@
 .petRegister {
-/*     border: solid; */
-    text-align: center;
+  /*     border: solid; */
+  text-align: center;
 }
 
 .petRegisterTitle {
-    border: solid;
-    color: palevioletred;
+  border: solid;
+  color: palevioletred;
 }
 
 .petRegisterHeader {
-    border: solid;
-    color: powderblue;
+  border: solid;
+  color: powderblue;
 }
 
 .petRegisterBody {
-    border: solid;
-    color: palegreen;
+  border: solid;
+  color: palegreen;
 }
 
 .petRegisterImages {
@@ -23,7 +23,7 @@
   color: peru;
 }
 
-#map {
+#registerMap {
   position: fixed;
   top: 40%;
   width: 100%;

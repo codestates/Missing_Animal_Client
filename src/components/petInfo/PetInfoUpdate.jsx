@@ -4,10 +4,7 @@ import axios from "axios";
 import FormData from "form-data";
 
 function PetInfoUpdate({
-  toggleToModifyPetInfo,
   handleToModifyPetInfo,
-  isLogged,
-  token,
   id,
   title,
   petname,
@@ -20,35 +17,14 @@ function PetInfoUpdate({
   createdAt,
   petsImages,
 }) {
-  /* 렌더링 조건 설명 : 로그인한 상태(isLogged 값이 true, token이 props로 전달된 상태)일때 myInfo 페이지가 읽기 가능함 */
-  // 임시 토큰 설정
-  // axios.defaults.headers.common["Authorization"] = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJjaGFybGllQGNvZGVzdGF0ZXMuY29tIiwidXNlcm5hbWUiOiJDaGFybGllIiwiaWF0IjoxNjEwOTU1Njk3LCJleHAiOjE2MTE1NjA0OTd9.mdQ3_zFrWK6l5CBxTaH6Li6gJQtscVTlVeTmeRE6x0w";
-  // axios.defaults.headers.common["Authorization"] = "Bearer " + token;
+
   axios.defaults.headers.post["Content-Type"] =
     "application/x-www-form-urlencoded";
 
-  const getCookie = (name) => {
-    var value = document.cookie.match("(^|;) ?" + name + "=([^;]*)(;|$)");
-    return value ? value[2] : null;
-  };
-
-  const checkLogin = window.localStorage.getItem("Login");
-  // const token = getCookie("token");
-
-  let checkToken = getCookie("token");
-  if (checkLogin === "naver") {
-    checkToken = getCookie("naver_token");
-  } else if (checkLogin === "kakao") {
-    checkToken = getCookie("access_token");
-  } else if (checkLogin === "signin") {
-    checkToken = getCookie("token");
-  }
-
-  axios.defaults.headers.common["Authorization"] = "Bearer " + checkToken;
+  const token = window.localStorage.getItem("token");
+  axios.defaults.headers.common["Authorization"] = "Bearer " + token;
 
   const [state, setState] = useState({
-    isLogged: true,
-    // isLogged,
     id,
     title,
     petname,
@@ -60,6 +36,7 @@ function PetInfoUpdate({
     reward,
     createdAt,
     img: petsImages,
+    updatedPet: {},
   });
 
   const modifyPetInfo = async () => {
@@ -81,30 +58,24 @@ function PetInfoUpdate({
     // formData.append('missingDate', newFormatDate);
     /* 사용자입력 실종 날짜 */
     formData.append("missingDate", missingDate);
-    // const res = await axios.put(`https://missinganimals.ml/pets/edit`, formData, { withCredentials: true });
+    // const res = await axios.put(`http://localhost:8080/pets/edit`, formData, { withCredentials: true });
     const res = await axios.put(
-      `https://missinganimals.ml/pets/edit`,
+      `http://missinganimals.ml/pets/edit`,
       formData,
       {
         withCredentials: true,
       }
     );
-    console.log(res.data);
     if (res.staus === 201) {
       console.log(res.status, res.statusText);
-      handleToModifyPetInfo(res.data);
+      setState((prevState) => ({
+        ...prevState,
+        updatedPet: res.data,
+      }));
     } else {
       console.log(res.status, res.statusText);
     }
   };
-
-  if (!state.isLogged) {
-    return (
-      <div className="petInfoModify">
-        Pet Info를 수정하려면 로그인이 필요합니다.
-      </div>
-    );
-  }
 
   return (
     <div className="myInfo">
@@ -124,7 +95,7 @@ function PetInfoUpdate({
       <label>Pet Name : </label>
       <input
         type="text"
-        placeholder="et Name"
+        placeholder="Pet Name"
         value={state.petname}
         onChange={(event) =>
           setState((prevState) => ({
@@ -230,12 +201,10 @@ function PetInfoUpdate({
         onClick={(event) => {
           event.preventDefault();
           modifyPetInfo();
-          toggleToModifyPetInfo();
+          handleToModifyPetInfo(state.updatedPet);
           window.location.reload();
         }}
-      >
-        Modify
-      </button>
+      >Modify</button>
     </div>
   );
 }

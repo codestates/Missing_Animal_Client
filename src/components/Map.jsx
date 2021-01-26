@@ -45,6 +45,7 @@ class Map extends React.Component {
         position: new window.kakao.maps.LatLng(el.longitude, el.latitude)
       })
     })
+
   };
 
   componentDidMount() {
