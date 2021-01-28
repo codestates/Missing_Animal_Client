@@ -58,7 +58,7 @@
 
   line-height: 26px;
   word-break: keep-all;
-  position: relative;
+  /* position: relative; */
   background-image: linear-gradient(
     rgba(252, 139, 0, 0.397),
     rgba(252, 139, 0, 0.397)
