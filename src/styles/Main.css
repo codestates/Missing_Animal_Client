@@ -49,12 +49,35 @@
   margin-bottom: 2rem;
 }
 .check {
+  /* border: solid #000;
+  border-left-width: 0px;
+  border-right-width: 0px;
+  border-top-width: 0px; */
+  font-weight: bolder;
+  font-size: 26px;
+
+  line-height: 26px;
+  word-break: keep-all;
+  position: relative;
+  background-image: linear-gradient(
+    rgba(252, 139, 0, 0.397),
+    rgba(252, 139, 0, 0.397)
+  );
+  background-position: 0 50%;
+  background-repeat: no-repeat;
+  /* background-size: 0 12px; */
+  /* transition: all 0.5s ease; */
+  transition: background-size 2s;
+}
+.check.active {
+  background-size: 100% 15px;
+}
+
+.highlight {
   border: solid #000;
   border-left-width: 0px;
   border-right-width: 0px;
   border-top-width: 0px;
-  font-weight: bolder;
-  font-size: 26px;
 }
 
 .ListBtn {

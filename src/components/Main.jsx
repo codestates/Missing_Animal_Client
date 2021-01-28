@@ -20,12 +20,14 @@ class Main extends React.Component {
             <div>여기저기 할 수 있는 곳에 신고는 다 했지만,</div>
             <div>감감무소식 인가요?</div>
             <p></p>
-            <span className="check">
+            <span className="check active">
               Finders가 당신의 발이 되어 드리겠습니다.
             </span>
             <p></p>
-            <div>지도에 잃어버린 반려동물을 등록하고</div>
-            <div>더 많은 제보와, 연락을 받으세요.</div>
+            <span className="highlight">
+              지도에 잃어버린 반려동물을 등록하고 <br></br> 더 많은 제보와,
+              연락을 받으세요.
+            </span>
           </div>
           {/* <div className="gotomap"> */}
           <Link to="/map">
