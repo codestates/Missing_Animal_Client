@@ -8,21 +8,31 @@
   left: 0;
   background: rgba(0, 0, 0, 0.6);
 }
+
 .loginList {
+  position: fixed;
+  top: 120px;
+  right: 0;
+  bottom: 0;
+  left: 0;
   width: 480px;
-  height: 621px;
+  height: 500px;
   background-color: white;
   position: relative;
   box-sizing: border-box;
   margin: 50px auto;
   padding: 20px;
   background: #fff;
+  border-radius: 10px;
 }
+
 .close {
   float: right;
-  font-size: 25px;
+  font-size: 20px;
   cursor: pointer;
+  margin-right: 15px;
 }
+
 .modalContents {
   margin: 0 auto;
   width: 100%;
@@ -34,10 +44,19 @@
   flex-direction: column;
 }
 
-.signinName {
+/* .signinName {
   margin: 0 auto;
   font-size: 25px;
   color: black;
+} */
+
+.logo_signin {
+  text-align: center;
+}
+
+.signinLogo {
+  width: 26%;
+  text-align: center;
 }
 
 .close {
@@ -53,6 +72,12 @@
   padding: 9px 12px;
   outline: none;
   box-sizing: border-box;
+}
+
+.loginId:focus,
+.loginPw:focus {
+  /* outline: 3px solid #ffd22e; */
+  outline: 3px solid #000000;
 }
 
 input::placeholder {
@@ -81,7 +106,9 @@ input::placeholder {
   font-size: 14px;
   padding: 13px 30px;
   cursor: pointer;
-  background-color: black;
+  /* background-color: #000000;
+  color: white; */
+  background-color: #016499;
   color: white;
   line-height: 1px;
   margin-top: 20px;
@@ -90,12 +117,19 @@ input::placeholder {
   border-style: none;
 }
 
+.loginBtn:hover {
+  background-color: #0076b6;
+}
+
 .socialBox {
   margin-bottom: 13px;
+  border-bottom: 1px solid #ddd;
 }
+
 .kakao {
-  background-color: #feec34;
-  border-color: #feec34;
+  background-color: #fee500;
+  border-color: #fee500;
+  color: #000000;
   height: 40px;
   display: flex;
   align-items: center;
@@ -107,32 +141,35 @@ input::placeholder {
 }
 
 .btn_kakao {
-  width: 300px;
+  width: 8%;
   font-size: 15px;
-  text-align: center;
+  margin-left: -23px;
   display: inline-block;
   box-sizing: border-box;
   object-fit: fill;
 }
 
 .naver {
-  background-color: #2db400;
-  border-color: #2db400;
+  background-color: #1ec800;
+  border-color: #1ec800;
+  color: #fff;
   height: 40px;
   display: flex;
+  align-items: center;
   justify-content: center;
   box-sizing: border-box;
-  color: #fff;
+  margin-bottom: 15px;
   border-radius: 3px;
   cursor: pointer;
 }
-.btn__naver {
-  padding-top: 12px;
-  width: 310px;
-  color: #fff;
+
+.btn_naver {
+  width: 6.5%;
   font-size: 15px;
-  text-align: center;
+  margin-left: -17px;
+  display: inline-block;
   box-sizing: border-box;
+  object-fit: fill;
 }
 
 .loginLine {
@@ -157,7 +194,9 @@ input::placeholder {
   font-size: 14px;
   padding: 13px 30px;
   cursor: pointer;
-  background-color: black;
+  /* background-color: black;
+  color: white; */
+  background-color: #016499;
   color: white;
   line-height: 1px;
   margin-top: 0px;
@@ -165,6 +204,11 @@ input::placeholder {
   border-radius: 3px;
   border-style: none;
 }
+
+.signUpBtn:hover {
+  background-color: #0076b6;
+}
+
 a {
   text-decoration: none;
   cursor: pointer;
