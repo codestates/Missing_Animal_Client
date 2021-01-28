@@ -6,7 +6,7 @@
   /* padding-right: 50px; */
   overflow: hidden;
   /* background-color: #dbd8c74d; */
-  background: url("../image/background.jpg") no-repeat 0 0;
+  background: url("../image/test.gif") no-repeat 0 0;
   background-size: 100% 100%;
 }
 
@@ -49,34 +49,55 @@
   margin-bottom: 2rem;
 }
 .check {
+  /* border: solid #000;
+  border-left-width: 0px;
+  border-right-width: 0px;
+  border-top-width: 0px; */
+  font-weight: bolder;
+  font-size: 26px;
+
+  line-height: 26px;
+  word-break: keep-all;
+  /* position: relative; */
+  background-image: linear-gradient(
+    rgba(252, 139, 0, 0.397),
+    rgba(252, 139, 0, 0.397)
+  );
+  background-position: 0 50%;
+  background-repeat: no-repeat;
+  /* background-size: 0 12px; */
+  /* transition: all 0.5s ease; */
+  transition: background-size 2s;
+}
+.check.active {
+  background-size: 100% 15px;
+}
+
+.highlight {
   border: solid #000;
   border-left-width: 0px;
   border-right-width: 0px;
   border-top-width: 0px;
-  font-weight: bolder;
-  font-size: 26px;
 }
 
 .ListBtn {
-  border-radius: 10px;
-  background-color: #000;
-  border: 1px;
-  display: block;
   color: #fff;
-  text-align: center;
-  font-size: 20px;
-  padding: 25px;
-  transition: all 0.5s;
-  cursor: pointer;
-  margin: 15px;
   display: inline-block;
-  position: relative;
+  background-color: #000;
+  border-radius: 10px;
+  text-align: center;
+  cursor: pointer;
+  font-size: 20px;
+  padding: 25px 20px 25px 25px;
+  transition: all 0.5s;
+  margin: 15px;
   transition: 0.5s;
+  /* position: relative; */
 }
 
 .ListBtn:after {
   content: "»";
-  position: absolute;
+  /* position: sticky; */
   opacity: 0;
   top: 14px;
   right: -20px;
