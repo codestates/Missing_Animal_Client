@@ -4,7 +4,7 @@ import './petDetail.css';
 function PetDetail({ title, petname, thumbnail, description, petsImages, species, sex, missingDate, area, reward, username, email, contact, createdAt }) {
     return (
         <div className="petDetail">
-            <p className="petDetailTitle">{title}</p>
+            {/* <p className="petDetailTitle">{title}</p> */}
             <div className="petDetailHeader">
                 {
                     petsImages.map((image, idx) => 
