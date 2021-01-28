@@ -58,25 +58,23 @@
 }
 
 .ListBtn {
-  border-radius: 10px;
-  background-color: #000;
-  border: 1px;
-  display: block;
   color: #fff;
-  text-align: center;
-  font-size: 20px;
-  padding: 25px;
-  transition: all 0.5s;
-  cursor: pointer;
-  margin: 15px;
   display: inline-block;
-  position: relative;
+  background-color: #000;
+  border-radius: 10px;
+  text-align: center;
+  cursor: pointer;
+  font-size: 20px;
+  padding: 25px 20px 25px 25px;
+  transition: all 0.5s;
+  margin: 15px;
   transition: 0.5s;
+  /* position: relative; */
 }
 
 .ListBtn:after {
   content: "»";
-  position: absolute;
+  /* position: sticky; */
   opacity: 0;
   top: 14px;
   right: -20px;
