@@ -1,5 +1,5 @@
-/* .board {
-    border: solid;
+.board {
+    /* border: solid; 랜딩페이지에 적용되므로 적용하지 말것! */
     text-align: center;
 
 }
@@ -7,5 +7,5 @@
 .boardTitle {
     color: palevioletred;
     border: solid;
-} */
+}
 

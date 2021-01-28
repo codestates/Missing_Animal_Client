@@ -17,16 +17,16 @@ const petDetailStyles = {
     }
 };
 // Comments Modal
-const customStyles = {
-    content: {
-        top: '50%',
-        left: '50%',
-        right: 'auto',
-        bottom: 'auto',
-        marginRight: '-50%',
-        transform: 'translate(-50%, -50%)'
-    }
-};
+// const customStyles = {
+//     content: {
+//         top: '50%',
+//         left: '50%',
+//         right: 'auto',
+//         bottom: 'auto',
+//         marginRight: '-50%',
+//         transform: 'translate(-50%, -50%)'
+//     }
+// };
 Modal.setAppElement('#root');
 
 function PetCard({ title, petname, thumbnail, description, petsImages, species, sex, missingDate, area, reward, username, email, contact, createdAt }) {
@@ -57,13 +57,13 @@ function PetCard({ title, petname, thumbnail, description, petsImages, species, 
 
     return (
         <div className="petCard">
-            <p>Title : { title }</p>
+            <p>제목 : { title }</p>
             <img className="petThumbnail" src={ thumbnail } alt="petThumbnail"></img>
-            <p>Pet Name : { petname }</p>
-            <p>Decription : { description }</p>
+            <p>이름 : { petname }</p>
+            <p>특이 사항 : { description }</p>
             {/* Pet Detail Modal */}
             <div className="modal petDetailModal">
-                <button className="openButton" onClick={ openDetailModal }>Pet Detail</button>
+                <button className="openButton" onClick={ openDetailModal }>상세 사항</button>
                 <Modal
                     isOpen={ detailModalIsOpen }
                     onAfterOpen={ afterOpenDetailModal }
@@ -73,7 +73,7 @@ function PetCard({ title, petname, thumbnail, description, petsImages, species, 
                 >
                     <h2 ref={ _subtitleDetail => (subtitleDetailModal = _subtitleDetail) }>{ petname }</h2>
                     <PetDetail
-                        title={title}
+                        // title={title}
                         petname={petname}
                         thumbnail={thumbnail}
                         description={description}
@@ -88,7 +88,7 @@ function PetCard({ title, petname, thumbnail, description, petsImages, species, 
                         contact={contact}
                         createdAt={createdAt}
                     ></PetDetail>
-                    <button className="closeButton" onClick={ closeDetailModal }>Close</button>
+                    <button className="closeButton" onClick={ closeDetailModal }>닫기</button>
                 </Modal>
             </div>
             {/* Comments Modal */}
