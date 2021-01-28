@@ -116,7 +116,7 @@ class PetRegister extends React.Component {
             img: "",
             missingDate: "",
           }));
-          window.location.href = '/petpage';
+          window.location.href = "/petpage";
         } else {
           alert("모든 정보를 입력해주세요");
           console.log(res.status, res.statusText);
@@ -190,6 +190,7 @@ class PetRegister extends React.Component {
 
     //지도 생성 및 객체 리턴
     this.map = new kakao.maps.Map(container, options);
+
     this.displayMaker();
     this.changeType();
   };
@@ -215,147 +216,155 @@ class PetRegister extends React.Component {
 
     return (
       <div className="petRegister">
-        <div>Pet Register</div>
-        <div className="petRegisterHeader">
-          <label>Title : </label>
-          <input
-            type="text"
-            placeholder="Title"
-            value={title}
-            onChange={(event) =>
-              this.setState((prevState) => ({
-                ...prevState,
-                title: event.target.value,
-              }))
-            }
-          ></input>
-          <br />
-          <label>Pet Name : </label>
-          <input
-            type="text"
-            placeholder="Pet Name"
-            value={petname}
-            onChange={(event) =>
-              this.setState((prevState) => ({
-                ...prevState,
-                petname: event.target.value,
-              }))
-            }
-          ></input>
-          <br />
+        <div className="petRegisterText">반려동물 등록</div>
+        <div className="petRegisterWrap">
+          <div className="pet__title">
+            <span className="titleTitle">제목</span>
+            <input
+              type="text"
+              className="inputTitle"
+              placeholder="제목을 입력해주세요"
+              value={title}
+              onChange={(event) =>
+                this.setState((prevState) => ({
+                  ...prevState,
+                  title: event.target.value,
+                }))
+              }
+            ></input>
+          </div>
+          <div className="pet__name">
+            <span className="titleName">이름</span>
+            <input
+              type="text"
+              className="inputName"
+              placeholder="이름"
+              value={petname}
+              onChange={(event) =>
+                this.setState((prevState) => ({
+                  ...prevState,
+                  petname: event.target.value,
+                }))
+              }
+            ></input>
+          </div>
+          <div className="pet__species">
+            <span className="titleSpecies">품종</span>
+            <input
+              type="text"
+              className="inputSpecies"
+              placeholder="품종"
+              value={species}
+              onChange={(event) =>
+                this.setState((prevState) => ({
+                  ...prevState,
+                  species: event.target.value,
+                }))
+              }
+            ></input>
+          </div>
+          <div className="pet__sex">
+            <span className="titleSex">성별</span>
+            <select
+              name="select"
+              className="inputSex"
+              onChange={(event) =>
+                this.setState((prevState) => ({
+                  ...prevState,
+                  sex: event.target.value,
+                }))
+              }
+            >
+              <option value="">선택</option>
+              <option value="female">암컷</option>
+              <option value="male">수컷</option>
+            </select>
+          </div>
+          <div className="pet__area">
+            <span className="titleArea">잃어버린 장소</span>
+            <input
+              type="text"
+              className="inputArea"
+              placeholder="아래 지도에서 선택 해주세요"
+              // value="지도를 클릭해주세요"
+              value={area}
+              readOnly
+            ></input>
+          </div>
+          <div className="pet__date">
+            <span className="titleDate">잃어버린 날짜</span>
+            <input
+              type="date"
+              className="inputDate"
+              onChange={(event) =>
+                this.setState((prevState) => ({
+                  ...prevState,
+                  missingDate: event.target.value,
+                }))
+              }
+            ></input>
+            <span className="petRegisterBtn"></span>
+          </div>
+          <div className="pet__reward">
+            {/* <label>보상금 </label> */}
+            <span className="titleReward">보상액</span>
+            <input
+              type="text"
+              className="inputReward"
+              placeholder="보상액(원)"
+              value={reward}
+              onChange={(event) =>
+                this.setState((prevState) => ({
+                  ...prevState,
+                  reward: event.target.value,
+                }))
+              }
+            ></input>
+          </div>
+          {/* </div> */}
+          <div className="pet__file">
+            <span className="titleFile">사진 올리기</span>
+            <input
+              type="file"
+              className="inputFile"
+              multiple
+              // onChange={(event) => console.log(event)}
+              onChange={(event) =>
+                this.setState((prevState) => ({
+                  ...prevState,
+                  img: [...event.target.files],
+                }))
+              }
+            ></input>
+          </div>
+          <div className="pet__description">
+            <span className="titleDescription">상세설명</span>
+            <textarea
+              className="inputDescription"
+              placeholder="상세설명"
+              value={description}
+              onChange={(event) =>
+                this.setState((prevState) => ({
+                  ...prevState,
+                  description: event.target.value,
+                }))
+              }
+            ></textarea>
+          </div>
         </div>
-        <div className="petRegisterBody">
-          <label>Species : </label>
-          <input
-            type="text"
-            placeholder="Species"
-            value={species}
-            onChange={(event) =>
-              this.setState((prevState) => ({
-                ...prevState,
-                species: event.target.value,
-              }))
-            }
-          ></input>
-          <br />
-          <label>Sex : </label>
-          <select
-            // type="text"
-            name="select"
-            onChange={(event) =>
-              this.setState((prevState) => ({
-                ...prevState,
-                sex: event.target.value,
-              }))
-            }
+        <div className="pet__submit">
+          <button
+            type="submit"
+            className="inputSubmit"
+            onClick={(event) => {
+              event.preventDefault();
+              this.registerPet();
+              // window.history.back();
+            }}
           >
-            <option value="">성별</option>
-            <option value="female">암컷</option>
-            <option value="male">수컷</option>
-            {/* placeholder="Sex" value={sex}
-            onChange=
-            {(event) =>
-              this.setState((prevState) => ({
-                ...prevState,
-                sex: event.target.value,
-              }))
-            }
-            > */}
-          </select>
-          <br />
-          <label>Missing Area : </label>
-          <input
-            type="text"
-            placeholder="지도를 클릭해주세요"
-            // value="지도를 클릭해주세요"
-            value={area}
-            readOnly
-          ></input>
-          <br />
-
-          <label>Missing Date : </label>
-          <input
-            type="date"
-            onChange={(event) =>
-              this.setState((prevState) => ({
-                ...prevState,
-                missingDate: event.target.value,
-              }))
-            }
-          ></input>
-          <br />
-
-          <label>Description : </label>
-          <input
-            type="text"
-            placeholder="Description"
-            value={description}
-            onChange={(event) =>
-              this.setState((prevState) => ({
-                ...prevState,
-                description: event.target.value,
-              }))
-            }
-          ></input>
-          <br />
-          <label>Reward : </label>
-          <input
-            type="text"
-            placeholder="Reward"
-            value={reward}
-            onChange={(event) =>
-              this.setState((prevState) => ({
-                ...prevState,
-                reward: event.target.value,
-              }))
-            }
-          ></input>
-          <br />
+            등록하기
+          </button>
         </div>
-        <div className="petRegisterImages">
-          <input
-            type="file"
-            multiple
-            // onChange={(event) => console.log(event)}
-            onChange={(event) =>
-              this.setState((prevState) => ({
-                ...prevState,
-                img: [...event.target.files],
-              }))
-            }
-          ></input>
-          <br />
-        </div>
-        <button
-          type="submit"
-          onClick={(event) => {
-            event.preventDefault();
-            this.registerPet();
-            // window.history.back();
-          }}
-        >
-          Register
-        </button>
         <>
           <div id="registerMap"></div>
         </>
