@@ -7,7 +7,7 @@ function SearchBar({ searchPets }) {
     return (
         <div className="searchbar">
             {/* <div>반려동물 검색</div> */}
-            <input className="searchInput" type="text" 
+            <input className="searchInput" type="search" placeholder="검색어를 입력하세요."
                 value={state.keyword} 
                 onChange={(event) => {
                     setState(() => ({ keyword: event.target.value }));
