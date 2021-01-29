@@ -1,6 +1,80 @@
-.registerWrapper {
+#wrap__signup {
+  position: fixed;
+  max-width: 50%;
+  height: 40%;
+  margin: auto;
+  top: 0px;
+  bottom: 450px;
+  left: 0px;
+  right: 0px;
+}
+
+.registerName {
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  padding: 40px;
+}
+
+.inputEmail,
+.inputPassword,
+.inputUsername,
+.inputMobile {
+  width: 95%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+input[type="submit"] {
+  background-color: #000;
+  color: white;
+  margin-top: 15px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+
+input[type="submit"]:hover {
+  background-color: #0076b6;
+}
+
+label {
+  padding: 12px 12px 12px 14px;
+  display: inline-block;
+}
+
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media screen and (max-width: 600px) {
+  .col-25,
+  .col-75,
+  input[type="submit"] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+
+/* .registerWrapper {
   margin: 0 auto;
-  margin-top: 100px;
   width: 100%;
   position: relative;
   padding: 0 20px 32px;
@@ -8,55 +82,27 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-}
+} */
 
 .logo_signup {
   text-align: center;
 }
 
 .signupLogo {
-  width: 13%;
+  width: 20%;
   text-align: center;
   margin-bottom: 30px;
 }
 
 .registerText {
-  font-size: 16px;
-  /* text-align: left; */
-}
-
-.register__text,
-.register__email,
-.register__password,
-.register__username,
-.register__mobile,
-.register__btn {
-  width: 100%;
-  text-align: center;
-}
-
-.inputEmail,
-.inputPassword,
-.inputUsername,
-.inputMobile {
-  margin-top: 5px;
-  border-radius: 2px;
-  width: 30%;
-  height: 40px;
-  border: 1px solid #e5e5e5;
-  padding: 9px 12px;
-  outline: none;
-  box-sizing: border-box;
-}
-
-input::placeholder {
-  color: #999999;
-}
-
-.autoLogin {
-  font-size: 12px;
-  color: #8d8d8d;
-  line-height: 3;
+  font-size: 14px;
+  /* color: black; */
+  color: white;
+  margin-left: 15px;
+  /* background-color: #000; */
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #000 50%);
+  opacity: 0.8;
+  /* background: linear-gradient(180deg, rgba(255, 255, 255, 0) 50%, #ffd0ae 50%); */
 }
 
 .registerBtn {
@@ -65,9 +111,8 @@ input::placeholder {
   font-size: 14px;
   padding: 13px 30px;
   cursor: pointer;
-  /* background-color: black;
-  color: white; */
-  background-color: #016499;
+  /* background-color: #016499; */
+  background-color: #000;
   color: white;
   line-height: 1px;
   margin-top: 20px;
@@ -85,5 +130,6 @@ input::placeholder {
 .inputUsername:focus,
 .inputMobile:focus {
   /* outline: 3px solid #ffd22e; */
-  outline: 3px solid #000000;
+  outline: 2px solid #000000;
+  /* background-color: lightblue; */
 }
