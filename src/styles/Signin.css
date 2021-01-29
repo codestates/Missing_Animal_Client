@@ -106,9 +106,8 @@ input::placeholder {
   font-size: 14px;
   padding: 13px 30px;
   cursor: pointer;
-  /* background-color: #000000;
-  color: white; */
-  background-color: #016499;
+  /* background-color: #016499; */
+  background-color: #000;
   color: white;
   line-height: 1px;
   margin-top: 20px;
@@ -194,9 +193,8 @@ input::placeholder {
   font-size: 14px;
   padding: 13px 30px;
   cursor: pointer;
-  /* background-color: black;
-  color: white; */
-  background-color: #016499;
+  /* background-color: #016499; */
+  background-color: #000;
   color: white;
   line-height: 1px;
   margin-top: 0px;
