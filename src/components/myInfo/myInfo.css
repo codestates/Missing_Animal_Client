@@ -1,0 +1,76 @@
+.myInfo {
+  display: flex;
+  background: url("../../image/newBackground.jpg") no-repeat 0 0;
+  background-size: 100% 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.menuBar {
+  padding: 1rem;
+  margin-top: 7rem;
+  height: 80vh;
+  width: 12vw;
+  font-size: 1.2rem;
+  border-right: 1px solid rgb(149, 149, 149);
+  text-align: center;
+}
+
+.barButton {
+  text-decoration: none;
+  color: #000;
+  cursor: pointer;
+}
+
+.barButtonText {
+  border-bottom: 2px solid;
+}
+
+.click {
+  line-height: 26px;
+  word-break: keep-all;
+  /* position: relative; */
+  background-image: linear-gradient(
+    rgba(252, 139, 0, 0.397),
+    rgba(252, 139, 0, 0.397)
+  );
+  background-position: 0 50%;
+  background-repeat: no-repeat;
+  /* background-size: 0 12px; */
+  /* transition: all 0.5s ease; */
+  transition: background-size 2s;
+}
+.click.active {
+  background-size: 100% 15px;
+}
+
+.mainBody {
+  text-align: center;
+  padding: 3rem;
+  margin-top: 7rem;
+  margin-right: 1rem;
+  width: 88vw;
+  height: 75vh;
+}
+
+.myInfoBody {
+  height: 75vh;
+}
+
+.modifyMyInfoButton {
+  margin: 20px;
+  font-size: 15px;
+  padding: 5px 16px 5px 16px;
+  background-color: #000;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.modifyMyInfoButton:hover {
+  /* color: #000; */
+  background-color: #ffd22e;
+}
+
+.goToPetPage {
+  margin: 2rem;
+}
