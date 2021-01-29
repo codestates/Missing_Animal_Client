@@ -14,8 +14,8 @@ function PetInfoDetail({ handleToModifyPetInfo, handleToDeletePetInfo, id, title
 
     const deletePetInfo = async() => {
         const res = await axios.delete(
-            `http://localhost:8080/pets/remove/${id}`,
-            // `https://missinganimals.ml/pets/remove/${id}`,
+            // `http://localhost:8080/pets/remove/${id}`,
+            `https://missinganimals.ml/pets/remove/${id}`,
             {
                 withCredentials: true,
             }

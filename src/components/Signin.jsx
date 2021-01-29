@@ -130,8 +130,8 @@ class Signin extends React.Component {
       alert("아이디, 비밀번호를 확인해주세요");
     } else if (isEmailChecked && isPasswordChecked) {
       const loginRequest = await axios.post(
-        "http://localhost:8080/auth/signin",
-        // "https://missinganimals.ml/auth/signin",
+        // "http://localhost:8080/auth/signin",
+        "https://missinganimals.ml/auth/signin",
         { email, password },
         { withCredentials: true }
       );

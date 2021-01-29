@@ -58,14 +58,14 @@ function PetInfoUpdate({
     // formData.append('missingDate', newFormatDate);
     /* 사용자입력 실종 날짜 */
     formData.append("missingDate", missingDate);
-    const res = await axios.put(`http://localhost:8080/pets/edit`, formData, { withCredentials: true });
-    // const res = await axios.put(
-    //   `http://missinganimals.ml/pets/edit`,
-    //   formData,
-    //   {
-    //     withCredentials: true,
-    //   }
-    // );
+    // const res = await axios.put(`http://localhost:8080/pets/edit`, formData, { withCredentials: true });
+    const res = await axios.put(
+      `http://missinganimals.ml/pets/edit`,
+      formData,
+      {
+        withCredentials: true,
+      }
+    );
     if (res.staus === 201) {
       console.log(res.status, res.statusText);
       setState((prevState) => ({

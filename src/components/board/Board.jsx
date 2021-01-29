@@ -17,8 +17,8 @@ function Board() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const res = await axios.get('http://localhost:8080/pets/petslist');
-      // const res = await axios.get("https://missinganimals.ml/pets/petslist");
+      // const res = await axios.get('http://localhost:8080/pets/petslist');
+      const res = await axios.get("https://missinganimals.ml/pets/petslist");
       if (res.status === 200) {
         console.log(res.status, res.statusText);
         setState((prevState) => ({
@@ -35,10 +35,10 @@ function Board() {
   }, []);
 
   const searchPets = async (keyword) => {
-    const res = await axios.post('http://localhost:8080/pets/search', { search: keyword });
-    // const res = await axios.post("https://missinganimals.ml/pets/search", {
-    //   search: keyword,
-    // });
+    // const res = await axios.post('http://localhost:8080/pets/search', { search: keyword });
+    const res = await axios.post("https://missinganimals.ml/pets/search", {
+      search: keyword,
+    });
     if (res.status === 200) {
       console.log(res.status, res.statusText);
       setState((prevState) => ({
