@@ -36,13 +36,18 @@ class Main_Menu extends React.Component {
                 </Link>
               </span> */}
               <span className="Btn">
-                <Link to="/mypage">
-                  <div className="text">마이페이지</div>
+                <Link className="aTag" to="/board">
+                  <div className="text">목록으로 확인하기</div>
                 </Link>
               </span>
               <span className="Btn">
-                <Link to="/petregister">
+                <Link className="aTag" to="/petregister">
                   <div className="text">반려동물 등록하기</div>
+                </Link>
+              </span>
+              <span className="Btn">
+                <Link className="aTag" to="/mypage">
+                  <div className="text">마이페이지</div>
                 </Link>
               </span>
               <span className="Btn signout text">
