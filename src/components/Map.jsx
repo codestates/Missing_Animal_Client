@@ -15,8 +15,8 @@ class Map extends React.Component {
   }
   getList = async () => {
     const res = await axios.get(
-    "http://localhost:8080/mapinfo",
-      // "https://missinganimals.ml/mapinfo",
+    // "http://localhost:8080/mapinfo",
+      "https://missinganimals.ml/mapinfo",
       { withCredentials: true }
     );
     const { markers } = this.state;

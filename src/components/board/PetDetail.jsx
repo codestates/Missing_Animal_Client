@@ -13,16 +13,16 @@ function PetDetail({ title, petname, thumbnail, description, petsImages, species
                 }
             </div>
             <div className="petDetailBody">
-                <p>Species      : {species}</p>
-                <p>Sex          : {sex}</p>
-                <p>Missing Date : {missingDate}</p>
-                <p>Missing Area : {area}</p>
-                <p>Descrioption : {description}</p>
-                <p>Reward       : {reward}</p>
-                <p>Owner's Name : {username}</p>
-                <p>Email        : {email}</p>
-                <p>Contact      : {contact}</p>
-                <p>Created At   : {createdAt}</p>
+                <p>종      : {species}</p>
+                <p>성별     : {sex}</p>
+                <p>실종 날짜 : {missingDate}</p>
+                <p>실종 지역 : {area}</p>
+                <p>특이 사항 : {description}</p>
+                <p>보상사례금 : {reward}</p>
+                <p>보호자   : {username}</p>
+                <p>이메일   : {email}</p>
+                <p>전화연락처 : {contact}</p>
+                {/* <p>Created At   : {createdAt}</p> */}
             </div>
         </div>
     );

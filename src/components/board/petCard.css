@@ -1,3 +1,4 @@
+/*** Pet Card ***/
 @media(min-width: 1285px) {
     .petCard {
         border: 5px solid #ffd331;
@@ -6,7 +7,7 @@
         width: 32%;
         margin: 1px;
     }
-}
+} 
 
 @media (max-width: 1284px) {
     .petCard {
@@ -14,6 +15,7 @@
         display: inline-block;
         border-radius: 5px;
         width: 48%;
+        margin: 1px;
     }
 }
 
@@ -23,24 +25,27 @@
         display: inline-block;
         border-radius: 5px;
         width: 100%;
+        margin: 1px;
     }
 }
-
 
 .petCard:hover {
     border: 5px solid #ffef44;
 }
 
- 
 .petThumbnail {
-    width: 100%;
-    min-width: 50px;
-    max-width: 300px;
-    height: auto;
+    max-width: 270px;
+    min-height: 180px;
+    border-radius: 5px;
 }
 
-.modal {
-    display: inline-block;
+.thumbnailContainer{
+    width: 300px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
 }
 
 /*** Pet Detail Open Button ***/
@@ -94,9 +99,13 @@
 }
 
 /*** Pet Detail Close Button ***/
-
 .closeButton {
     display: block;
 }
 
+/*** Pet Detail Modal ***/
+.petDetailModal {
+    position: fixed;
+    z-index: 100;
+}
 
