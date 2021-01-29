@@ -1,31 +1,174 @@
-.petRegister {
-/*     border: solid; */
-    text-align: center;
-}
-
-.petRegisterTitle {
-    border: solid;
-    color: palevioletred;
-}
-
-.petRegisterHeader {
-    border: solid;
-    color: powderblue;
-}
-
-.petRegisterBody {
-    border: solid;
-    color: palegreen;
-}
-
-.petRegisterImages {
-  border: solid;
-  color: peru;
-}
-
-#map {
+#wrap__petregister {
+  background-color: #f9f9f9;
   position: fixed;
-  top: 40%;
+  /* border-radius: 20px; */
+  max-width: 60%;
+  height: 58%;
+  margin: auto;
+  top: 0px;
+  bottom: 380px;
+  left: 0px;
+  right: 0px;
+  z-index: 1;
+  opacity: 1;
+  flex-direction: column;
+}
+
+.petRegister {
+  /* text-align: center; */
+  margin: 0 auto;
+  width: 62.8%;
+  position: relative;
+  padding: 0 20px 32px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.petRegisterText {
+  font-size: 30px;
+  text-align: center;
+  margin-top: 15px;
+}
+
+.petRegisterWrap {
+  margin-top: 25px;
+  border-top: solid #016499;
+  /* border-bottom: solid #016499; */
+  border-top: solid #000000;
+  border-bottom: solid #000000;
+  /* border-top: thick double #016499; */
+  /* border-bottom: thick double #016499; */
+}
+
+.pet__title,
+.pet__name,
+.pet__species,
+.pet__sex,
+.pet__area,
+.pet__date,
+.pet__reward,
+.pet__file {
   width: 100%;
-  height: 400px;
+  display: flex;
+  /* align-items: left; */
+  /* justify-content: center; */
+  height: 35px;
+  font-size: 14px;
+  border-bottom: thick double #000000;
+}
+
+.titleTitle,
+.titleName,
+.titleSpecies,
+.titleSex,
+.titleArea,
+.titleDate,
+.titleReward,
+.titleFile {
+  background-color: #ffd22e;
+  color: #000000;
+  width: 16%;
+  text-align: center;
+  padding-top: 5px;
+  /* border-bottom: thick double #000000; */
+}
+
+.inputTitle,
+.inputName,
+.inputSpecies,
+.inputSex,
+.inputArea,
+.inputDate,
+.inputFile,
+.inputReward {
+  width: 84%;
+  font-size: 16px;
+  padding-left: 10px;
+  outline-style: none;
+  /* border-bottom: thick double #000000; */
+}
+
+.inputTitle:focus,
+.inputName:focus,
+.inputSpecies:focus,
+.inputSex:focus,
+.inputArea:focus,
+.inputDate:focus,
+.inputFile:focus,
+.inputReward:focus {
+  /* outline: 3px solid #ffd22e; */
+  /* outline: 3px solid #000000; */
+  background-color: lightblue;
+}
+
+/* .petRegisterBtn {
+  background-color: #016499;
+  color: #000000;
+  width: 16%;
+  text-align: center;
+  padding-top: 5px;
+} */
+
+.pet__description {
+  width: 100%;
+  display: flex;
+  height: 100px;
+  font-size: 14px;
+}
+
+.titleDescription {
+  background-color: #ffd22e;
+  color: #000000;
+  width: 16%;
+  text-align: center;
+  padding-top: 39px;
+}
+
+.inputDescription {
+  width: 83%;
+  font-size: 16px;
+  padding-left: 10px;
+  outline-style: none;
+  resize: none;
+  padding-top: 10px;
+  /* border: none; */
+}
+
+.inputDescription:focus {
+  /* outline: 3px solid #ffd22e; */
+  outline: 3px solid #000000;
+}
+
+.pet__submit {
+  margin-top: 15px;
+  width: 100%;
+  height: 50px;
+  text-align: center;
+}
+.inputSubmit {
+  width: 20%;
+  height: 30px;
+  font-size: 15px;
+  /* background-color: #016499; */
+  background-color: #000;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.inputSubmit:hover {
+  background-color: #0076b6;
+}
+
+#registerMap {
+  position: fixed;
+  top: 62%;
+  width: 59.5%;
+  height: 25rem;
+  display: flex;
+  justify-content: center;
+  border: thick double #000000;
+  /* border: thick double #016499; */
 }

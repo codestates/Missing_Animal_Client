@@ -12,10 +12,15 @@ class Signout extends Component {
 
   logoutBtn = () => {
     axios
-      .post("https://missinganimals.ml/signout", { credentials: "include" })
+      .post("http://localhost:8080/auth/signout", { credentials: "include" })
+      // .post("https://missinganimals.ml/auth/signout", {
+      //   credentials: "include",
+      // })
       .then((res) => {
         if (res.data.message === "signout") {
           window.localStorage.removeItem("isLogin");
+          window.localStorage.removeItem("token");
+          // window.localStorage.removeItem("Login");
           this.props.history.push("/");
         }
       })

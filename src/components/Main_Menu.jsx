@@ -28,34 +28,48 @@ class Main_Menu extends React.Component {
           </Link>
         </div>
         <div>
-          <span className="Btn">
-            <Link to="/mypage">
-              <div className="mypageBtn">마이페이지</div>
-            </Link>
-          </span>
-
           {checkLogin ? (
-            <span className="Btn signout">
-              <Signout />
-            </span>
+            <>
+              {/* <span className="Btn">
+                <Link to="/petpage">
+                  <div className="petpageBtn">펫페이지</div>
+                </Link>
+              </span> */}
+              <span className="Btn">
+                <Link to="/mypage">
+                  <div className="text">마이페이지</div>
+                </Link>
+              </span>
+              <span className="Btn">
+                <Link to="/petregister">
+                  <div className="text">반려동물 등록하기</div>
+                </Link>
+              </span>
+              <span className="Btn signout text">
+                <Signout />
+              </span>
+            </>
           ) : (
-            <span className="Btn signin">
-              {/* <button onClick={this.openModal} className="signinBtn">
+            <>
+              <span className="Btn">
+                <Link className="aTag" to="/board">
+                  <div className="text">목록으로 확인하기</div>
+                </Link>
+              </span>
+              <span className="Btn signin">
+                {/* <button onClick={this.openModal} className="signinBtn">
                 로그인
               </button> */}
-              <div onClick={this.openModal} className="signinBtn">
-                로그인
-              </div>
-              <Signin isOpen={this.state.isModalOpen} close={this.closeModal} />
-            </span>
+                <div onClick={this.openModal} className="text">
+                  로그인
+                </div>
+                <Signin
+                  isOpen={this.state.isModalOpen}
+                  close={this.closeModal}
+                />
+              </span>
+            </>
           )}
-
-          {/* <span className="Btn signin">
-            <div onClick={this.openModal} className="signinBtn">
-              로그인
-            </div>
-             <Signin isOpen={this.state.isModalOpen} close={this.closeModal} />
-         </span> */}
         </div>
       </div>
     );

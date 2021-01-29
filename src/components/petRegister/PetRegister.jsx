@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import "./petRegister.css";
 import FormData from "form-data";
 import axios from "axios";
+// import GetAddress from "./GetAddress";
 
 /*global kakao*/
 class PetRegister extends React.Component {
@@ -19,12 +20,11 @@ class PetRegister extends React.Component {
       description: "",
       reward: "",
       img: [],
+      missingDate: "",
       latitude: "",
       longitude: "",
       test: "",
     };
-
-    this.displayMaker = this.displayMaker.bind(this);
   }
 
   registerPet = async () => {
@@ -39,83 +39,89 @@ class PetRegister extends React.Component {
       img,
       latitude,
       longitude,
-      // missingDate,
+      missingDate,
     } = this.state;
 
-    // 좌표로 주소 얻기
-    const getAddress = await axios.get(
-      `https://dapi.kakao.com//v2/local/geo/coord2address.json?x=${latitude}&y=${longitude}`,
-      { headers: { Authorization: "KakaoAK b5c1749155b0e7951f524756103ea74b" } }
-    );
-
-    const address = getAddress.data.documents[0].address.address_name;
-
-    // console.log(
-    //   "getAddress",
-    //   getAddress.data.documents[0].address.address_name
-    // );
-
-    const formData = new FormData();
-
-    formData.append("title", title);
-    formData.append("petname", petname);
-    formData.append("species", species);
-    formData.append("sex", sex);
-    formData.append("area", address);
-    // formData.append("area", "test");
-    formData.append("description", description);
-    formData.append("reward", reward);
-    formData.append("latitude", latitude);
-    formData.append("longitude", longitude);
-    img.forEach((ele) => {
-      formData.append("img", ele);
-    });
-    // 현재기준 날짜시간
-    const newDate = new Date(new Date().getTime() + 32400000).toISOString();
-    const newFormatDate = newDate.split(".")[0].replace("T", " ");
-    formData.append("missingDate", newFormatDate);
-
-    const getCookie = (name) => {
-      var value = document.cookie.match("(^|;) ?" + name + "=([^;]*)(;|$)");
-      return value ? value[2] : null;
-    };
-
-    const checkLogin = window.localStorage.getItem("Login");
-    // const token = getCookie("token");
-
-    let token = getCookie("token");
-    if (checkLogin === "naver") {
-      token = getCookie("naver_token");
-    } else if (checkLogin === "kakao") {
-      token = getCookie("access_token");
-    } else if (checkLogin === "signin") {
-      token = getCookie("token");
-    }
-
-    axios.defaults.headers.common["Authorization"] = "Bearer " + token;
-
-    const res = await axios.post(
-      "https://missinganimals.ml/pets/register",
-      formData,
-      { withCredentials: true },
-      { headers: { "Content-type": "application/x-www-form-urlencoded" } }
-    );
-
-    if (res.status === 201) {
-      console.log(res.status, res.statusText);
-      this.setState(() => ({
-        title: "",
-        petname: "",
-        species: "",
-        sex: "",
-        area: "",
-        description: "",
-        reward: "",
-        img: "",
-        // missingDate: '',
-      }));
+    if (latitude === "" || longitude === "") {
+      alert("모든 정보를 입력해주세요");
     } else {
-      console.log(res.status, res.statusText);
+      // // 좌표로 주소 얻기
+      // const getAddress = await axios.get(
+      //   `https://dapi.kakao.com//v2/local/geo/coord2address.json?x=${latitude}&y=${longitude}`,
+      //   {
+      //     headers: {
+      //       Authorization: "KakaoAK b5c1749155b0e7951f524756103ea74b",
+      //     },
+      //   }
+      // );
+
+      // const address = getAddress.data.documents[0].address.address_name;
+
+      const formData = new FormData();
+
+      formData.append("title", title);
+      formData.append("petname", petname);
+      formData.append("species", species);
+      formData.append("sex", sex);
+      // formData.append("area", address);
+      formData.append("area", area);
+      formData.append("description", description);
+      formData.append("reward", reward);
+      formData.append("latitude", latitude);
+      formData.append("longitude", longitude);
+      img.forEach((ele) => {
+        formData.append("img", ele);
+      });
+      formData.append("missingDate", missingDate);
+
+      // 현재기준 날짜시간
+      // const newDate = new Date(new Date().getTime() + 32400000).toISOString();
+      // const newFormatDate = newDate.split(".")[0].replace("T", " ");
+      // formData.append("missingDate", newFormatDate);
+
+      const token = window.localStorage.getItem("token");
+      axios.defaults.headers.common["Authorization"] = "Bearer " + token;
+
+      if (
+        !title ||
+        !petname ||
+        !species ||
+        !sex ||
+        !area ||
+        !description ||
+        !reward ||
+        !img ||
+        !missingDate
+      ) {
+        alert("모든 정보를 입력해주세요");
+      } else {
+        const res = await axios.post(
+          "http://localhost:8080/pets/register",
+          // "https://missinganimals.ml/pets/register",
+          formData,
+          { withCredentials: true },
+          { headers: { "Content-type": "application/x-www-form-urlencoded" } }
+        );
+
+        if (res.status === 201) {
+          console.log(res.status, res.statusText);
+          this.setState(() => ({
+            title: "",
+            petname: "",
+            species: "",
+            sex: "",
+            area: "",
+            description: "",
+            reward: "",
+            img: "",
+            missingDate: "",
+          }));
+          window.location.href = "/petpage";
+        } else {
+          alert("모든 정보를 입력해주세요");
+          console.log(res.status, res.statusText);
+        }
+      }
     }
   };
 
@@ -130,25 +136,33 @@ class PetRegister extends React.Component {
 
       // 마커 위치를 클릭한 위치로 옮깁니다
       marker.setPosition(latlng);
-      console.log("displayMarker:", mouseEvent.latLng.La);
+      // console.log("displayMarker:", mouseEvent.latLng.La);
     });
 
-    // this.setState({ getLocation: "change" });
+    kakao.maps.event.addListener(this.map, "click", (mouseEvent) => {
+      axios
+        .get(
+          `https://dapi.kakao.com//v2/local/geo/coord2address.json?x=${mouseEvent.latLng.La}&y=${mouseEvent.latLng.Ma}`,
+          {
+            headers: {
+              Authorization: "KakaoAK b5c1749155b0e7951f524756103ea74b",
+            },
+          }
+        )
+        .then((res) => {
+          this.setState(
+            {
+              area: res.data.documents[0].address.address_name,
+              latitude: mouseEvent.latLng.La,
+              longitude: mouseEvent.latLng.Ma,
+            },
+            function () {}
+          );
+        });
+    });
   }
 
-  async componentDidMount() {
-    // const { area } = this.state;
-    let container = document.getElementById("map");
-
-    let options = {
-      //지도를 생성할 때 필요한 기본 옵션
-      center: new kakao.maps.LatLng(37.508502, 127.074719), //지도의 중심좌표
-      level: 5, //지도의 레벨(확대, 축소 정도)
-    };
-
-    //지도 생성 및 객체 리턴
-    this.map = new kakao.maps.Map(container, options);
-
+  changeType() {
     // 일반 지도와 스카이뷰로 지도 타입을 전환할 수 있는 지도타입 컨트롤을 생성
     var mapTypeControl = new kakao.maps.MapTypeControl();
 
@@ -160,20 +174,29 @@ class PetRegister extends React.Component {
     var zoomControl = new kakao.maps.ZoomControl();
     this.map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
 
-    kakao.maps.event.addListener(this.map, "click", (mouseEvent) => {
-      // 원하는 액션
-      //   console.log("Lat:", mouseEvent.latLng.La);
-      //   console.log("Lng:", mouseEvent.latLng.Ma);
-      this.displayMaker();
-      this.setState(
-        {
-          area: [mouseEvent.latLng.La, mouseEvent.latLng.Ma],
-          latitude: mouseEvent.latLng.La,
-          longitude: mouseEvent.latLng.Ma,
-        },
-        function () {}
-      );
-    });
+    // 지도에 컨트롤을 추가해야 지도위에 표시
+    // kakao.maps.ControlPosition은 컨트롤이 표시될 위치를 정의하는데 TOPRIGHT는 오른쪽 위를 의미
+    this.map.addControl(mapTypeControl, kakao.maps.ControlPosition.TOPRIGHT);
+  }
+
+  mapScript = () => {
+    let container = document.getElementById("registerMap");
+
+    let options = {
+      //지도를 생성할 때 필요한 기본 옵션
+      center: new kakao.maps.LatLng(37.508502, 127.074719), //지도의 중심좌표
+      level: 5, //지도의 레벨(확대, 축소 정도)
+    };
+
+    //지도 생성 및 객체 리턴
+    this.map = new kakao.maps.Map(container, options);
+
+    this.displayMaker();
+    this.changeType();
+  };
+
+  componentDidMount() {
+    this.mapScript();
   }
 
   render() {
@@ -181,136 +204,171 @@ class PetRegister extends React.Component {
       title,
       petname,
       species,
-      sex,
+      // sex,
       area,
       description,
       reward,
-      img,
-      latitude,
-      longitude,
+      // img,
+      // latitude,
+      // longitude,
+      // missingDate,
     } = this.state;
 
-    console.log("====", this.state.test);
-
     return (
-      <div className="petRegister">
-        <div>Pet Register</div>
-        <div className="petRegisterHeader">
-          <label>Title : </label>
-          <input
-            type="text"
-            placeholder="Title"
-            value={title}
-            onChange={(event) =>
-              this.setState((prevState) => ({
-                ...prevState,
-                title: event.target.value,
-              }))
-            }
-          ></input>
-          <br />
-          <label>Pet Name : </label>
-          <input
-            type="text"
-            placeholder="Pet Name"
-            value={petname}
-            onChange={(event) =>
-              this.setState((prevState) => ({
-                ...prevState,
-                petname: event.target.value,
-              }))
-            }
-          ></input>
-          <br />
+      <div id="wrap__petregister">
+        <div className="petRegister">
+          <div className="petRegisterText">반려동물 정보를 입력해주세요</div>
+          <div className="petRegisterWrap">
+            <div className="pet__title">
+              <span className="titleTitle">제목</span>
+              <input
+                type="text"
+                className="inputTitle"
+                placeholder="제목을 입력해주세요"
+                value={title}
+                onChange={(event) =>
+                  this.setState((prevState) => ({
+                    ...prevState,
+                    title: event.target.value,
+                  }))
+                }
+              ></input>
+            </div>
+            <div className="pet__name">
+              <span className="titleName">이름</span>
+              <input
+                type="text"
+                className="inputName"
+                placeholder="이름"
+                value={petname}
+                onChange={(event) =>
+                  this.setState((prevState) => ({
+                    ...prevState,
+                    petname: event.target.value,
+                  }))
+                }
+              ></input>
+            </div>
+            <div className="pet__species">
+              <span className="titleSpecies">품종</span>
+              <input
+                type="text"
+                className="inputSpecies"
+                placeholder="품종"
+                value={species}
+                onChange={(event) =>
+                  this.setState((prevState) => ({
+                    ...prevState,
+                    species: event.target.value,
+                  }))
+                }
+              ></input>
+            </div>
+            <div className="pet__sex">
+              <span className="titleSex">성별</span>
+              <select
+                name="select"
+                className="inputSex"
+                onChange={(event) =>
+                  this.setState((prevState) => ({
+                    ...prevState,
+                    sex: event.target.value,
+                  }))
+                }
+              >
+                <option value="">선택</option>
+                <option value="female">암컷</option>
+                <option value="male">수컷</option>
+              </select>
+            </div>
+            <div className="pet__area">
+              <span className="titleArea">위치</span>
+              <input
+                type="text"
+                className="inputArea"
+                placeholder="아래 지도에서 선택 해주세요"
+                // value="지도를 클릭해주세요"
+                value={area}
+                readOnly
+              ></input>
+            </div>
+            <div className="pet__date">
+              <span className="titleDate">날짜</span>
+              <input
+                type="date"
+                className="inputDate"
+                onChange={(event) =>
+                  this.setState((prevState) => ({
+                    ...prevState,
+                    missingDate: event.target.value,
+                  }))
+                }
+              ></input>
+              <span className="petRegisterBtn"></span>
+            </div>
+            <div className="pet__reward">
+              {/* <label>보상금 </label> */}
+              <span className="titleReward">보상</span>
+              <input
+                type="text"
+                className="inputReward"
+                placeholder="보상(원)"
+                value={reward}
+                onChange={(event) =>
+                  this.setState((prevState) => ({
+                    ...prevState,
+                    reward: event.target.value,
+                  }))
+                }
+              ></input>
+            </div>
+            {/* </div> */}
+            <div className="pet__file">
+              <span className="titleFile">사진</span>
+              <input
+                type="file"
+                className="inputFile"
+                multiple
+                // onChange={(event) => console.log(event)}
+                onChange={(event) =>
+                  this.setState((prevState) => ({
+                    ...prevState,
+                    img: [...event.target.files],
+                  }))
+                }
+              ></input>
+            </div>
+            <div className="pet__description">
+              <span className="titleDescription">상세설명</span>
+              <textarea
+                className="inputDescription"
+                placeholder="상세설명"
+                value={description}
+                onChange={(event) =>
+                  this.setState((prevState) => ({
+                    ...prevState,
+                    description: event.target.value,
+                  }))
+                }
+              ></textarea>
+            </div>
+          </div>
+          <div className="pet__submit">
+            <button
+              type="submit"
+              className="inputSubmit"
+              onClick={(event) => {
+                event.preventDefault();
+                this.registerPet();
+                // window.history.back();
+              }}
+            >
+              등록
+            </button>
+          </div>
         </div>
-        <div className="petRegisterBody">
-          <label>Species : </label>
-          <input
-            type="text"
-            placeholder="Species"
-            value={species}
-            onChange={(event) =>
-              this.setState((prevState) => ({
-                ...prevState,
-                species: event.target.value,
-              }))
-            }
-          ></input>
-          <br />
-          <label>Sex : </label>
-          <input
-            type="text"
-            placeholder="Sex"
-            value={sex}
-            onChange={(event) =>
-              this.setState((prevState) => ({
-                ...prevState,
-                sex: event.target.value,
-              }))
-            }
-          ></input>
-          <br />
-          <label>Missing Area : </label>
-          <input
-            type="text"
-            // placeholder="지도를 클릭해주세요"
-            value={area}
-            readOnly
-          ></input>
-          <br />
-          <label>Description : </label>
-          <input
-            type="text"
-            placeholder="Description"
-            value={description}
-            onChange={(event) =>
-              this.setState((prevState) => ({
-                ...prevState,
-                description: event.target.value,
-              }))
-            }
-          ></input>
-          <br />
-          <label>Reward : </label>
-          <input
-            type="text"
-            placeholder="Reward"
-            value={reward}
-            onChange={(event) =>
-              this.setState((prevState) => ({
-                ...prevState,
-                reward: event.target.value,
-              }))
-            }
-          ></input>
-          <br />
-        </div>
-        <div className="petRegisterImages">
-          <input
-            type="file"
-            multiple
-            // onChange={(event) => console.log(event)}
-            onChange={(event) =>
-              this.setState((prevState) => ({
-                ...prevState,
-                img: [...event.target.files],
-              }))
-            }
-          ></input>
-          <br />
-        </div>
-        <button
-          type="submit"
-          onClick={(event) => {
-            event.preventDefault();
-            this.registerPet();
-            window.history.back();
-          }}
-        >
-          Register
-        </button>
         <>
-          <div id="map"></div>
+          <div id="registerMap"></div>
         </>
       </div>
     );

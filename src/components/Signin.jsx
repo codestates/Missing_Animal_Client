@@ -2,6 +2,9 @@
 import React from "react";
 import axios from "axios";
 import "../styles/Signin.css";
+import btn_kakao from "../styles/img/kakao3.png";
+import btn_naver from "../styles/img/naver3.png";
+import logo_signin from "../styles/img/FindersLogo.png";
 
 import { withRouter, Link } from "react-router-dom";
 
@@ -23,15 +26,17 @@ class Signin extends React.Component {
     this.kakaoLoginHandler = this.kakaoLoginHandler.bind(this);
 
     this.NAVER_LOGIN_URL =
-      "https://nid.naver.com/oauth2.0/authorize?response_type=code&client_id=vbUF8EMae9G5PmUfbyRh&state=MiAn&redirect_uri=https://missinganimals.ml/";
+      // "https://nid.naver.com/oauth2.0/authorize?response_type=code&client_id=vbUF8EMae9G5PmUfbyRh&state=MiAn&redirect_uri=http://localhost:3000";
+      "https://nid.naver.com/oauth2.0/authorize?response_type=code&client_id=vbUF8EMae9G5PmUfbyRh&state=MiAn&redirect_uri=https://missinganimal.ml";
 
     this.KAKAO_LOGIN_URL =
-      "https://kauth.kakao.com/oauth/authorize?client_id=e728a9738a0f6dd292c373b3ec9e5b45&redirect_uri=https://missinganimals.ml/&response_type=code";
+      // "https://kauth.kakao.com/oauth/authorize?client_id=e728a9738a0f6dd292c373b3ec9e5b45&redirect_uri=http://localhost:3000&response_type=code";
+      "https://kauth.kakao.com/oauth/authorize?client_id=e728a9738a0f6dd292c373b3ec9e5b45&redirect_uri=https://missinganimal.ml&response_type=code";
   }
 
   loginHandler() {
     window.localStorage.setItem("isLogin", true);
-    window.localStorage.setItem("Login", "signin");
+    // window.localStorage.setItem("Login", "signin");
     this.props.close();
     this.props.history.push({
       isLogin: this.state.isLogin,
@@ -42,6 +47,7 @@ class Signin extends React.Component {
     // 네이버
     if (authorizationCode.length === 18) {
       const resp = await axios.post(
+        // "http://localhost:8080/auth/naver",
         "https://missinganimals.ml/auth/naver",
         {
           authorizationCode: authorizationCode,
@@ -50,14 +56,16 @@ class Signin extends React.Component {
       );
 
       if (resp.data.message === "naver login") {
+        window.localStorage.setItem("token", resp.data.token);
         window.localStorage.setItem("isLogin", true);
-        window.localStorage.setItem("Login", "naver");
+        // window.localStorage.setItem("Login", "naver");
         this.props.history.push("/");
       }
     }
     // 카카오
     else {
       const resp = await axios.post(
+        // "http://localhost:8080/auth/kakao",
         "https://missinganimals.ml/auth/kakao",
         {
           authorizationCode: authorizationCode,
@@ -66,8 +74,9 @@ class Signin extends React.Component {
       );
 
       if (resp.data.message === "kakao login") {
+        window.localStorage.setItem("token", resp.data.token);
         window.localStorage.setItem("isLogin", true);
-        window.localStorage.setItem("Login", "kakao");
+        // window.localStorage.setItem("Login", "kakao");
         this.props.history.push("/");
       }
     }
@@ -121,12 +130,13 @@ class Signin extends React.Component {
       alert("아이디, 비밀번호를 확인해주세요");
     } else if (isEmailChecked && isPasswordChecked) {
       const loginRequest = await axios.post(
-        "https://missinganimals.ml/auth/signin",
+        "http://localhost:8080/auth/signin",
+        // "https://missinganimals.ml/auth/signin",
         { email, password },
         { withCredentials: true }
       );
-
       if (loginRequest.data.message === "signin OK") {
+        window.localStorage.setItem("token", loginRequest.data.token);
         this.loginHandler();
       }
     }
@@ -156,7 +166,10 @@ class Signin extends React.Component {
                 &times;
               </span>
               <div className="modalContents" onClick={() => isOpen}>
-                <div className="signinName"> Missing Animal </div>
+                {/* <div className="signinName"> Finders </div> */}
+                <div className="logo_signin">
+                  <img src={logo_signin} className="signinLogo" />
+                </div>
                 <input
                   className="loginId"
                   placeholder="아이디(이메일)"
@@ -175,22 +188,38 @@ class Signin extends React.Component {
                   로그인
                 </button>
                 <div className="socialBox">
-                  <div className="kakao">
+                  <div className="kakao" onClick={this.kakaoLoginHandler}>
+                    <img
+                      src={btn_kakao}
+                      className="btn_kakao"
+                      // onClick={this.kakaoLoginHandler}
+                    />
+                    카카오 로그인
+                  </div>
+                  <div className="naver" onClick={this.naverLoginHandler}>
+                    <img
+                      src={btn_naver}
+                      className="btn_naver"
+                      // onClick={this.naverLoginHandler}
+                    />
+                    네이버 로그인
+                  </div>
+                  {/* <div className="kakao">
                     <div
                       className="btn__kakao"
                       onClick={this.kakaoLoginHandler}
                     >
                       카카오 계정으로 로그인
                     </div>
-                  </div>
-                  <div className="naver">
+                  </div> */}
+                  {/* <div className="naver">
                     <div
                       className="btn__naver"
                       onClick={this.naverLoginHandler}
                     >
                       네이버 계정으로 로그인
                     </div>
-                  </div>
+                  </div> */}
                 </div>
                 <div>
                   <Link to="/signup" className="loginEnd">

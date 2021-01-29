@@ -8,38 +8,68 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: linear-gradient(to bottom, #8bc4c1 50%, #d1e9ca3a);
-  z-index: 10;
-  /* border-bottom: 0.5px solid rgb(232, 232, 232); */
 }
+
 .Btn {
-  width: 120px;
-  background-color: #50756ab7;
-  border-radius: 10px;
-  color: #fff;
-  padding: 15px 0;
-  text-align: center;
+  /* border-radius: 4px; */
+  /* background-color: #000; */
+  /* border: 1px; */
+  /* display: block; */
   text-decoration: none;
-  display: inline-block;
-  font-size: 14px;
-  margin: 4px;
+  border: solid #000;
+  border-left-width: 0px;
+  border-right-width: 0px;
+  color: #000;
+  text-align: center;
+  font-weight: bolder;
+  font-size: 12px;
+  padding: 10px;
+  width: 7rem;
+  transition: all 0.5s;
   cursor: pointer;
+  margin: 15px;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
 }
+
+.Btn:after {
+  content: "»";
+  position: absolute;
+  opacity: 0;
+  top: 14px;
+  right: -20px;
+  transition: 0.5s;
+}
+
 .Btn:hover {
-  background-color: #7baa71;
+  padding-right: 24px;
+  padding-left: 8px;
 }
-.mypageBtn {
-  color: white;
+
+.Btn:hover:after {
+  opacity: 1;
+  right: 10px;
 }
+
+.Btn:visited,
+.Btn:active {
+  color: #000;
+  text-decoration: none;
+}
+
 .signin {
-  margin-left: 15px;
-  margin-right: 43px;
+  margin-right: 60px;
 }
 .signout {
-  margin-left: 15px;
   margin-right: 43px;
 }
 
 .logo {
   margin-left: 55px;
+}
+
+.aTag:visited {
+  text-decoration: none;
+  color: #000;
 }

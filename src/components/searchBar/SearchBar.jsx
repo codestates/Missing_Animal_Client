@@ -6,19 +6,19 @@ function SearchBar({ searchPets }) {
 
     return (
         <div className="searchbar">
-            <div>Search Bar</div>
-            <input type="text" value={state.keyword} 
+            {/* <div>반려동물 검색</div> */}
+            <input className="searchInput" type="search" placeholder="검색어를 입력하세요."
+                value={state.keyword} 
                 onChange={(event) => {
                     setState(() => ({ keyword: event.target.value }));
                 }} 
             ></input> 
-            <button type="submit" 
+            <button className="searchButton" type="submit" 
                 onClick={(event) => {
-                    // console.log('search clicked!');
                     event.preventDefault();
                     searchPets(state.keyword);
                 }}
-            >Search</button>
+            >검색하기</button>
         </div>
     )
 }

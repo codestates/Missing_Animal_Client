@@ -7,9 +7,8 @@ class Map extends React.Component {
 
   getList = async () => {
     const res = await axios.get(
-      "http://localhost:8080/mapinfo",
-      // const res = await axios.get(
-      //   "https://missinganimals.ml/mapinfo",
+    "http://localhost:8080/mapinfo",
+      // "https://missinganimals.ml/mapinfo",
       { withCredentials: true }
     );
     let mapContainer = document.getElementById("main_map"), // 지도를 표시할 div
