@@ -33,8 +33,8 @@ class Signup extends Component {
       email.includes(".")
     ) {
       axios
-        // .post("http://localhost:8080/auth/signup", this.state)
-        .post("https://missinganimals.ml/auth/signup", this.state)
+        .post("http://localhost:8080/auth/signup", this.state)
+        // .post("https://missinganimals.ml/auth/signup", this.state)
         .then((res) => {
           this.props.history.push("/");
         })
@@ -50,51 +50,73 @@ class Signup extends Component {
 
   render() {
     return (
-      <div className="registerWrapper">
-        {/* <div className="registerName"> Finders </div> */}
-        <div className="logo_signup">
-          <img src={logo_signup} className="signupLogo" />
-        </div>
-
-        <div className="register__text">
+      <div id="wrap__signup">
+        <div className="registerName">
+          {/* <form> */}
+          <div className="logo_signup">
+            <img src={logo_signup} className="signupLogo" />
+          </div>
           <span className="registerText">회원정보를 입력해주세요</span>
-        </div>
-        <div className="register__email">
-          <input
-            placeholder="아이디(이메일)"
-            type="email"
-            className="inputEmail"
-            onChange={this.handleInputValue("email")}
-          />
-        </div>
-        <div className="register__password">
-          <input
-            placeholder="비밀번호"
-            type="password"
-            className="inputPassword"
-            onChange={this.handleInputValue("password")}
-          />
-        </div>
-        <div className="register__username">
-          <input
-            placeholder="이름(닉네임))"
-            type="username"
-            className="inputUsername"
-            onChange={this.handleInputValue("username")}
-          />
-        </div>
-        <div className="register__mobile">
-          <input
-            placeholder="휴대폰 번호(숫자)"
-            type="mobile"
-            className="inputMobile"
-            onChange={this.handleInputValue("mobile")}
-          />
-        </div>
-        <div className="register__btn">
-          <button className="registerBtn" onClick={() => this.clickBtn()}>
-            회원 가입하기
-          </button>
+          <div className="row">
+            <div className="col-25">
+              <label for="email">이메일</label>
+            </div>
+            <div className="col-75">
+              <input
+                placeholder="아이디(이메일)"
+                type="email"
+                className="inputEmail"
+                onChange={this.handleInputValue("email")}
+              />
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-25">
+              <label for="password">비밀번호</label>
+            </div>
+            <div className="col-75">
+              <input
+                placeholder="비밀번호"
+                type="password"
+                className="inputPassword"
+                onChange={this.handleInputValue("password")}
+              />
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-25">
+              <label for="username">닉네임</label>
+            </div>
+            <div className="col-75">
+              <input
+                placeholder="이름(닉네임)"
+                type="username"
+                className="inputUsername"
+                onChange={this.handleInputValue("username")}
+              />
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-25">
+              <label for="mobile">전화번호</label>
+            </div>
+            <div className="col-75">
+              <input
+                placeholder="휴대폰 번호(숫자)"
+                type="mobile"
+                className="inputMobile"
+                onChange={this.handleInputValue("mobile")}
+              />
+            </div>
+          </div>
+          <div className="row">
+            <input
+              type="submit"
+              value="회원가입"
+              onClick={() => this.clickBtn()}
+            />
+          </div>
+          {/* </form> */}
         </div>
       </div>
     );
@@ -102,8 +124,3 @@ class Signup extends Component {
 }
 
 export default withRouter(Signup);
-
-// function SignUp()
-//   return <div className="Myinfo_menue">회원가입</div>;
-// }
-// export default SignUp;
