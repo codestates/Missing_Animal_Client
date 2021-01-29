@@ -29,11 +29,11 @@ class Main extends React.Component {
               연락을 받으세요.
             </span>
           </div>
-          {/* <div className="gotomap"> */}
-          <Link to="/map">
-            <div className="ListBtn">지도로 확인하기</div>
-          </Link>
-          {/* </div> */}
+          <span>
+            <Link to="/map">
+              <div className="ListBtn">지도로 확인하기</div>
+            </Link>
+          </span>
         </div>
       </div>
     );

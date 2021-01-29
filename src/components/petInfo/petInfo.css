@@ -1,0 +1,57 @@
+.box {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  background: url("../../image/newBackground.jpg") no-repeat 0 0;
+  background-size: 100% 100%;
+  /* padding: 3rem; */
+  /* padding-top: 5rem; */
+  /* text-align: center; */
+  /* height: 80vh; */
+}
+
+/* .petInfoTitle {
+  height: 15vh;
+  font-size: 2rem;
+} */
+
+.menuBar {
+  padding: 1rem;
+  margin-top: 7rem;
+  height: 80vh;
+  width: 12vw;
+  font-size: 1.2rem;
+  border-right: 1px solid rgb(149, 149, 149);
+  text-align: center;
+}
+
+.mainBox {
+  margin-right: 1rem;
+  width: 86vw;
+  height: 80vh;
+}
+
+.petInfo {
+  display: flex;
+  text-align: center;
+  margin: 8rem 0 1rem 1rem;
+  /* padding: 1rem; */
+}
+
+.click {
+  line-height: 26px;
+  word-break: keep-all;
+  /* position: relative; */
+  background-image: linear-gradient(
+    rgba(252, 139, 0, 0.397),
+    rgba(252, 139, 0, 0.397)
+  );
+  background-position: 0 50%;
+  background-repeat: no-repeat;
+  /* background-size: 0 12px; */
+  /* transition: all 0.5s ease; */
+  transition: background-size 2s;
+}
+.click.active {
+  background-size: 100% 15px;
+}
