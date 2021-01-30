@@ -1,8 +1,8 @@
 import React from "react";
 import "./petRegister.css";
+import logo_petRegister from "./FindersLogo.png";
 import FormData from "form-data";
 import axios from "axios";
-// import GetAddress from "./GetAddress";
 
 /*global kakao*/
 class PetRegister extends React.Component {
@@ -96,8 +96,8 @@ class PetRegister extends React.Component {
         alert("모든 정보를 입력해주세요");
       } else {
         const res = await axios.post(
-          // "http://localhost:8080/pets/register",
-          "https://missinganimals.ml/pets/register",
+          "http://localhost:8080/pets/register",
+          // "https://missinganimals.ml/pets/register",
           formData,
           { withCredentials: true },
           { headers: { "Content-type": "application/x-www-form-urlencoded" } }
@@ -215,161 +215,208 @@ class PetRegister extends React.Component {
     } = this.state;
 
     return (
-      <div id="wrap__petregister">
-        <div className="petRegister">
-          <div className="petRegisterText">반려동물 정보를 입력해주세요</div>
-          <div className="petRegisterWrap">
-            <div className="pet__title">
-              <span className="titleTitle">제목</span>
-              <input
-                type="text"
-                className="inputTitle"
-                placeholder="제목을 입력해주세요"
-                value={title}
-                onChange={(event) =>
-                  this.setState((prevState) => ({
-                    ...prevState,
-                    title: event.target.value,
-                  }))
-                }
-              ></input>
-            </div>
-            <div className="pet__name">
-              <span className="titleName">이름</span>
-              <input
-                type="text"
-                className="inputName"
-                placeholder="이름"
-                value={petname}
-                onChange={(event) =>
-                  this.setState((prevState) => ({
-                    ...prevState,
-                    petname: event.target.value,
-                  }))
-                }
-              ></input>
-            </div>
-            <div className="pet__species">
-              <span className="titleSpecies">품종</span>
-              <input
-                type="text"
-                className="inputSpecies"
-                placeholder="품종"
-                value={species}
-                onChange={(event) =>
-                  this.setState((prevState) => ({
-                    ...prevState,
-                    species: event.target.value,
-                  }))
-                }
-              ></input>
-            </div>
-            <div className="pet__sex">
-              <span className="titleSex">성별</span>
-              <select
-                name="select"
-                className="inputSex"
-                onChange={(event) =>
-                  this.setState((prevState) => ({
-                    ...prevState,
-                    sex: event.target.value,
-                  }))
-                }
-              >
-                <option value="">선택</option>
-                <option value="female">암컷</option>
-                <option value="male">수컷</option>
-              </select>
-            </div>
-            <div className="pet__area">
-              <span className="titleArea">위치</span>
-              <input
-                type="text"
-                className="inputArea"
-                placeholder="아래 지도에서 선택 해주세요"
-                // value="지도를 클릭해주세요"
-                value={area}
-                readOnly
-              ></input>
-            </div>
-            <div className="pet__date">
-              <span className="titleDate">날짜</span>
-              <input
-                type="date"
-                className="inputDate"
-                onChange={(event) =>
-                  this.setState((prevState) => ({
-                    ...prevState,
-                    missingDate: event.target.value,
-                  }))
-                }
-              ></input>
-              <span className="petRegisterBtn"></span>
-            </div>
-            <div className="pet__reward">
-              {/* <label>보상금 </label> */}
-              <span className="titleReward">보상</span>
-              <input
-                type="text"
-                className="inputReward"
-                placeholder="보상(원)"
-                value={reward}
-                onChange={(event) =>
-                  this.setState((prevState) => ({
-                    ...prevState,
-                    reward: event.target.value,
-                  }))
-                }
-              ></input>
-            </div>
-            {/* </div> */}
-            <div className="pet__file">
-              <span className="titleFile">사진</span>
-              <input
-                type="file"
-                className="inputFile"
-                multiple
-                // onChange={(event) => console.log(event)}
-                onChange={(event) =>
-                  this.setState((prevState) => ({
-                    ...prevState,
-                    img: [...event.target.files],
-                  }))
-                }
-              ></input>
-            </div>
-            <div className="pet__description">
-              <span className="titleDescription">상세설명</span>
-              <textarea
-                className="inputDescription"
-                placeholder="상세설명"
-                value={description}
-                onChange={(event) =>
-                  this.setState((prevState) => ({
-                    ...prevState,
-                    description: event.target.value,
-                  }))
-                }
-              ></textarea>
-            </div>
-          </div>
-          <div className="pet__submit">
-            <button
-              type="submit"
-              className="inputSubmit"
-              onClick={(event) => {
-                event.preventDefault();
-                this.registerPet();
-                // window.history.back();
-              }}
-            >
-              등록
-            </button>
-          </div>
+      <div className="container">
+        <br></br>
+        <span className="logo_petRegister">
+          <a href="/">
+            <img src={logo_petRegister} className="registerLogo" />
+          </a>
+        </span>
+        <br></br>
+        <div className="register__title">
+          <h1>
+            반려동물 정보를<br></br>입력해주세요
+          </h1>
         </div>
-        <>
+        <div id="wrap__petregister">
+          <div className="petRegister">
+            <div className="row">
+              <div className="col-25">
+                <label for="title">제목</label>
+              </div>
+              <div className="col-75">
+                <input
+                  type="text"
+                  className="inputTitle"
+                  placeholder="제목을 입력해주세요"
+                  value={title}
+                  onChange={(event) =>
+                    this.setState((prevState) => ({
+                      ...prevState,
+                      title: event.target.value,
+                    }))
+                  }
+                ></input>
+              </div>
+            </div>
+
+            <div className="row">
+              <div className="col-25">
+                <label for="name">이름</label>
+              </div>
+              <div className="col-75">
+                <input
+                  type="text"
+                  className="inputName"
+                  placeholder="이름"
+                  value={petname}
+                  onChange={(event) =>
+                    this.setState((prevState) => ({
+                      ...prevState,
+                      petname: event.target.value,
+                    }))
+                  }
+                ></input>
+              </div>
+            </div>
+
+            <div className="row">
+              <div className="col-25">
+                <label for="species">품종</label>
+              </div>
+              <div className="col-75">
+                <input
+                  type="text"
+                  className="inputSpecies"
+                  placeholder="품종"
+                  value={species}
+                  onChange={(event) =>
+                    this.setState((prevState) => ({
+                      ...prevState,
+                      species: event.target.value,
+                    }))
+                  }
+                ></input>
+              </div>
+            </div>
+
+            <div className="row">
+              <div className="col-25">
+                <label for="sex">성별</label>
+              </div>
+              <div className="col-75">
+                <select
+                  name="select"
+                  className="inputSex"
+                  onChange={(event) =>
+                    this.setState((prevState) => ({
+                      ...prevState,
+                      sex: event.target.value,
+                    }))
+                  }
+                >
+                  <option value="">선택</option>
+                  <option value="female">암컷</option>
+                  <option value="male">수컷</option>
+                </select>
+              </div>
+            </div>
+
+            <div className="row">
+              <div className="col-25">
+                <label for="area">위치</label>
+              </div>
+              <div className="col-75">
+                <input
+                  type="text"
+                  className="inputArea"
+                  placeholder="지도에서 선택 해주세요"
+                  value={area}
+                  readOnly
+                ></input>
+              </div>
+            </div>
+
+            <div className="row">
+              <div className="col-25">
+                <label for="date">날짜</label>
+              </div>
+              <div className="col-75">
+                <input
+                  type="date"
+                  className="inputDate"
+                  onChange={(event) =>
+                    this.setState((prevState) => ({
+                      ...prevState,
+                      missingDate: event.target.value,
+                    }))
+                  }
+                ></input>
+              </div>
+            </div>
+
+            <div className="row">
+              <div className="col-25">
+                <label for="reward">보상</label>
+              </div>
+              <div className="col-75">
+                <input
+                  type="number"
+                  className="inputReward"
+                  placeholder="보상(원)"
+                  value={reward}
+                  onChange={(event) =>
+                    this.setState((prevState) => ({
+                      ...prevState,
+                      reward: event.target.value,
+                    }))
+                  }
+                ></input>
+              </div>
+            </div>
+
+            <div className="row">
+              <div className="col-25">
+                <label for="img">사진</label>
+              </div>
+              <div className="col-75">
+                <input
+                  type="file"
+                  className="inputFile"
+                  multiple
+                  onChange={(event) =>
+                    this.setState((prevState) => ({
+                      ...prevState,
+                      img: [...event.target.files],
+                    }))
+                  }
+                ></input>
+              </div>
+            </div>
+
+            <div className="row">
+              <div className="col-25">
+                <label for="description">상세설명</label>
+              </div>
+              <div className="col-75">
+                <textarea
+                  className="inputDescription"
+                  placeholder="상세설명"
+                  value={description}
+                  onChange={(event) =>
+                    this.setState((prevState) => ({
+                      ...prevState,
+                      description: event.target.value,
+                    }))
+                  }
+                ></textarea>
+              </div>
+            </div>
+            <div className="row">
+              <input
+                type="submit"
+                className="inputSubmit"
+                value="등록하기"
+                onClick={(event) => {
+                  event.preventDefault();
+                  this.registerPet();
+                }}
+              ></input>
+            </div>
+          </div>
+
           <div id="registerMap"></div>
-        </>
+        </div>
       </div>
     );
   }

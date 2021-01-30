@@ -4,15 +4,11 @@
 
 * {
   font-family: "Noto Sans KR", sans-serif;
-  /* box-sizing: border-box; */
+  box-sizing: border-box;
 }
 
-/* body {
-  margin: 0px 0px
-} */
-
 body {
-  margin: 0px 0px
+  margin: 0px 0px;
 }
 
 .app {
@@ -30,7 +26,7 @@ body {
   position: absolute;
   width: 100%;
   height: 100vh;
-  background: url("../image/background2.jpg");
+  background: url("../image/newBackground.jpg");
   /* background: url("../image/test.jpg"); */
   opacity: 100%;
   background-repeat: no-repeat;
