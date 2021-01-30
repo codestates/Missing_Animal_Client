@@ -2,6 +2,7 @@ import React from "react";
 import "../styles/Map.css";
 import axios from "axios";
 import $ from "jquery";
+import { Link } from "react-router-dom";
 /*global kakao*/
 class Map extends React.Component {
   constructor(props) {
@@ -15,8 +16,8 @@ class Map extends React.Component {
   }
   getList = async () => {
     const res = await axios.get(
-    // "http://localhost:8080/mapinfo",
-      "https://missinganimals.ml/mapinfo",
+      "http://localhost:8080/mapinfo",
+      // "https://missinganimals.ml/mapinfo",
       { withCredentials: true }
     );
     const { markers } = this.state;
@@ -42,7 +43,7 @@ class Map extends React.Component {
 
       var title = document.createElement('div');
       title.innerHTML = '동물 정보&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;X'
-      title.style.cssText = 'background:#333641; color: white; border: 1px; solid black; margin-top: 5px; border: 1px solid black;'
+      title.style.cssText = 'background:#333641; color: white; border: 1px; solid black; margin-left: 9px; margin-top: 5px; border: 1px solid black;'
       title.onclick = function () {
         overlay.setMap(null);
       };
@@ -157,6 +158,13 @@ class Map extends React.Component {
     // console.log("marker", this.state.marker);
     return (
       <>
+        <div className="main_map_nav">
+          <div className="logo">
+            <Link to="/">
+              <img src="/images/FindersLogo.png" width="200px" height="90px" alt="img" />
+            </Link>
+          </div>
+        </div>
         <div id="main_map"></div>
       </>
     );
