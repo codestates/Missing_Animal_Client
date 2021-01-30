@@ -4,7 +4,7 @@ import SearchBar from "../searchBar/SearchBar";
 import "./board.css";
 import axios from "axios";
 import MainMenu from "../Main_Menu";
- 
+
 function Board() {
   const [state, setState] = useState({
     get: {
@@ -18,7 +18,7 @@ function Board() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const res = await axios.get('http://localhost:8080/pets/petslist');
+      const res = await axios.get("http://localhost:8080/pets/petslist");
       // const res = await axios.get("https://missinganimals.ml/pets/petslist");
       if (res.status === 200) {
         console.log(res.status, res.statusText);
@@ -36,7 +36,9 @@ function Board() {
   }, []);
 
   const searchPets = async (keyword) => {
-    const res = await axios.post('http://localhost:8080/pets/search', { search: keyword });
+    const res = await axios.post("http://localhost:8080/pets/search", {
+      search: keyword,
+    });
     // const res = await axios.post("https://missinganimals.ml/pets/search", {
     //   search: keyword,
     // });
@@ -61,13 +63,13 @@ function Board() {
     _petsList = state.search.petsList;
   }
   return (
-    <>
+    <div className="totaltotal">
       <div className="boardMainMenu">
         <MainMenu></MainMenu>
       </div>
       <div className="board">
         <SearchBar searchPets={searchPets}></SearchBar>
-        <div className="boardTitle">반려동물 게시판</div>
+        <div className="boardTitle">등록된 반려동물 목록</div>
         <div className="petCards">
           {_petsList.map((pet) => (
             <PetCard
@@ -90,9 +92,8 @@ function Board() {
           ))}
         </div>
       </div>
-    </>
+    </div>
   );
 }
 
 export default Board;
-

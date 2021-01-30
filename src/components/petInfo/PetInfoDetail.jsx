@@ -44,10 +44,10 @@ function PetInfoDetail({
       description={description}
       species={species}
       sex={sex}
-      missingDate={missingDate}
+      missingDate={missingDate.split("T")[0]}
       area={area}
       reward={reward}
-      createdAt={createdAt}
+      createdAt={createdAt.split("T")[0]}
       petsImages={petsImages}
       handleToModifyPetInfo={handleToModifyPetInfo}
     ></PetInfoUpdate>
@@ -58,7 +58,7 @@ function PetInfoDetail({
         {petsImages.map((image, idx) => (
           <img
             key={idx + 1}
-            className="petsImage"
+            className="petInfoImage"
             src={image.imagePath}
             alt={"petImage" + (idx + 1)}
           ></img>
@@ -68,11 +68,11 @@ function PetInfoDetail({
       <p>Pet Name : {petname}</p>
       <p>Species : {species}</p>
       <p>Sex : {sex}</p>
-      <p>Missing Date : {missingDate}</p>
+      <p>Missing Date : {missingDate.split("T")[0]}</p>
       <p>Missing Area : {area}</p>
       <p>Descrioption : {description}</p>
       <p>Reward : {reward}</p>
-      <p>Created At : {createdAt}</p>
+      <p>Created At : {createdAt.split("T")[0]}</p>
       <div className="fixedButton">
         <span
           className="modifyPetInfoButton"

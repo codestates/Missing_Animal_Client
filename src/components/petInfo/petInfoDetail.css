@@ -5,12 +5,20 @@
   display: inline-block;
   background-color: #f4f4f4f4;
   box-shadow: 1px 2px 1px 0 rgb(0 0 0 / 5%), 0 1px 1px 0 rgb(0 0 0 / 8%),
-  0 3px 8px 0 rgb(0 0 0 / 8%);
+    0 3px 8px 0 rgb(0 0 0 / 8%);
   box-sizing: border-box;
-  font-size : 1rem;
-
+  font-size: 1rem;
 }
- 
+
+.petInfoDetail:hover {
+  border: 5px solid #ffef44;
+}
+
+.petInfoImage {
+  width: 108px;
+  height: 100px;
+}
+
 .petInfoDetailTitle {
   font-size: 1.5rem;
 }

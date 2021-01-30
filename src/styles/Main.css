@@ -8,18 +8,20 @@
   /* background-color: #dbd8c74d; */
   /* background: url("../image/test.gif") no-repeat 0 0;
   background-size: 100% 100%; */
+  width: 100vw;
+  height: 100vh;
 }
 
 .main {
-  padding: 10rem 0 0 3.5rem;
+  padding: 10rem 0 0 3rem;
   width: 50vw;
   height: 80vh;
   /* margin-bottom: 5rem; */
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .main img {
-  margin-top: 4rem;
+  margin-top: 6rem;
   max-width: 100%;
   height: auto;
   display: block;
@@ -27,7 +29,7 @@
 
 .shadow {
   /* position: absolute; */
-  margin: 9.8rem 10rem 0 10rem;
+  margin: 9.5rem 10rem 0 9rem;
   padding: 0.7rem 13rem 0.7rem 13rem;
   background-color: rgb(206, 206, 206);
   color: rgb(206, 206, 206);
@@ -66,7 +68,7 @@
 }
 
 .intro {
-  font-size: 23px;
+  font-size: 1.5vw;
   margin-top: 10rem;
   margin-bottom: 2rem;
 }
@@ -76,7 +78,7 @@
   border-right-width: 0px;
   border-top-width: 0px; */
   font-weight: bolder;
-  font-size: 26px;
+  font-size: 1.5vw;
 
   line-height: 26px;
   word-break: keep-all;
@@ -109,7 +111,7 @@
   border-radius: 10px;
   text-align: center;
   cursor: pointer;
-  font-size: 20px;
+  font-size: 1.3vw;
   padding: 25px 20px 25px 25px;
   transition: all 0.5s;
   margin: 15px;
