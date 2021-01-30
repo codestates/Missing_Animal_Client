@@ -1,12 +1,14 @@
 body {
     /* background: url("../../image/background2.jpg"); App.css에서 적용하는 것이 보기엔 더 나음 */
-}
+} 
 
 .board {
     /* border: solid; 랜딩페이지에 적용되므로 적용하지 말것! */
-    width: 70%;
+    width: 80%;
     text-align: center;
     margin: auto;
+    display: block;
+    /* margin-top: 60px; */
 }
 
 .boardTitle {
@@ -15,10 +17,23 @@ body {
     font-size: 1.8rem;
     margin-top: 2rem;
     margin-bottom: 2rem;
-
 }
 
 .petCards {
     display: flex;
     flex-wrap: wrap;
+    text-align : center;
+
+}
+
+.boardMainMenu {
+    /* width: 100%;
+    height: 200px;
+    background-color : #ffd331;
+    position:fixed;
+    top : 0;
+    left : 0;
+    right : 0;
+    bottom : 0;
+    z-index : 10000; */
 }

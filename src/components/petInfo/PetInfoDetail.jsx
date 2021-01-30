@@ -27,8 +27,8 @@ function PetInfoDetail({
 
   const deletePetInfo = async () => {
     const res = await axios.delete(
-      // `http://localhost:8080/pets/remove/${id}`,
-      `https://missinganimals.ml/pets/remove/${id}`,
+      `http://localhost:8080/pets/remove/${id}`,
+      // `https://missinganimals.ml/pets/remove/${id}`,
       {
         withCredentials: true,
       }
@@ -73,28 +73,30 @@ function PetInfoDetail({
       <p>Descrioption : {description}</p>
       <p>Reward : {reward}</p>
       <p>Created At : {createdAt}</p>
-      <span
-        className="modifyPetInfoButton"
-        onClick={(event) => {
-          event.preventDefault();
-          setState((prevState) => ({
-            ...prevState,
-            toModifyPetInfo: !prevState.toModifyPetInfo,
-          }));
-        }}
-      >
-        수정
-      </span>
-      <span
-        className="deletePetInfoButton"
-        onClick={(event) => {
-          event.preventDefault();
-          deletePetInfo();
-          handleToDeletePetInfo(id);
-        }}
-      >
-        삭제
-      </span>
+      <div className="fixedButton">
+        <span
+          className="modifyPetInfoButton"
+          onClick={(event) => {
+            event.preventDefault();
+            setState((prevState) => ({
+              ...prevState,
+              toModifyPetInfo: !prevState.toModifyPetInfo,
+            }));
+          }}
+        >
+          수정
+        </span>
+        <span
+          className="deletePetInfoButton"
+          onClick={(event) => {
+            event.preventDefault();
+            deletePetInfo();
+            handleToDeletePetInfo(id);
+          }}
+        >
+          삭제
+        </span>
+      </div>
       {/* </div> */}
     </div>
   );

@@ -6,14 +6,36 @@
   /* padding-right: 50px; */
   overflow: hidden;
   /* background-color: #dbd8c74d; */
-  background: url("../image/test.gif") no-repeat 0 0;
-  background-size: 100% 100%;
+  /* background: url("../image/test.gif") no-repeat 0 0;
+  background-size: 100% 100%; */
 }
 
 .main {
-  padding-top: 100px;
+  padding: 10rem 0 0 3.5rem;
   width: 50vw;
-  height: 88.3vh;
+  height: 80vh;
+  /* margin-bottom: 5rem; */
+  overflow: hidden;
+}
+
+.main img {
+  margin-top: 4rem;
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.shadow {
+  /* position: absolute; */
+  margin: 9.8rem 10rem 0 10rem;
+  padding: 0.7rem 13rem 0.7rem 13rem;
+  background-color: rgb(206, 206, 206);
+  color: rgb(206, 206, 206);
+  border-radius: 50%;
+
+  /* max-width: 100%; */
+  height: auto;
+  display: block;
 }
 
 .pageList {

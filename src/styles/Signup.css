@@ -1,35 +1,47 @@
 #wrap__signup {
-  position: fixed;
+  /* position: fixed;
   max-width: 50%;
   height: 40%;
   margin: auto;
   top: 0px;
-  bottom: 450px;
+  bottom: 420px;
+  left: 0px;
+  right: 0px; */
+  /* display: flex; */
+  position: fixed;
+  width: 30%;
+  height: 75%;
+  margin: auto;
+  top: 50px;
+  bottom: 0px;
   left: 0px;
   right: 0px;
 }
 
 .registerName {
   background-color: #f9f9f9;
-  border-radius: 5px;
+  /* border-radius: 5px; */
   padding: 40px;
+  box-shadow: 0 2px 5px 0 rgb(96 96 96 / 16%),
+    2px 10px 23px 0 rgb(96 96 96 / 13%);
 }
 
 .inputEmail,
 .inputPassword,
 .inputUsername,
 .inputMobile {
-  width: 95%;
+  width: 100%;
   padding: 12px;
   border: 1px solid #ccc;
   border-radius: 4px;
   resize: vertical;
 }
 
-input[type="submit"] {
+.user_submit {
   background-color: #000;
   color: white;
   margin-top: 15px;
+  /* margin-right: 35px; */
   padding: 12px 20px;
   border: none;
   border-radius: 4px;
@@ -37,7 +49,7 @@ input[type="submit"] {
   float: right;
 }
 
-input[type="submit"]:hover {
+.user_submit:hover {
   background-color: #0076b6;
 }
 
@@ -67,7 +79,7 @@ label {
 @media screen and (max-width: 600px) {
   .col-25,
   .col-75,
-  input[type="submit"] {
+  .user_submit {
     width: 100%;
     margin-top: 0;
   }
@@ -88,8 +100,15 @@ label {
   text-align: center;
 }
 
+.signupLogo_head {
+  width: 180px;
+  height: 90px;
+  margin-top: -39px;
+  margin-left: 71px;
+}
+
 .signupLogo {
-  width: 20%;
+  width: 30%;
   text-align: center;
   margin-bottom: 30px;
 }
@@ -130,6 +149,7 @@ label {
 .inputUsername:focus,
 .inputMobile:focus {
   /* outline: 3px solid #ffd22e; */
-  outline: 2px solid #000000;
+  outline: 1px solid #000000;
+  box-shadow: 0 0 0 1.8pt #000000;
   /* background-color: lightblue; */
 }

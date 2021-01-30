@@ -2,14 +2,11 @@
   width: 94%;
   height: 85%;  
   margin: 0% 3% 3% 3%;
+
 }
 
 .main_map_nav {
   height: 10%;
   display: flex;
   justify-content: center;
-}
-.go_main_menu {
-  margin: 0 0 -20px 17px;
-  font-size: 0.7rem;
 }

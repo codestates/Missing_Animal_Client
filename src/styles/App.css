@@ -4,15 +4,11 @@
 
 * {
   font-family: "Noto Sans KR", sans-serif;
-  /* box-sizing: border-box; */
+  box-sizing: border-box;
 }
 
-/* body {
-  margin: 0px 0px
-} */
-
 body {
-  margin: 0px 0px
+  margin: 0px 0px;
 }
 
 .app {
@@ -24,21 +20,10 @@ body {
   background-size: cover;
   background-position: center center;
   z-index: 1;
-}
-
-.app::after {
-  position: absolute;
-  width: 100%;
-  height: 100vh;
-  background: url("../image/background2.jpg");
-  /* background: url("../image/test.jpg"); */
+  background: url("../image/newBackground.jpg");
   opacity: 100%;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
   background-position: center center;
-  content: "";
-  top: 0;
-  left: 0;
-  z-index: -10;
 }

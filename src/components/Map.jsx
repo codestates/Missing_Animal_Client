@@ -18,6 +18,7 @@ class Map extends React.Component {
     const res = await axios.get(
       "http://localhost:8080/mapinfo",
       // "https://missinganimals.ml/mapinfo",
+
       { withCredentials: true }
     );
     const { markers } = this.state;
@@ -35,19 +36,15 @@ class Map extends React.Component {
       markers.push(marker);
       // console.log("markers", markers);
       this.setState({ marker: marker });
-
-
       var main = document.createElement('div')
       main.style.cssText =
         'background: #333641; font-size: 13px; color: #9B9CA0; font-weight: 300; margin-bottom: -180px; width: 260px; height: 288px;'
-
       var title = document.createElement('div');
       title.innerHTML = '동물 정보&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;X'
       title.style.cssText = 'background:#333641; color: white; border: 1px; solid black; margin-left: 9px; margin-top: 5px; border: 1px solid black;'
       title.onclick = function () {
         overlay.setMap(null);
       };
-
       var petImg = document.createElement('img')
       petImg.src = el.thumbnail;
       petImg.style.cssText = 'position: absolute; background: #26282F; width: 14.6rem; height: 7.7rem; margin-top: -150px;margin-left: 4px;'
@@ -68,6 +65,7 @@ class Map extends React.Component {
       reward.innerHTML = '사례금: ' + el.reward + '원'
       reward.style.cssText = 'background: #26282F; margin: 5px 9px 0 9px; display: flex'
 
+
       var move = document.createElement('a')
       move.innerHTML = '게시판으로'
       move.href = 'https://missinganimal.ml/board'
@@ -76,8 +74,6 @@ class Map extends React.Component {
       // var closeBtn = document.createElement('button');
       // closeBtn.innerHTML = '닫기';
       // closeBtn.style.cssText = 'width: 40px; height: 20px; margin-left:153px; display: flex'
-
-
       main.appendChild(title)
       // main.appendChild(closeBtn);
       petname.appendChild(petImg)
@@ -87,8 +83,6 @@ class Map extends React.Component {
       main.appendChild(reward)
       main.appendChild(move)
       overlay.setContent(main);
-
-
       kakao.maps.event.addListener(marker, 'click', function () {
         overlay.setMap(map);
       });
@@ -110,8 +104,8 @@ class Map extends React.Component {
       // disableClickZoom: true,
       minClusterSize: 1,
     });
-    $.get("http://localhost:8080/mapinfo", function (data) {
-      // $.get("https://missinganimals.ml/mapinfo", function (data) {
+    // $.get("http://localhost:8080/mapinfo", function (data) {
+    $.get("https://missinganimals.ml/mapinfo", function (data) {
       // 데이터에서 좌표 값을 가지고 마커를 표시합니다
       // 마커 클러스터러로 관리할 마커 객체는 생성할 때 지도 객체를 설정하지 않습니다
       let markers = $(data.mapinfo).map(function (i, position) {
