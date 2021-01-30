@@ -46,22 +46,29 @@ class Map extends React.Component {
       var petImg = document.createElement('img')
       petImg.src = el.thumbnail;
       petImg.style.cssText = 'position: absolute; background: #26282F; width: 14.6rem; height: 7.7rem; margin-top: -150px;margin-left: 4px;'
+
       var petname = document.createElement('div');
       petname.innerHTML = '이름: ' + el.petname;
       petname.style.cssText = 'background: #26282F; display: flex; margin: 160px 9px -48px 9px;'
+
       var missingDate = document.createElement('div');
       missingDate.innerHTML = '날짜: ' + el.missingDate.substring(0, 10);
       missingDate.style.cssText = 'background: #26282F; margin: 5px 9px 0 9px; display: flex';
+
       var species = document.createElement('div');
       species.innerHTML = '품종: ' + el.species;
       species.style.cssText = 'background: #26282F; margin: 28px 9px 0 9px; display: flex'
+
       var reward = document.createElement('div');
       reward.innerHTML = '사례금: ' + el.reward + '원'
       reward.style.cssText = 'background: #26282F; margin: 5px 9px 0 9px; display: flex'
+
+
       var move = document.createElement('a')
       move.innerHTML = '게시판으로'
       move.href = 'https://missinganimal.ml/board'
       move.style.cssText = 'background: #26282F; color: #9B9CA0; margin: 5px 9px 0 9px; display: flex';
+
       // var closeBtn = document.createElement('button');
       // closeBtn.innerHTML = '닫기';
       // closeBtn.style.cssText = 'width: 40px; height: 20px; margin-left:153px; display: flex'
