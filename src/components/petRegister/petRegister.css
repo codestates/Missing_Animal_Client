@@ -30,8 +30,9 @@
   display: flex;
   position: fixed;
   width: 80%;
-  height: 60%;
+  height: 64%;
   margin: auto;
+  margin-top: 9rem;
   top: 50px;
   bottom: 0px;
   left: 0px;
