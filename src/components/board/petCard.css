@@ -1,136 +1,131 @@
 /*** Pet Card ***/
-@media(min-width: 1285px) {
-    .petCard {
-        /* border: 5px solid #ffd331; */
-        display: inline-block;
-        /* border-radius: 10px; */
-        width: 33%;
-        margin: 1px;
-        padding-bottom: 20px;
-        background-color : #f4f4f4f4;
-        box-shadow : 1px 2px 1px 0 rgb(0 0 0 / 5%), 0 1px 1px 0 rgb(0 0 0 / 8%), 0 3px 8px 0 rgb(0 0 0 / 8%);
-
-    }
-} 
+@media (min-width: 1285px) {
+  .petCard {
+    /* border: 5px solid #ffd331; */
+    display: inline-block;
+    /* border-radius: 10px; */
+    width: 33%;
+    margin: 1px;
+    padding-bottom: 20px;
+    background-color: #f4f4f4f4;
+    box-shadow: 1px 2px 1px 0 rgb(0 0 0 / 5%), 0 1px 1px 0 rgb(0 0 0 / 8%),
+      0 3px 8px 0 rgb(0 0 0 / 8%);
+  }
+}
 
 @media (max-width: 1284px) {
-    .petCard {
-        /* border: 5px solid #ffd331; */
-        display: inline-block;
-        /* border-radius: 10px; */
-        width: 49%;
-        margin: 1px;
-        padding-bottom : 20px;
-        background-color : #f4f4f4f4;
-        box-shadow : 1px 2px 1px 0 rgb(0 0 0 / 5%), 0 1px 1px 0 rgb(0 0 0 / 8%), 0 3px 8px 0 rgb(0 0 0 / 8%);
-
-    }
+  .petCard {
+    /* border: 5px solid #ffd331; */
+    display: inline-block;
+    /* border-radius: 10px; */
+    width: 49%;
+    margin: 1px;
+    padding-bottom: 20px;
+    background-color: #f4f4f4f4;
+    box-shadow: 1px 2px 1px 0 rgb(0 0 0 / 5%), 0 1px 1px 0 rgb(0 0 0 / 8%),
+      0 3px 8px 0 rgb(0 0 0 / 8%);
+  }
 }
 
 @media (max-width: 856px) {
-    .petCard {
-        /* border: 5px solid #ffd331; */
-        display: inline-block;
-        /* border-radius: 10px; */
-        width: 100%;
-        margin: 1px;
-        padding-bottom : 20px;
-        background-color : #f4f4f4f4;
-        box-shadow : 1px 2px 1px 0 rgb(0 0 0 / 5%), 0 1px 1px 0 rgb(0 0 0 / 8%), 0 3px 8px 0 rgb(0 0 0 / 8%);
-
-    }
+  .petCard {
+    /* border: 5px solid #ffd331; */
+    display: inline-block;
+    /* border-radius: 10px; */
+    width: 100%;
+    margin: 1px;
+    padding-bottom: 20px;
+    background-color: #f4f4f4f4;
+    box-shadow: 1px 2px 1px 0 rgb(0 0 0 / 5%), 0 1px 1px 0 rgb(0 0 0 / 8%),
+      0 3px 8px 0 rgb(0 0 0 / 8%);
+  }
 }
 
 .petCard:hover {
-    border: 5px solid #ffef44;
+  border: 5px solid #ffef44;
 }
 
 .petThumbnail {
-    width: 300px;
-    height: 200px;
-    border-radius: 5px;
+  width: 300px;
+  height: 200px;
+  border-radius: 5px;
 }
 
-.thumbnailContainer{
-    width: 300px;
-    height: 200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: auto;
+.thumbnailContainer {
+  width: 300px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
 }
 
 /*** Pet Detail Open Button ***/
 .openButton {
-    font-size : 15px;
-    padding : 3px 6px 3px 6px;
-    background-color : #000;
-    color : #fff;
-    cursor : pointer;
-    border-radius : 5px;
-    margin-right : 5px;
+  font-size: 15px;
+  padding: 3px 6px 3px 6px;
+  background-color: #000;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 5px;
+  /* margin-right : 5px; */
 }
 
 .openButton:hover {
-    background-color : #ffd22e;
+  background-color: #ffd22e;
 }
 
 .openButton:hover:after {
-    opacity: 1;
-    right: 10px;
+  opacity: 1;
+  right: 10px;
 }
 
 /*** Pet Detail Close Button ***/
 .closeButton {
-    font-size : 15px;
-    padding : 3px 6px 3px 6px;
-    background-color : #000;
-    color : #fff;
-    cursor : pointer;
-    border-radius : 5px;
-    margin : auto;
+  font-size: 15px;
+  padding: 3px 6px 3px 6px;
+  background-color: #000;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: auto;
 }
 
 .closeButton:hover {
-    background-color : #ffd22e;
+  background-color: #ffd22e;
 }
 
 .closeButton:hover:after {
-    opacity : 1;
-    right : 10px;
+  opacity: 1;
+  right: 10px;
 }
-
 
 /*** Pet Detail Modal ***/
 .petDetailModal {
-    position : absolute;
-    top : 40 px;
-    left : 40 px;
-    right : 40 px;
-    bottom : 40 px;
-    background-color : whitesmoke;
-    text-align: center;
-    border-radius: 5px;
-    padding: 10px;
-    width : 70%;
-    height : 75%;
-    margin-top: 3%;
-
+  position: absolute;
+  top: 40 px;
+  left: 40 px;
+  right: 40 px;
+  bottom: 40 px;
+  background-color: whitesmoke;
+  text-align: center;
+  border-radius: 5px;
+  padding: 10px;
+  width: 70%;
+  height: 75%;
+  margin-top: 3%;
 }
 
 .petDetailOverlay {
-    position : fixed;
-    top : 0;
-    left : 0;
-    right : 0;
-    bottom : 0;
-    z-index : 10001;
-    background-color : rgba(0, 0, 0, 0.6);
-
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10001;
+  background-color: rgba(0, 0, 0, 0.6);
 }
 
 .modalPetName {
-    margin-top: 3%;
+  margin-top: 3%;
 }
-
-

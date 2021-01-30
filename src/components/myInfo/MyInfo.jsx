@@ -21,7 +21,9 @@ function MyInfo() {
     axios.defaults.headers.common["Authorization"] = "Bearer " + token;
 
     const fetchData = async () => {
-      const res = await axios.get('http://localhost:8080/users/myinfo', { withCredentials: true });
+      const res = await axios.get("http://localhost:8080/users/myinfo", {
+        withCredentials: true,
+      });
       // const res = await axios.get("https://missinganimals.ml/users/myinfo", {
       //   withCredentials: true,
       // });
@@ -79,7 +81,7 @@ function MyInfo() {
             <p>User Name : {username}</p>
             <p>Email : {email}</p>
             <p>Mobile : {mobile}</p>
-            <p>Created At : {createdAt}</p>
+            <p>Created At : {createdAt.split("T")[0]}</p>
             <div
               className="modifyMyInfoButton"
               onClick={() =>
