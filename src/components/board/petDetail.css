@@ -23,14 +23,54 @@
 
 }
 
-.petsImage {
-    width: 330px;
-    height: 280px;
-    border-radius: 10px;
-}
-
 .modalPetName {
     text-align : center;
     font-size: 1.5rem;
 
+}
+
+/*** Pet Images ***/
+@media(min-width: 1453px) {
+    .petsImage {
+        width: 330px;
+        height: 280px;
+        border-radius: 10px;
+        margin: 1px;
+    }
+}
+
+@media(max-width: 1452px) {
+    .petsImage {
+        width: 210px;
+        height: 140px;
+        border-radius: 10px;
+        margin: 1px;
+    }
+}
+
+@media(max-width: 938px) {
+    .petsImage {
+        width: 150px;
+        height: 100px;
+        border-radius: 10px;
+        margin: 1px;
+    }
+}
+
+@media(max-width: 680px) {
+    .petsImage {
+        width: 120px;
+        height: 80px;
+        border-radius: 10px;
+        margin: 1px;
+    }
+}
+
+@media(max-width: 551px) {
+    .petsImage {
+        width: 105px;
+        height: 70px;
+        border-radius: 10px;
+        margin: 1px;
+    }
 }

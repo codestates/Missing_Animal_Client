@@ -1,5 +1,5 @@
 /*** Pet Card ***/
-@media(min-width: 1285px) {
+@media (min-width: 1443px) {
     .petCard {
         /* border: 5px solid #ffd331; */
         display: inline-block;
@@ -9,11 +9,10 @@
         padding-bottom: 20px;
         background-color : #f4f4f4f4;
         box-shadow : 1px 2px 1px 0 rgb(0 0 0 / 5%), 0 1px 1px 0 rgb(0 0 0 / 8%), 0 3px 8px 0 rgb(0 0 0 / 8%);
-
     }
 } 
 
-@media (max-width: 1284px) {
+@media (max-width: 1442px) {
     .petCard {
         /* border: 5px solid #ffd331; */
         display: inline-block;
@@ -23,7 +22,6 @@
         padding-bottom : 20px;
         background-color : #f4f4f4f4;
         box-shadow : 1px 2px 1px 0 rgb(0 0 0 / 5%), 0 1px 1px 0 rgb(0 0 0 / 8%), 0 3px 8px 0 rgb(0 0 0 / 8%);
-
     }
 }
 
@@ -45,12 +43,6 @@
     border: 5px solid #ffef44;
 }
 
-.petThumbnail {
-    width: 300px;
-    height: 200px;
-    border-radius: 5px;
-}
-
 .thumbnailContainer{
     width: 300px;
     height: 200px;
@@ -58,6 +50,12 @@
     justify-content: center;
     align-items: center;
     margin: auto;
+}
+
+.petThumbnail {
+    width: 300px;
+    height: 200px;
+    border-radius: 5px;
 }
 
 /*** Pet Detail Open Button ***/
@@ -102,19 +100,55 @@
 
 
 /*** Pet Detail Modal ***/
-.petDetailModal {
-    position : absolute;
-    top : 40 px;
-    left : 40 px;
-    right : 40 px;
-    bottom : 40 px;
-    background-color : whitesmoke;
-    text-align: center;
-    border-radius: 5px;
-    padding: 10px;
-    width : 70%;
-    height : 75%;
-    margin-top: 3%;
+@media(min-width: 1453px) {
+    .petDetailModal {
+        position: absolute;
+        top: 40 px;
+        left: 40 px;
+        right: 40 px;
+        bottom: 40 px;
+        background-color: whitesmoke;
+        text-align: center;
+        border-radius: 5px;
+        padding: 10px;
+        margin-top: 3%;
+        width: 70%;
+        height: 75%;
+    }
+}
+
+@media(max-width: 1452px) {
+    .petDetailModal {
+        position: absolute;
+        top: 40 px;
+        left: 40 px;
+        right: 40 px;
+        bottom: 40 px;
+        background-color: whitesmoke;
+        text-align: center;
+        border-radius: 5px;
+        padding: 10px;
+        margin-top: 3%;
+        width: 70%;
+        height: 60%;
+    }
+}
+
+@media(max-width: 938px) {
+    .petDetailModal {
+        position: absolute;
+        top: 40 px;
+        left: 40 px;
+        right: 40 px;
+        bottom: 40 px;
+        background-color: whitesmoke;
+        text-align: center;
+        border-radius: 5px;
+        padding: 10px;
+        margin-top: 3%;
+        width: 70%;
+        height: 55%;
+    }
 
 }
 
