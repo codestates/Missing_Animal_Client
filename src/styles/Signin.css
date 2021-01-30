@@ -77,7 +77,8 @@
 .loginId:focus,
 .loginPw:focus {
   /* outline: 3px solid #ffd22e; */
-  outline: 3px solid #000000;
+  outline: 1px solid #000000;
+  box-shadow: 0 0 0 2pt #000000;
 }
 
 input::placeholder {

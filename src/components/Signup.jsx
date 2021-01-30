@@ -33,8 +33,8 @@ class Signup extends Component {
       email.includes(".")
     ) {
       axios
-        // .post("http://localhost:8080/auth/signup", this.state)
-        .post("https://missinganimals.ml/auth/signup", this.state)
+        .post("http://localhost:8080/auth/signup", this.state)
+        // .post("https://missinganimals.ml/auth/signup", this.state)
         .then((res) => {
           this.props.history.push("/");
         })
@@ -54,7 +54,9 @@ class Signup extends Component {
         <div className="registerName">
           {/* <form> */}
           <div className="logo_signup">
-            <img src={logo_signup} className="signupLogo" />
+            <a href="/">
+              <img src={logo_signup} className="signupLogo" />
+            </a>
           </div>
           <span className="registerText">회원정보를 입력해주세요</span>
           <div className="row">
@@ -102,8 +104,8 @@ class Signup extends Component {
             </div>
             <div className="col-75">
               <input
-                placeholder="휴대폰 번호(숫자)"
-                type="mobile"
+                placeholder="휴대폰 번호('-'제외)"
+                type="number"
                 className="inputMobile"
                 onChange={this.handleInputValue("mobile")}
               />
@@ -112,6 +114,7 @@ class Signup extends Component {
           <div className="row">
             <input
               type="submit"
+              className="user_submit"
               value="회원가입"
               onClick={() => this.clickBtn()}
             />
