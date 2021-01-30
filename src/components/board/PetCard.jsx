@@ -13,7 +13,7 @@ const petDetailStyles = {
         right: 'auto',
         bottom: 'auto',
         marginRight: '-50%',
-        transform: 'translate(-50%, -50%)'
+        transform: 'translate(-50%, -50%)',
     }
 };
 // Comments Modal
@@ -37,7 +37,7 @@ function PetCard({ title, petname, thumbnail, description, petsImages, species, 
         setDetailModalIsOpen(true);
     }
     function afterOpenDetailModal() {
-        subtitleDetailModal.style.color = '#8965E6';
+        subtitleDetailModal.style.color = '#000';
     }
     function closeDetailModal() {
         setDetailModalIsOpen(false);
@@ -68,13 +68,14 @@ function PetCard({ title, petname, thumbnail, description, petsImages, species, 
                 <button className="openButton" onClick={ openDetailModal }>상세 사항</button>
                 <Modal
                     className="petDetailModal"
+                    overlayClassName="petDetailOverlay"
                     isOpen={ detailModalIsOpen }
                     onAfterOpen={ afterOpenDetailModal }
                     onRequestClose={ closeDetailModal }
                     style={ petDetailStyles }
                     contentLabel="PetDetailModal"
                 >
-                    <h2 ref={ _subtitleDetail => (subtitleDetailModal = _subtitleDetail) }>{ petname }</h2>
+                    <h2 className="modalPetName" ref={ _subtitleDetail => (subtitleDetailModal = _subtitleDetail) }>{ petname }</h2>
                     <PetDetail
                         // title={title}
                         petname={petname}
