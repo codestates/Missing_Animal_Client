@@ -1,18 +1,17 @@
-body {
-  /* background: url("../../image/background2.jpg"); App.css에서 적용하는 것이 보기엔 더 나음 */
-}
-
 .totaltotal {
   background-color: #ffd22e;
-  z-index: 1;
+  z-index: 3;
   /* height: 100%; */
-  /* padding-bottom: 3rem; */
+  padding-bottom: 3rem;
   background-repeat: repeat;
+  /* background-repeat: inherit; */
+  min-height: 100vh;
 }
 
 .board {
   /* border: solid; 랜딩페이지에 적용되므로 적용하지 말것! */
   width: 80%;
+  /* min-height: 96vh; */
   text-align: center;
   margin: auto;
   display: block;
