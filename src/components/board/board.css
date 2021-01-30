@@ -1,24 +1,23 @@
-body {
-    /* background-image: url("../../image/background2.jpg"); */
-}
+/* body {
+    background-image: url("../../image/background2.jpg");
+} */
 
 .board {
-    /* border: solid; 랜딩페이지에 적용되므로 적용하지 말것! */
-    width: 70%;
-    text-align: center;
-    margin: auto;
+  /* border: solid; 랜딩페이지에 적용되므로 적용하지 말것! */
+  width: 70%;
+  text-align: center;
+  margin: auto;
 }
 
 .boardTitle {
-    /* border: solid; */
-    color: #000;
-    font-size: 1.8rem;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-
+  /* border: solid; */
+  color: #000;
+  font-size: 1.8rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 .petCards {
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 }

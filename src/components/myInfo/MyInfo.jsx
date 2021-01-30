@@ -80,7 +80,7 @@ function MyInfo() {
             <p>Email : {email}</p>
             <p>Mobile : {mobile}</p>
             <p>Created At : {createdAt}</p>
-            <span
+            <div
               className="modifyMyInfoButton"
               onClick={() =>
                 setState((prevState) => ({
@@ -89,15 +89,8 @@ function MyInfo() {
                 }))
               }
             >
-              Modify My Info
-            </span>
-            <br></br>
-            <Link to="/petpage">
-              {/* <span className="goToPetPage">
-                내가 등록한 반려동물 확인하기 : 현재 {petsList.length}개의 글
-                등록
-              </span> */}
-            </Link>
+              내 정보 수정
+            </div>
           </div>
         )}
       </div>

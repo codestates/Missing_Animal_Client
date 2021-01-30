@@ -17,7 +17,6 @@ function PetInfoUpdate({
   createdAt,
   petsImages,
 }) {
-
   axios.defaults.headers.post["Content-Type"] =
     "application/x-www-form-urlencoded";
 
@@ -58,7 +57,9 @@ function PetInfoUpdate({
     // formData.append('missingDate', newFormatDate);
     /* 사용자입력 실종 날짜 */
     formData.append("missingDate", missingDate);
-    const res = await axios.put(`http://localhost:8080/pets/edit`, formData, { withCredentials: true });
+    const res = await axios.put(`http://localhost:8080/pets/edit`, formData, {
+      withCredentials: true,
+    });
     // const res = await axios.put(
     //   `http://missinganimals.ml/pets/edit`,
     //   formData,
@@ -78,111 +79,127 @@ function PetInfoUpdate({
   };
 
   return (
-    <div className="myInfo">
-      <label>Title : </label>
-      <input
-        type="text"
-        placeholder="Title"
-        value={state.title}
-        onChange={(event) =>
-          setState((prevState) => ({
-            ...prevState,
-            title: event.target.value,
-          }))
-        }
-      ></input>
-      <br />
-      <label>Pet Name : </label>
-      <input
-        type="text"
-        placeholder="Pet Name"
-        value={state.petname}
-        onChange={(event) =>
-          setState((prevState) => ({
-            ...prevState,
-            petname: event.target.value,
-          }))
-        }
-      ></input>
-      <br />
-      <label>Description : </label>
-      <input
-        type="text"
-        placeholder="Description"
-        value={state.description}
-        onChange={(event) =>
-          setState((prevState) => ({
-            ...prevState,
-            description: event.target.value,
-          }))
-        }
-      ></input>
-      <br />
-      <label>Species : </label>
-      <input
-        type="text"
-        placeholder="Species"
-        value={state.species}
-        onChange={(event) =>
-          setState((prevState) => ({
-            ...prevState,
-            species: event.target.value,
-          }))
-        }
-      ></input>
-      <br />
-      <label>Sex : </label>
-      <input
-        type="text"
-        placeholder="Sex"
-        value={state.sex}
-        onChange={(event) =>
-          setState((prevState) => ({
-            ...prevState,
-            sex: event.target.value,
-          }))
-        }
-      ></input>
-      <br />
-      <label>Missing Date : </label>
-      <input
-        type="text"
-        placeholder="Missing Date"
-        value={state.missingDate}
-        onChange={(event) =>
-          setState((prevState) => ({
-            ...prevState,
-            missingDate: event.target.value,
-          }))
-        }
-      ></input>
-      <br />
-      <label>Missing Area : </label>
-      <input
-        type="text"
-        placeholder="Missing Area"
-        value={state.area}
-        onChange={(event) =>
-          setState((prevState) => ({
-            ...prevState,
-            area: event.target.value,
-          }))
-        }
-      ></input>
-      <br />
-      <label>Reward : </label>
-      <input
-        type="text"
-        placeholder="Reward"
-        value={state.reward}
-        onChange={(event) =>
-          setState((prevState) => ({
-            ...prevState,
-            reward: event.target.value,
-          }))
-        }
-      ></input>
-      <br />
+    <div className="modifiedmyInfo">
+      <div className="eachLine">
+        <label>Title : </label>
+        <input
+          className="eachInput"
+          type="text"
+          placeholder="Title"
+          value={state.title}
+          onChange={(event) =>
+            setState((prevState) => ({
+              ...prevState,
+              title: event.target.value,
+            }))
+          }
+        ></input>
+      </div>
+      <div className="eachLine">
+        <label>Pet Name : </label>
+        <input
+          className="eachInput"
+          type="text"
+          placeholder="Pet Name"
+          value={state.petname}
+          onChange={(event) =>
+            setState((prevState) => ({
+              ...prevState,
+              petname: event.target.value,
+            }))
+          }
+        ></input>
+      </div>
+      <div className="eachLine">
+        <label>Description : </label>
+        <input
+          className="eachInput"
+          type="text"
+          placeholder="Description"
+          value={state.description}
+          onChange={(event) =>
+            setState((prevState) => ({
+              ...prevState,
+              description: event.target.value,
+            }))
+          }
+        ></input>
+      </div>
+      <div className="eachLine">
+        <label>Species : </label>
+        <input
+          className="eachInput"
+          type="text"
+          placeholder="Species"
+          value={state.species}
+          onChange={(event) =>
+            setState((prevState) => ({
+              ...prevState,
+              species: event.target.value,
+            }))
+          }
+        ></input>
+      </div>
+      <div className="eachLine">
+        <label>Sex : </label>
+        <input
+          className="eachInput"
+          type="text"
+          placeholder="Sex"
+          value={state.sex}
+          onChange={(event) =>
+            setState((prevState) => ({
+              ...prevState,
+              sex: event.target.value,
+            }))
+          }
+        ></input>
+      </div>
+      <div className="eachLine">
+        <label>Missing Date : </label>
+        <input
+          className="eachInput"
+          type="text"
+          placeholder="Missing Date"
+          value={state.missingDate}
+          onChange={(event) =>
+            setState((prevState) => ({
+              ...prevState,
+              missingDate: event.target.value,
+            }))
+          }
+        ></input>
+      </div>
+      <div className="eachLine">
+        <label>Missing Area : </label>
+        <input
+          className="eachInput"
+          type="text"
+          placeholder="Missing Area"
+          value={state.area}
+          onChange={(event) =>
+            setState((prevState) => ({
+              ...prevState,
+              area: event.target.value,
+            }))
+          }
+        ></input>
+      </div>
+      <div className="eachLine">
+        <label>Reward : </label>
+        <input
+          className="eachInput"
+          type="text"
+          placeholder="Reward"
+          value={state.reward}
+          onChange={(event) =>
+            setState((prevState) => ({
+              ...prevState,
+              reward: event.target.value,
+            }))
+          }
+        ></input>
+      </div>
       <div className="petModifyImages">
         <input
           type="file"
@@ -194,9 +211,8 @@ function PetInfoUpdate({
             }))
           }
         ></input>
-        <br />
       </div>
-      <button
+      <div
         className="requestModifyPetInfoButton"
         onClick={(event) => {
           event.preventDefault();
@@ -204,7 +220,9 @@ function PetInfoUpdate({
           handleToModifyPetInfo(state.updatedPet);
           window.location.reload();
         }}
-      >Modify</button>
+      >
+        수정하기
+      </div>
     </div>
   );
 }
