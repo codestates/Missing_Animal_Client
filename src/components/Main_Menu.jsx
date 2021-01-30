@@ -35,44 +35,48 @@ class Main_Menu extends React.Component {
                   <div className="petpageBtn">펫페이지</div>
                 </Link>
               </span> */}
-              <span className="Btn">
-                <Link className="aTag" to="/board">
-                  <div className="text">목록으로 확인하기</div>
-                </Link>
-              </span>
-              <span className="Btn">
-                <Link className="aTag" to="/petregister">
-                  <div className="text">반려동물 등록하기</div>
-                </Link>
-              </span>
-              <span className="Btn">
-                <Link className="aTag" to="/mypage">
-                  <div className="text">마이페이지</div>
-                </Link>
-              </span>
-              <span className="Btn signout text">
-                <Signout />
-              </span>
+              <div className="nav_menu">
+                <div className="Btn">
+                  <Link className="aTag" to="/board">
+                    <div className="text">목록으로 확인하기</div>
+                  </Link>
+                </div>
+                <div className="Btn">
+                  <Link className="aTag" to="/petregister">
+                    <div className="text">반려동물 등록하기</div>
+                  </Link>
+                </div>
+                <div className="Btn">
+                  <Link className="aTag" to="/mypage">
+                    <div className="text">마이페이지</div>
+                  </Link>
+                </div>
+                <div className="Btn signout text">
+                  <Signout />
+                </div>
+              </div>
             </>
           ) : (
             <>
-              <span className="Btn">
-                <Link className="aTag" to="/board">
-                  <div className="text">목록으로 확인하기</div>
-                </Link>
-              </span>
-              <span className="Btn signin">
-                {/* <button onClick={this.openModal} className="signinBtn">
+              <div className="nav_menu">
+                <div className="Btn">
+                  <Link className="aTag" to="/board">
+                    <div className="text">목록으로 확인하기</div>
+                  </Link>
+                </div>
+                <div className="Btn signin">
+                  {/* <button onClick={this.openModal} className="signinBtn">
                 로그인
               </button> */}
-                <div onClick={this.openModal} className="text">
-                  로그인
+                  <div onClick={this.openModal} className="text">
+                    로그인
+                  </div>
+                  <Signin
+                    isOpen={this.state.isModalOpen}
+                    close={this.closeModal}
+                  />
                 </div>
-                <Signin
-                  isOpen={this.state.isModalOpen}
-                  close={this.closeModal}
-                />
-              </span>
+              </div>
             </>
           )}
         </div>

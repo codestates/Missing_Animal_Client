@@ -68,7 +68,7 @@
 }
 
 .intro {
-  font-size: 23px;
+  font-size: 1.5vw;
   margin-top: 10rem;
   margin-bottom: 2rem;
 }
@@ -78,7 +78,7 @@
   border-right-width: 0px;
   border-top-width: 0px; */
   font-weight: bolder;
-  font-size: 26px;
+  font-size: 1.5vw;
 
   line-height: 26px;
   word-break: keep-all;
@@ -111,7 +111,7 @@
   border-radius: 10px;
   text-align: center;
   cursor: pointer;
-  font-size: 20px;
+  font-size: 1.3vw;
   padding: 25px 20px 25px 25px;
   transition: all 0.5s;
   margin: 15px;

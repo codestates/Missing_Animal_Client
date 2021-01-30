@@ -28,7 +28,7 @@ class Main extends React.Component {
             </span>
             <p></p>
             <span className="highlight">
-              지도에 잃어버린 반려동물을 등록하고 <br></br> 더 많은 제보와,
+              지도에 잃어버린 반려동물을 등록하고 <br></br> 더 많은 제보와
               연락을 받으세요.
             </span>
           </div>
