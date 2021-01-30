@@ -1,19 +1,25 @@
+/*** Pet Card ***/
 @media(min-width: 1285px) {
     .petCard {
         border: 5px solid #ffd331;
         display: inline-block;
-        border-radius: 5px;
+        border-radius: 10px;
         width: 32%;
         margin: 1px;
+        background-color : rgba(255, 255, 255, 0.534);
+        padding-bottom: 20px;
     }
-}
+} 
 
 @media (max-width: 1284px) {
     .petCard {
         border: 5px solid #ffd331;
         display: inline-block;
-        border-radius: 5px;
+        border-radius: 10px;
         width: 48%;
+        margin: 1px;
+        background-color : rgba(255, 255, 255, 0.534);
+        padding-bottom : 20px;
     }
 }
 
@@ -21,65 +27,46 @@
     .petCard {
         border: 5px solid #ffd331;
         display: inline-block;
-        border-radius: 5px;
+        border-radius: 10px;
         width: 100%;
+        margin: 1px;
+        background-color : rgba(255, 255, 255, 0.534);
+        padding-bottom : 20px;
     }
 }
-
 
 .petCard:hover {
     border: 5px solid #ffef44;
 }
 
- 
 .petThumbnail {
-    width: 100%;
-    min-width: 50px;
-    max-width: 300px;
-    height: auto;
+    max-width: 240px;
+    min-height: 160px;
+    border-radius: 5px;
 }
 
-.modal {
-    display: inline-block;
+.thumbnailContainer{
+    width: 300px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
 }
 
 /*** Pet Detail Open Button ***/
 .openButton {
-    display: block;
-    border-radius: 5px;
-    background-color: #ffd331;
-    border: 1px;
-    text-decoration: none;
-    border: solid #000;
-    border-left-width: 0;
-    border-right-width: 0;
-    color: #000;
-    text-align: center;
-    font-weight: bolder;
-    font-size: 12px;
-    padding: 10px;
-    width: 7rem;
-    transition: all 0.5s;
-    cursor: pointer;
-    margin: 15px;
-    display: inline-block;
-    position: relative;
-    transition: 0.5s;
-}
-
-.openButton:after {
-    content: "»";
-    position: absolute;
-    opacity: 0;
-    top: 14px;
-    right: -20px;
-    transition: 0.5s;
+    font-size : 15px;
+    padding : 3px 6px 3px 6px;
+    background-color : #000;
+    color : #fff;
+    cursor : pointer;
+    border-radius : 5px;
+    margin-right : 5px;
 }
 
 .openButton:hover {
-    background-color: #ffef44;
-    padding-right: 24px;
-    padding-left: 8px;
+    background-color : #ffd22e;
 }
 
 .openButton:hover:after {
@@ -87,16 +74,50 @@
     right: 10px;
 }
 
-.openButton:visited,
-.openButton:active {
-    color: #000;
-    text-decoration: none;
+/*** Pet Detail Close Button ***/
+.closeButton {
+    font-size : 15px;
+    padding : 3px 6px 3px 6px;
+    background-color : #000;
+    color : #fff;
+    cursor : pointer;
+    border-radius : 5px;
+    margin : auto;
 }
 
-/*** Pet Detail Close Button ***/
+.closeButton:hover {
+    background-color : #ffd22e;
+}
 
-.closeButton {
-    display: block;
+.closeButton:hover:after {
+    opacity : 1;
+    right : 10px;
+}
+
+
+/*** Pet Detail Modal ***/
+.petDetailModal {
+    position : absolute;
+    top : 40 px;
+    left : 40 px;
+    right : 40 px;
+    bottom : 40 px;
+    background-color : whitesmoke;
+    text-align: center;
+    border-radius: 5px;
+    padding: 10px;
+    width : 350 px;
+    height : auto;
+
+}
+
+.petDetailOverlay {
+    position : fixed;
+    top : 0;
+    left : 0;
+    right : 0;
+    bottom : 0;
+    z-index : 10001;
 }
 
 
