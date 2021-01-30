@@ -12,7 +12,10 @@ class Main extends React.Component {
   render() {
     return (
       <div className="flex">
-        <div className="main"></div>
+        <div className="main">
+          <img src="/images/test6.gif" />
+          <span className="shadow">hi</span>
+        </div>
         <div className="pageList">
           <div className="intro">
             <div>사랑하는 반려동물을 잃어버렸는데,</div>
