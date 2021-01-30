@@ -89,9 +89,11 @@ function PetInfoDetail({
         <span
           className="deletePetInfoButton"
           onClick={(event) => {
-            event.preventDefault();
-            deletePetInfo();
-            handleToDeletePetInfo(id);
+            if(window.confirm('등록된 펫 정보를 지우시겠습니까?')) {
+              event.preventDefault();
+              deletePetInfo();
+              handleToDeletePetInfo(id);
+            }
           }}
         >
           삭제
