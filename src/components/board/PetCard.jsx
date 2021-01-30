@@ -57,12 +57,12 @@ function PetCard({ title, petname, thumbnail, description, petsImages, species, 
 
     return (
         <div className="petCard">
-            <p>제목 : { title }</p>
+            <p>{ title }</p>
             <div className="thumbnailContainer">
                 <img className="petThumbnail" src={ thumbnail } alt="petThumbnail"></img>
             </div>
-            <p>이름 : { petname }</p>
-            <p>특이 사항 : { description }</p>
+                <p>이름 : { petname }</p>
+                <p>특이 사항 : { description }</p>
             {/* Pet Detail Modal */}
             <div>
                 <button className="openButton" onClick={ openDetailModal }>상세 사항</button>

@@ -21,10 +21,10 @@ function MyInfo() {
     axios.defaults.headers.common["Authorization"] = "Bearer " + token;
 
     const fetchData = async () => {
-      // const res = await axios.get('http://localhost:8080/users/myinfo', { withCredentials: true });
-      const res = await axios.get("https://missinganimals.ml/users/myinfo", {
-        withCredentials: true,
-      });
+      const res = await axios.get('http://localhost:8080/users/myinfo', { withCredentials: true });
+      // const res = await axios.get("https://missinganimals.ml/users/myinfo", {
+      //   withCredentials: true,
+      // });
       if (res.status === 200) {
         console.log(res.status, res.statusText);
         setState((prevState) => ({

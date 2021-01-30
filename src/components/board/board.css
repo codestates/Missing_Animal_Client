@@ -4,11 +4,11 @@ body {
 
 .board {
     /* border: solid; 랜딩페이지에 적용되므로 적용하지 말것! */
-    width: 70%;
+    width: 80%;
     text-align: center;
     margin: auto;
     display: block;
-    margin-top: 60px;
+    /* margin-top: 60px; */
 }
 
 .boardTitle {
@@ -22,10 +22,12 @@ body {
 .petCards {
     display: flex;
     flex-wrap: wrap;
+    text-align : center;
+
 }
 
 .boardMainMenu {
-    width: 100%;
+    /* width: 100%;
     height: 200px;
     background-color : #ffd331;
     position:fixed;
@@ -33,5 +35,5 @@ body {
     left : 0;
     right : 0;
     bottom : 0;
-    z-index : 10000;
+    z-index : 10000; */
 }

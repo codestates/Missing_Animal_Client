@@ -1,7 +1,7 @@
 .searchbar {
     /* border: solid; */
     padding-top: 150px;
-    padding-botton : 30px;
+    padding-bottom : 30px;
     text-align: center;
     display: block;
 }
@@ -9,7 +9,7 @@
 /*** Search Button ***/
 .searchButton {
     display : block;
-    border-radius: 5px;
+    /* border-radius: 5px; */
     background-color: #ffd331;
     border: 1px;
     display: block;
@@ -33,7 +33,6 @@
 
 .searchButton:after {
     /* content: "»"; */
-
     position: absolute;
     opacity: 0;
     top: 14px;
@@ -60,11 +59,15 @@
     width: 20%;
     height: 2rem;
     font-size: 1rem;
-    border-radius: 5px;
+    /* border-radius: 5px; */
+    background-color : #ffd22e;
+
 }
 
 .searchInput:focus {
     border: none;
-    border-bottom: solid #ffd22e;
+    border-bottom: solid #000;
     outline: none;
+    background-color : rgba(255, 255, 255, 0.777);
+
 }

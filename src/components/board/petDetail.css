@@ -1,6 +1,7 @@
 .petDetail {
     /* border: solid; */
     /* text-align: center; */
+
 }
  
 .petDetailTitle {
@@ -14,19 +15,22 @@
 }
 
 .petDetailBody {
-    border: solid;
+    /* border: solid; */
     border-radius: 5px;
-    text-align: left;
+    text-align: center;
     padding: 23px;
+    font-size: 1rem;
+
 }
 
 .petsImage {
-    max-width: 100px;
-    height: auto;
+    width: 330px;
+    height: 280px;
     border-radius: 10px;
 }
 
 .modalPetName {
     text-align : center;
+    font-size: 1.5rem;
 
 }
