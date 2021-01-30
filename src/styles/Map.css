@@ -1,5 +1,12 @@
 #main_map {
-  width: 120rem;
-  height: 100rem;
+  width: 94%;
+  height: 85%;  
+  margin: 0% 3% 3% 3%;
+
 }
 
+.main_map_nav {
+  height: 10%;
+  display: flex;
+  justify-content: center;
+}
