@@ -1,26 +1,32 @@
 .petDetail {
-    border: solid;
-    text-align: center;
-    display: inline-block;
+    /* border: solid; */
+    /* text-align: center; */
 }
  
 .petDetailTitle {
-    border: solid;
-    color: palegreen;
+    /* border: solid; */
+    text-align : center;
+
 }
 
 .petDetailHeader {
-    border: solid;
-    color: powderblue;
+    /* border: solid; */
 }
 
 .petDetailBody {
     border: solid;
-    color: palevioletred;
+    border-radius: 5px;
     text-align: left;
+    padding: 23px;
 }
 
 .petsImage {
     max-width: 100px;
     height: auto;
+    border-radius: 10px;
+}
+
+.modalPetName {
+    text-align : center;
+
 }

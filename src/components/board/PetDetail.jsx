@@ -15,7 +15,7 @@ function PetDetail({ title, petname, thumbnail, description, petsImages, species
             <div className="petDetailBody">
                 <p>종      : {species}</p>
                 <p>성별     : {sex}</p>
-                <p>실종 날짜 : {missingDate}</p>
+                <p>실종 날짜 : {missingDate.split('T')[0]}</p>
                 <p>실종 지역 : {area}</p>
                 <p>특이 사항 : {description}</p>
                 <p>보상사례금 : {reward}</p>
