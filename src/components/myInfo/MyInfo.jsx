@@ -78,10 +78,10 @@ function MyInfo() {
           ></MyInfoUpdate>
         ) : (
           <div className="myInfoBody">
-            <p>User Name : {username}</p>
-            <p>Email : {email}</p>
-            <p>Mobile : {mobile}</p>
-            <p>Created At : {createdAt.split("T")[0]}</p>
+            <p>닉네임 : {username}</p>
+            <p>이메일 : {email}</p>
+            <p>연락처 : {mobile}</p>
+            <p>계정 생성일 : {createdAt.split("T")[0]}</p>
             <div
               className="modifyMyInfoButton"
               onClick={() =>

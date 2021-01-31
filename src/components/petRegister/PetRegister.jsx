@@ -740,7 +740,7 @@ class PetRegister extends React.Component {
 
             <div className="row">
               <div className="col-25">
-                <label for="area">위치</label>
+                <label for="area">실종 지역</label>
               </div>
               <div className="col-75">
                 <input
@@ -755,7 +755,7 @@ class PetRegister extends React.Component {
 
             <div className="row">
               <div className="col-25">
-                <label for="date">날짜</label>
+                <label for="date">실종 날짜</label>
               </div>
               <div className="col-75">
                 <input
@@ -773,7 +773,7 @@ class PetRegister extends React.Component {
 
             <div className="row">
               <div className="col-25">
-                <label for="reward">보상</label>
+                <label for="reward">보상사례금</label>
               </div>
               <div className="col-75">
                 <input
@@ -812,7 +812,7 @@ class PetRegister extends React.Component {
 
             <div className="row">
               <div className="col-25">
-                <label for="description">상세설명</label>
+                <label for="description">특이 사항</label>
               </div>
               <div className="col-75">
                 <textarea

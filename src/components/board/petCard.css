@@ -1,28 +1,30 @@
 /*** Pet Card ***/
 @media (min-width: 1443px) {
-    .petCard {
-        /* border: 5px solid #ffd331; */
-        display: inline-block;
-        /* border-radius: 10px; */
-        width: 33%;
-        margin: 1px;
-        padding-bottom: 20px;
-        background-color : #f4f4f4f4;
-        box-shadow : 1px 2px 1px 0 rgb(0 0 0 / 5%), 0 1px 1px 0 rgb(0 0 0 / 8%), 0 3px 8px 0 rgb(0 0 0 / 8%);
-    }
-} 
+  .petCard {
+    /* border: 5px solid #ffd331; */
+    display: inline-block;
+    /* border-radius: 10px; */
+    width: 33%;
+    margin: 1px;
+    padding-bottom: 20px;
+    background-color: #f4f4f4f4;
+    box-shadow: 1px 2px 1px 0 rgb(0 0 0 / 5%), 0 1px 1px 0 rgb(0 0 0 / 8%),
+      0 3px 8px 0 rgb(0 0 0 / 8%);
+  }
+}
 
 @media (max-width: 1442px) {
-    .petCard {
-        /* border: 5px solid #ffd331; */
-        display: inline-block;
-        /* border-radius: 10px; */
-        width: 49%;
-        margin: 1px;
-        padding-bottom : 20px;
-        background-color : #f4f4f4f4;
-        box-shadow : 1px 2px 1px 0 rgb(0 0 0 / 5%), 0 1px 1px 0 rgb(0 0 0 / 8%), 0 3px 8px 0 rgb(0 0 0 / 8%);
-    }
+  .petCard {
+    /* border: 5px solid #ffd331; */
+    display: inline-block;
+    /* border-radius: 10px; */
+    width: 49%;
+    margin: 1px;
+    padding-bottom: 20px;
+    background-color: #f4f4f4f4;
+    box-shadow: 1px 2px 1px 0 rgb(0 0 0 / 5%), 0 1px 1px 0 rgb(0 0 0 / 8%),
+      0 3px 8px 0 rgb(0 0 0 / 8%);
+  }
 }
 
 @media (max-width: 856px) {
@@ -43,19 +45,23 @@
   border: 5px solid #ffef44;
 }
 
-.thumbnailContainer{
-    width: 300px;
-    height: 200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: auto;
+.petCardTitle {
+  font-size: 1.5rem;
+}
+
+.thumbnailContainer {
+  width: 300px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
 }
 
 .petThumbnail {
-    width: 300px;
-    height: 200px;
-    border-radius: 5px;
+  width: 300px;
+  height: 200px;
+  border-radius: 5px;
 }
 
 /*** Pet Detail Open Button ***/
@@ -99,56 +105,59 @@
 }
 
 /*** Pet Detail Modal ***/
-@media(min-width: 1453px) {
-    .petDetailModal {
-        position: absolute;
-        top : 50%;
-        left : 50%;
-        right : auto;
-        bottom : auto;
-        background-color: whitesmoke;
-        text-align: center;
-        border-radius: 5px;
-        padding: 10px;
-        margin-top: 3%;
-        width: 70%;
-        height: 70%;
-    }
+/* @media (min-width: 1453px) { */
+@media (min-width: 1453px) {
+  .petDetailModal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    right: auto;
+    bottom: auto;
+    background-color: whitesmoke;
+    text-align: center;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 0;
+    width: 70%;
+    /* height: 70%; */
+    height: 90%;
+    line-height: 100%;
+  }
 }
 
-@media(max-width: 1452px) {
-    .petDetailModal {
-        position: absolute;
-        top : 45%;
-        left : 50%;
-        right : auto;
-        bottom : auto;
-        background-color: whitesmoke;
-        text-align: center;
-        border-radius: 5px;
-        padding: 10px;
-        margin-top: 3%;
-        width: 70%;
-        height: 95%;
-    }
+@media (max-width: 1452px) {
+  .petDetailModal {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    right: auto;
+    bottom: auto;
+    background-color: whitesmoke;
+    text-align: center;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 3%;
+    width: 70%;
+    height: 95%;
+  }
 }
 
-@media(max-width: 938px) {
-    .petDetailModal {
-        top : 45%;
-        left : 50%;
-        right : auto;
-        bottom : auto;
-        background-color: whitesmoke;
-        text-align: center;
-        border-radius: 5px;
-        padding: 10px;
-        margin-top: 3%;
-        width: 70%;
-        height: 85%;
-    }
+@media (max-width: 938px) {
+  .petDetailModal {
+    top: 45%;
+    left: 50%;
+    right: auto;
+    bottom: auto;
+    background-color: whitesmoke;
+    text-align: center;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 3%;
+    width: 70%;
+    height: 85%;
+  }
 }
- 
+
 .petDetailOverlay {
   position: fixed;
   top: 0;

@@ -14,14 +14,14 @@
 
 .main {
   padding: 10rem 0 0 3rem;
-  width: 50vw;
+  width: 55vw;
   height: 80vh;
   /* margin-bottom: 5rem; */
   /* overflow: hidden; */
 }
 
 .main img {
-  margin-top: 6rem;
+  margin-top: 3.5rem;
   max-width: 100%;
   height: auto;
   display: block;
@@ -42,7 +42,7 @@
 
 .pageList {
   padding-top: 20px;
-  width: 50vw;
+  width: 45vw;
   height: 88.3vh;
   display: flex;
   width: 20vw;
