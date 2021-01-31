@@ -8,6 +8,8 @@
   /* background-color: #dbd8c74d; */
   /* background: url("../image/test.gif") no-repeat 0 0;
   background-size: 100% 100%; */
+  background-image: url("../image/forMain.jpg");
+  background-size: cover;
   width: 100vw;
   height: 100vh;
 }
@@ -27,18 +29,16 @@
   display: block;
 }
 
-.shadow {
-  /* position: absolute; */
+/* .shadow {
   margin: 9.5rem 10rem 0 9rem;
   padding: 0.7rem 13rem 0.7rem 13rem;
   background-color: rgb(206, 206, 206);
   color: rgb(206, 206, 206);
   border-radius: 50%;
 
-  /* max-width: 100%; */
   height: auto;
   display: block;
-}
+} */
 
 .pageList {
   padding-top: 20px;
