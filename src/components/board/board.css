@@ -6,7 +6,7 @@
   background-repeat: repeat;
   /* background-repeat: inherit; */
   min-height: 100vh;
-}
+} 
 
 .board {
   /* border: solid; 랜딩페이지에 적용되므로 적용하지 말것! */

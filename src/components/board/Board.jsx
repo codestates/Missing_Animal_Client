@@ -4,7 +4,7 @@ import SearchBar from "../searchBar/SearchBar";
 import "./board.css";
 import axios from "axios";
 import MainMenu from "../Main_Menu";
-
+ 
 function Board() {
   const [state, setState] = useState({
     get: {
