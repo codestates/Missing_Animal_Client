@@ -14,7 +14,7 @@ class Main extends React.Component {
       <div className="flex">
         <div className="main">
           <img src="/images/test6.gif" />
-          <span className="shadow">hi</span>
+          {/* <span className="shadow">hi</span> */}
         </div>
         <div className="pageList">
           <div className="intro">
