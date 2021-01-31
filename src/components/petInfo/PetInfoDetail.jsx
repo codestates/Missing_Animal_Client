@@ -65,14 +65,14 @@ function PetInfoDetail({
         ))}
       </div>
       {/* <div className="petInfoDetailBody"> */}
-      <p>Pet Name : {petname}</p>
-      <p>Species : {species}</p>
-      <p>Sex : {sex}</p>
-      <p>Missing Date : {missingDate.split("T")[0]}</p>
-      <p>Missing Area : {area}</p>
-      <p>Descrioption : {description}</p>
-      <p>Reward : {reward}</p>
-      <p>Created At : {createdAt.split("T")[0]}</p>
+      <p>이름 : {petname}</p>
+      <p>품종 : {species}</p>
+      <p>성별 : {sex}</p>
+      <p>실종 날짜 : {missingDate.split("T")[0]}</p>
+      <p>실종 지역 : {area}</p>
+      <p>특이 사항 : {description}</p>
+      <p>보상사례금 : {reward}원</p>
+      <p>작성일 : {createdAt.split("T")[0]}</p>
       <div className="fixedButton">
         <span
           className="modifyPetInfoButton"
@@ -89,7 +89,7 @@ function PetInfoDetail({
         <span
           className="deletePetInfoButton"
           onClick={(event) => {
-            if(window.confirm('등록된 펫 정보를 지우시겠습니까?')) {
+            if (window.confirm("등록된 펫 정보를 지우시겠습니까?")) {
               event.preventDefault();
               deletePetInfo();
               handleToDeletePetInfo(id);

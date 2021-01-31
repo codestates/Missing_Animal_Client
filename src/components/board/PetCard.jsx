@@ -65,10 +65,10 @@ function PetCard({
   // function closeModal() {
   //     setIsOpen(false);
   // }
- 
+
   return (
     <div className="petCard">
-      <p>{title}</p>
+      <p className="petCardTitle">{title}</p>
       <div className="thumbnailContainer">
         <img className="petThumbnail" src={thumbnail} alt="petThumbnail"></img>
       </div>

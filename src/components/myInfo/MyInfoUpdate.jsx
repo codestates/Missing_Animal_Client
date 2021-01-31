@@ -40,7 +40,7 @@ function MyInfoUpdate({
   return (
     <div className="modifiedBody">
       <div className="each">
-        <label>User Name : </label>
+        <label>닉네임 : </label>
         <input
           className="modifiedInput"
           type="text"
@@ -55,7 +55,7 @@ function MyInfoUpdate({
         ></input>
       </div>
       <div className="each">
-        <label>Email : </label>
+        <label>이메일 : </label>
         <input
           className="modifiedInput"
           type="text"
@@ -70,7 +70,7 @@ function MyInfoUpdate({
         ></input>
       </div>
       <div className="each">
-        <label>Mobile : </label>
+        <label>연락처 : </label>
         <input
           className="modifiedInput"
           type="text"
@@ -85,7 +85,7 @@ function MyInfoUpdate({
         ></input>
       </div>
       <div className="each">
-        <label>Old Password : </label>
+        <label>기존 비밀번호 : </label>
         <input
           className="modifiedInput"
           type="password"
@@ -100,7 +100,7 @@ function MyInfoUpdate({
         ></input>
       </div>
       <div className="each">
-        <label> New Password : </label>
+        <label>새 비밀번호 : </label>
         <input
           className="modifiedInput"
           type="password"

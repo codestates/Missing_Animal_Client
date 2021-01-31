@@ -81,7 +81,7 @@ function PetInfoUpdate({
   return (
     <div className="modifiedmyInfo">
       <div className="eachLine">
-        <label>Title : </label>
+        <label>제목 : </label>
         <input
           className="eachInput"
           type="text"
@@ -96,7 +96,7 @@ function PetInfoUpdate({
         ></input>
       </div>
       <div className="eachLine">
-        <label>Pet Name : </label>
+        <label>이름 : </label>
         <input
           className="eachInput"
           type="text"
@@ -111,7 +111,7 @@ function PetInfoUpdate({
         ></input>
       </div>
       <div className="eachLine">
-        <label>Description : </label>
+        <label>특이 사항 : </label>
         <input
           className="eachInput"
           type="text"
@@ -126,7 +126,7 @@ function PetInfoUpdate({
         ></input>
       </div>
       <div className="eachLine">
-        <label>Species : </label>
+        <label>품종 : </label>
         <input
           className="eachInput"
           type="text"
@@ -141,7 +141,7 @@ function PetInfoUpdate({
         ></input>
       </div>
       <div className="eachLine">
-        <label>Sex : </label>
+        <label>성별 : </label>
         <input
           className="eachInput"
           type="text"
@@ -156,7 +156,7 @@ function PetInfoUpdate({
         ></input>
       </div>
       <div className="eachLine">
-        <label>Missing Date : </label>
+        <label>실종 날짜 : </label>
         <input
           className="eachInput"
           type="text"
@@ -171,7 +171,7 @@ function PetInfoUpdate({
         ></input>
       </div>
       <div className="eachLine">
-        <label>Missing Area : </label>
+        <label>실종 지역 : </label>
         <input
           className="eachInput"
           type="text"
@@ -186,7 +186,7 @@ function PetInfoUpdate({
         ></input>
       </div>
       <div className="eachLine">
-        <label>Reward : </label>
+        <label>보상사례금 : </label>
         <input
           className="eachInput"
           type="text"

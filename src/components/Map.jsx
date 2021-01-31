@@ -36,57 +36,64 @@ class Map extends React.Component {
       markers.push(marker);
       // console.log("markers", markers);
       this.setState({ marker: marker });
-      var main = document.createElement('div')
+      var main = document.createElement("div");
       main.style.cssText =
-        'background: #333641; font-size: 13px; color: #9B9CA0; font-weight: 300; margin-bottom: -180px; width: 260px; height: 288px;'
-      var title = document.createElement('div');
-      title.innerHTML = '동물 정보&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;X'
-      title.style.cssText = 'background:#333641; color: white; border: 1px; solid black; margin-left: 9px; margin-top: 5px; border: 1px solid black;'
+        "background: #333641; font-size: 13px; color: #9B9CA0; font-weight: 300; margin-bottom: -180px; width: 260px; height: 288px;";
+      var title = document.createElement("div");
+      title.innerHTML =
+        "동물 정보&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;X";
+      title.style.cssText =
+        "background:#333641; color: white; border: 1px; solid black; margin-left: 9px; margin-top: 5px; border: 1px solid black;";
       title.onclick = function () {
         overlay.setMap(null);
       };
-      var petImg = document.createElement('img')
+      var petImg = document.createElement("img");
       petImg.src = el.thumbnail;
-      petImg.style.cssText = 'position: absolute; background: #26282F; width: 14.6rem; height: 7.7rem; margin-top: -150px;margin-left: 4px;'
+      petImg.style.cssText =
+        "position: absolute; background: #26282F; width: 14.6rem; height: 7.7rem; margin-top: -150px;margin-left: 4px;";
 
-      var petname = document.createElement('div');
-      petname.innerHTML = '이름: ' + el.petname;
-      petname.style.cssText = 'background: #26282F; display: flex; margin: 160px 9px -48px 9px;'
+      var petname = document.createElement("div");
+      petname.innerHTML = "이름: " + el.petname;
+      petname.style.cssText =
+        "background: #26282F; display: flex; margin: 160px 9px -48px 9px;";
 
-      var missingDate = document.createElement('div');
-      missingDate.innerHTML = '날짜: ' + el.missingDate.substring(0, 10);
-      missingDate.style.cssText = 'background: #26282F; margin: 5px 9px 0 9px; display: flex';
+      var missingDate = document.createElement("div");
+      missingDate.innerHTML = "날짜: " + el.missingDate.substring(0, 10);
+      missingDate.style.cssText =
+        "background: #26282F; margin: 5px 9px 0 9px; display: flex";
 
-      var species = document.createElement('div');
-      species.innerHTML = '품종: ' + el.species;
-      species.style.cssText = 'background: #26282F; margin: 28px 9px 0 9px; display: flex'
+      var species = document.createElement("div");
+      species.innerHTML = "품종: " + el.species;
+      species.style.cssText =
+        "background: #26282F; margin: 28px 9px 0 9px; display: flex";
 
-      var reward = document.createElement('div');
-      reward.innerHTML = '사례금: ' + el.reward + '원'
-      reward.style.cssText = 'background: #26282F; margin: 5px 9px 0 9px; display: flex'
+      var reward = document.createElement("div");
+      reward.innerHTML = "사례금: " + el.reward + "원";
+      reward.style.cssText =
+        "background: #26282F; margin: 5px 9px 0 9px; display: flex";
 
-
-      var move = document.createElement('a')
-      move.innerHTML = '게시판으로'
-      move.href = 'https://missinganimal.ml/board'
-      move.style.cssText = 'background: #26282F; color: #9B9CA0; margin: 5px 9px 0 9px; display: flex';
+      var move = document.createElement("a");
+      move.innerHTML = "게시판으로";
+      move.href = "https://missinganimal.ml/board";
+      move.style.cssText =
+        "background: #26282F; color: #9B9CA0; margin: 5px 9px 0 9px; display: flex";
 
       // var closeBtn = document.createElement('button');
       // closeBtn.innerHTML = '닫기';
       // closeBtn.style.cssText = 'width: 40px; height: 20px; margin-left:153px; display: flex'
-      main.appendChild(title)
+      main.appendChild(title);
       // main.appendChild(closeBtn);
-      petname.appendChild(petImg)
-      main.appendChild(petname)
-      main.appendChild(missingDate)
-      main.appendChild(species)
-      main.appendChild(reward)
-      main.appendChild(move)
+      petname.appendChild(petImg);
+      main.appendChild(petname);
+      main.appendChild(missingDate);
+      main.appendChild(species);
+      main.appendChild(reward);
+      main.appendChild(move);
       overlay.setContent(main);
-      kakao.maps.event.addListener(marker, 'click', function () {
+      kakao.maps.event.addListener(marker, "click", function () {
         overlay.setMap(map);
       });
-    })
+    });
     // console.log("====", markers);
     this.setState({ markers: markers });
   };
@@ -151,16 +158,24 @@ class Map extends React.Component {
   render() {
     // console.log("marker", this.state.marker);
     return (
-      <>
+      <div className="mapBox">
         <div className="main_map_nav">
           <div className="logo">
             <Link to="/">
-              <img src="/images/FindersLogo.png" width="200px" height="90px" alt="img" />
+              <img
+                className="mapLogo"
+                src="/images/FindersLogo.png"
+                width="180px"
+                height="90px"
+                alt="img"
+              />
             </Link>
           </div>
+          <span className="mapTitle">사라진 반려동물들 :</span>
+          <span className="mapSubTitle">핀을 클릭해 정보를 확인하세요</span>
         </div>
         <div id="main_map"></div>
-      </>
+      </div>
     );
   }
 }
