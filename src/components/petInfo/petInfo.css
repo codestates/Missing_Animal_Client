@@ -65,3 +65,7 @@
 .click.active {
   background-size: 100% 15px;
 }
+
+.petInfoEmpty {
+  font-size: 1.3rem;
+}

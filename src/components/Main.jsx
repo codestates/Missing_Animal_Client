@@ -5,15 +5,11 @@ import { Link, withRouter } from "react-router-dom";
 // import Signin from "./Signin";
 
 class Main extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <div className="flex">
         <div className="main">
-          <img src="/images/test6.gif" />
+          <img src="/images/test6.gif" alt="gifimage" />
           {/* <span className="shadow">hi</span> */}
         </div>
         <div className="pageList">

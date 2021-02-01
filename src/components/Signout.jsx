@@ -20,6 +20,7 @@ class Signout extends Component {
         if (res.data.message === "signout") {
           window.localStorage.removeItem("isLogin");
           window.localStorage.removeItem("token");
+          window.localStorage.removeItem("check");
           // window.localStorage.removeItem("Login");
           this.props.history.push("/");
         }

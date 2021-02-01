@@ -212,3 +212,11 @@ a {
   text-decoration: none;
   cursor: pointer;
 }
+
+.anyMessage {
+  display: none;
+}
+
+.kakao:hover > .anyMessage {
+  display: inline;
+}

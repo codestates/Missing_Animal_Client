@@ -24,7 +24,12 @@ class Main_Menu extends React.Component {
       <div className="Main_Menu">
         <div className="logo">
           <Link to="/">
-            <img src="/images/FindersLogo.png" width="180px" height="90px" />
+            <img
+              src="/images/FindersLogo.png"
+              width="180px"
+              height="90px"
+              alt="teamLogo"
+            />
           </Link>
         </div>
         <div>
