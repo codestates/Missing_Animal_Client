@@ -305,8 +305,8 @@ class PetRegister extends React.Component {
                   }
                 >
                   <option value="">선택</option>
-                  <option value="female">암컷</option>
-                  <option value="male">수컷</option>
+                  <option value="암컷">암컷</option>
+                  <option value="수컷">수컷</option>
                 </select>
               </div>
             </div>
