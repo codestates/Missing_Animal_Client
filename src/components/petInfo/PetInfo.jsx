@@ -3,7 +3,7 @@ import "./petInfo.css";
 import axios from "axios";
 import PetInfoDetail from "./PetInfoDetail";
 import Main_Menu from "../Main_Menu";
-import { Link, withRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function PetInfo() {
   const [state, setState] = useState({
@@ -17,7 +17,9 @@ function PetInfo() {
   useEffect(() => {
     const fetchData = async () => {
       // const res = await axios.get("http://localhost:8080/users/myinfo", { withCredentials: true });
-      const res = await axios.get('https://missinganimals.ml/users/myinfo', { withCredentials: true });
+      const res = await axios.get("https://missinganimals.ml/users/myinfo", {
+        withCredentials: true,
+      });
       if (res.status === 200) {
         console.log(res.status, res.statusText);
         setState((prevState) => ({
@@ -31,6 +33,26 @@ function PetInfo() {
     };
     fetchData();
   }, []);
+
+  if (state.petsList.length === 0) {
+    return (
+      <div className="box">
+        <Main_Menu></Main_Menu>
+        <div className="menuBar">
+          <Link className="barButton" to="/mypage">
+            <span className="barButtonText">내 정보</span>
+          </Link>
+          <p></p>
+          <Link className="barButton" to="/petpage">
+            <span className="barButtonText click active">내가 쓴 글</span>
+          </Link>
+        </div>
+        <div className="mainBox">
+          <div className="petInfoEmpty">현재 등록된 글이 없습니다.</div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="box">

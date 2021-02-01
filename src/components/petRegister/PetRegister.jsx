@@ -1,7 +1,6 @@
 import React from "react";
 import "./petRegister.css";
 import Main_Menu from "../Main_Menu";
-import logo_petRegister from "./FindersLogo.png";
 import FormData from "form-data";
 import axios from "axios";
 

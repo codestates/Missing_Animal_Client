@@ -36,7 +36,7 @@ class Signin extends React.Component {
 
   loginHandler() {
     window.localStorage.setItem("isLogin", true);
-    // window.localStorage.setItem("Login", "signin");
+    window.localStorage.setItem("local", true);
     this.props.close();
     this.props.history.push({
       isLogin: this.state.isLogin,
@@ -58,7 +58,7 @@ class Signin extends React.Component {
       if (resp.data.message === "naver login") {
         window.localStorage.setItem("token", resp.data.token);
         window.localStorage.setItem("isLogin", true);
-        // window.localStorage.setItem("Login", "naver");
+        window.localStorage.setItem("local", false);
         this.props.history.push("/");
       }
     }
@@ -76,7 +76,7 @@ class Signin extends React.Component {
       if (resp.data.message === "kakao login") {
         window.localStorage.setItem("token", resp.data.token);
         window.localStorage.setItem("isLogin", true);
-        // window.localStorage.setItem("Login", "kakao");
+        window.localStorage.setItem("local", false);
         this.props.history.push("/");
       }
     }
@@ -168,7 +168,11 @@ class Signin extends React.Component {
               <div className="modalContents" onClick={() => isOpen}>
                 {/* <div className="signinName"> Finders </div> */}
                 <div className="logo_signin">
-                  <img src={logo_signin} className="signinLogo" />
+                  <img
+                    src={logo_signin}
+                    className="signinLogo"
+                    alt="signinLogo"
+                  />
                 </div>
                 <input
                   className="loginId"
@@ -192,14 +196,19 @@ class Signin extends React.Component {
                     <img
                       src={btn_kakao}
                       className="btn_kakao"
+                      alt="kakaoLogo"
                       // onClick={this.kakaoLoginHandler}
                     />
                     카카오 로그인
+                    <span className="anyMessage">
+                      은 이메일 동의를 필요로 합니다.
+                    </span>
                   </div>
                   <div className="naver" onClick={this.naverLoginHandler}>
                     <img
                       src={btn_naver}
                       className="btn_naver"
+                      alt="naverLogo"
                       // onClick={this.naverLoginHandler}
                     />
                     네이버 로그인

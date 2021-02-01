@@ -20,7 +20,7 @@ class Signup extends Component {
   };
 
   clickBtn = () => {
-    const { email, password, username, mobile } = this.state;
+    const { email, password, mobile } = this.state;
 
     if (
       password.length >= 4 &&
@@ -51,7 +51,11 @@ class Signup extends Component {
         <br></br>
         <span className="logo_signup">
           <a href="/">
-            <img src={logo_signup} className="signupLogo_head" />
+            <img
+              src={logo_signup}
+              className="signupLogo_head"
+              alt="signupLogo1"
+            />
           </a>
         </span>
         <br></br>
@@ -62,7 +66,11 @@ class Signup extends Component {
             </div> */}
             <div className="logo_signup">
               <a href="/">
-                <img src={logo_signup} className="signupLogo" />
+                <img
+                  src={logo_signup}
+                  className="signupLogo"
+                  alt="signupLogo2"
+                />
               </a>
             </div>
             <span className="registerText">회원정보를 입력해주세요</span>

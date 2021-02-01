@@ -28,7 +28,7 @@ function MyInfo() {
         withCredentials: true,
       });
       if (res.status === 200) {
-        console.log(res.status, res.statusText);
+        // console.log(res.status, res.statusText);
         setState((prevState) => ({
           ...prevState,
           userId: res.data.userId,
@@ -39,23 +39,23 @@ function MyInfo() {
           createdAt: res.data.createdAt,
         }));
       } else {
-        console.log(res.status, res.statusText);
+        // console.log(res.status, res.statusText);
       }
     };
     fetchData();
   }, []);
 
-  const { userId, username, email, mobile, createdAt, petsList } = state;
+  const { userId, username, email, mobile, createdAt } = state;
   return (
     <div className="myInfo">
       <Main_Menu></Main_Menu>
       <div className="menuBar">
         <Link className="barButton" to="/mypage">
-          <span className="barButtonText click active">My Info</span>
+          <span className="barButtonText click active">내 정보</span>
         </Link>
         <p></p>
         <Link className="barButton" to="/petpage">
-          <span className="barButtonText">My Post</span>
+          <span className="barButtonText">내가 쓴 글</span>
         </Link>
       </div>
       <div className="mainBody">
