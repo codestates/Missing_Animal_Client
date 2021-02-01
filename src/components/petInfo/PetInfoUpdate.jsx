@@ -61,7 +61,7 @@ function PetInfoUpdate({
     //   withCredentials: true,
     // });
     const res = await axios.put(
-      `http://missinganimals.ml/pets/edit`,
+      `https://missinganimals.ml/pets/edit`,
       formData,
       {
         withCredentials: true,

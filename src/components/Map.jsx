@@ -57,7 +57,7 @@ class Map extends React.Component {
         "background: #26282F; display: flex; margin: 160px 9px -48px 9px;";
 
       var missingDate = document.createElement("div");
-      missingDate.innerHTML = "날짜: " + el.missingDate.substring(0, 10);
+      missingDate.innerHTML = "실종 날짜: " + el.missingDate.substring(0, 10);
       missingDate.style.cssText =
         "background: #26282F; margin: 5px 9px 0 9px; display: flex";
 

@@ -59,11 +59,11 @@ function PetInfo() {
       <Main_Menu></Main_Menu>
       <div className="menuBar">
         <Link className="barButton" to="/mypage">
-          <span className="barButtonText">My Info</span>
+          <span className="barButtonText">내 정보</span>
         </Link>
         <p></p>
         <Link className="barButton" to="/petpage">
-          <span className="barButtonText click active">My Post</span>
+          <span className="barButtonText click active">내가 쓴 글</span>
         </Link>
       </div>
       <div className="mainBox">
