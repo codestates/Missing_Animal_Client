@@ -1,4 +1,4 @@
-# Finders : Missing Animal 🐾
+# Finders : Missing Animal (Client) 🐾
 
 사랑하는 반려동물을 잃어버렸는데, 마땅히 도움을 구할 곳이 없나요? <br>
 신고할 곳이 구청의 작은 과와 유기견단체 뿐이라, 연락을 기다리고 있지만 감감무소식 인가요? <br>
