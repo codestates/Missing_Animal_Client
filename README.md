@@ -17,4 +17,4 @@
 <br>
 <br>
 
-<a href="https://github.com/codestates/Missing_Animal_Client/wiki"><h3>프로젝트에 대 더 많은 정보를 보려면 여기를 클릭해주세요🐾<h3></a>
+<a href="https://github.com/codestates/Missing_Animal_Client/wiki"><h3>프로젝트에 대한 더 많은 정보를 보려면 여기를 클릭해주세요🐾<h3></a>
